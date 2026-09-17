@@ -8,16 +8,75 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# Projektregeln: Bilder
+# Projektregeln
 
-## Immer `next/image`
+Verbindliche Regeln für jede Änderung. Hintergründe, Stack, Design-Tokens und bekannte Fallstricke stehen in `docs/einstieg.md` (Teil B). Next-Doku liegt unter `node_modules/next/dist/docs/01-app/`.
+
+## Next.js und React
+
+- **Server Components sind Standard.** `"use client"` nur für kleine interaktive Blätter (Vorbild: `nav-link.tsx`, `mobile-nav.tsx`), nie für ganze Abschnitte, Seiten oder Layouts. Interaktive Teile herauslösen, statt die Grenze nach oben zu ziehen. Doku: `01-getting-started/05-server-and-client-components.md`.
+- **Keine Inhalte erst im Browser laden.** Kein Datenholen per `useEffect`/`fetch` im Client. Alles, was Besucher oder Google lesen sollen, muss im initialen Server-HTML stehen. Das gilt auch für aufklappbare Inhalte (siehe FAQ mit `<details>`).
+- **Kein `useMemo`/`useCallback`/`React.memo` auf Verdacht.** Der React Compiler ist aktiv und übernimmt das.
+- **Links:** interne Seiten und Anker mit `next/link`. Externe URLs und `mailto:`/`tel:` mit `<a>`. Externe Links, die in einem neuen Tab öffnen, bekommen `target="_blank" rel="noopener noreferrer"`.
+- **Schriften nur über `next/font`** (siehe `src/app/layout.tsx`). Keine `<link>`-Einbindung von Google Fonts, keine weiteren Schriftfamilien.
+- **Formulare mit Server Actions**, Eingaben immer auf dem Server validieren. Doku: `01-getting-started/07-mutating-data.md`.
+- **Geheimnisse** (API-Keys, SMTP-Zugänge) nur in `.env.local` bzw. Umgebungsvariablen **ohne** `NEXT_PUBLIC_`-Präfix. Niemals committen.
+- **Neue npm-Pakete nur nach Rückfrage beim Menschen.** Immer `pnpm`, nie `npm`/`yarn`.
+
+## SEO
+
+- **Jede Seite exportiert `metadata`** mit eigenem `title` (ohne Markenname, das Template ergänzt ihn) und eigener `description` (ca. 120–160 Zeichen, konkret, keine Superlative). Sobald `metadataBase` gesetzt ist, zusätzlich `alternates: { canonical: "/<route>" }`. Doku: `03-api-reference/04-functions/generate-metadata.md`.
+- **Genau eine `<h1>` pro Seite.** Überschriften-Ebenen nicht überspringen (`h2` → `h3`, nicht `h2` → `h4`). Für optische Größe Klassen nutzen, nicht die Ebene ändern.
+- **Semantisches HTML:** `<section>`, `<article>`, `<nav aria-label>`, Listen als `<ul>`/`<ol>`, Zitate als `<figure>`/`<blockquote>`. Keine Klick-`<div>`s.
+- **Neue Route → Sitemap.** Sobald `src/app/sitemap.ts` existiert, jede neue öffentliche Seite dort eintragen. Impressum und Datenschutz bleiben indexierbar. Doku: `03-api-reference/03-file-conventions/01-metadata/sitemap.md`.
+- **Strukturierte Daten** nur über `~/components/seo/json-ld` und nur mit echten, sichtbaren Angaben. Nichts auszeichnen, was nicht auf der Seite steht. Keine erfundenen Adressen, Öffnungszeiten oder Bewertungen.
+- **Open-Graph-Bilder** über die Datei-Konvention `opengraph-image` (Doku: `03-api-reference/03-file-conventions/01-metadata/opengraph-image.md`), sobald die Domain feststeht.
+- **Prüfen:** `curl -s http://localhost:3000/<route>` muss Überschriften, Fließtext und JSON-LD enthalten.
+
+## Barrierefreiheit
+
+- **Alt-Texte** auf Deutsch und beschreibend („Mädchen lacht auf einer Rutsche im Kita-Garten“, nicht „Bild1“ oder „Foto“). Rein dekorative Bilder: `alt=""`.
+- **Icons** (lucide) bekommen `aria-hidden`. Icon-only-Buttons brauchen einen Text für Screenreader (`<span className="sr-only">`).
+- **Fokus sichtbar lassen.** Kein `outline-none` ohne `focus-visible:`-Ersatz. Alles muss per Tastatur bedienbar sein.
+- **Kontrast:** Text auf Weiß/Creme mindestens `ink-700` bzw. `terracotta-600`. `ink-600` und heller nur für Deko oder auf dunklem Grund.
+- **Formularfelder** immer mit sichtbarem `<label>`, Fehlermeldungen per `aria-describedby` verknüpfen.
+
+## Code und Styling
+
+- **Nur Design-Tokens aus `src/app/globals.css`.** Keine Hex-/RGB-Werte oder beliebigen Farben in Klassen (`text-[#c5602f]` ist verboten). Beliebige Werte für Abstände/Größen nur, wenn die Tailwind-Skala nicht passt.
+- **Vorhandene Bausteine zuerst:** `Section`, `SectionHeader`, `Eyebrow`, `Container`, `Button`. Neue wiederverwendbare Bausteine nach `src/components/`, nicht in eine Seite kopieren.
+- **Klassen zusammenführen mit `cn()`** aus `~/lib/utils`, wenn Komponenten `className` annehmen.
+- **Inhalte, die mehrfach vorkommen** (FAQ, Stimmen, Preise, Kontaktdaten, Links), gehören nach `src/content/` bzw. `src/config/site.ts`, nicht hartkodiert in Komponenten.
+- **Imports über den Alias `~/`**, keine tiefen relativen Pfade (`../../..`).
+- **TypeScript strict:** kein `any`, kein `@ts-ignore`. Biome-Ausnahmen (`biome-ignore`) nur mit Begründung im Kommentar.
+- **Code-Kommentare und Bezeichner auf Englisch**, sichtbare Texte auf Deutsch.
+
+## Definition of Done
+
+Eine Änderung ist erst fertig, wenn alles davon erfüllt ist:
+
+1. `pnpm exec biome check --write`, `pnpm lint`, `pnpm exec tsc --noEmit` und `pnpm build` laufen fehlerfrei.
+2. Im Browser auf **1440px und 375px** geprüft: kein horizontales Scrollen, interaktive Teile angeklickt, keine Konsolenfehler.
+3. Bei neuen oder geänderten Bildern: Bild-Check (siehe unten).
+4. Bei neuen Seiten oder Inhalten: `curl`-Check (siehe SEO).
+5. Dem Menschen in einfachen Worten erklärt, was geändert wurde.
+
+## Git
+
+- Auf einem eigenen Branch oder `development` arbeiten, **nie direkt auf `main`**.
+- Commit-Nachrichten auf Deutsch, im Imperativ, erste Zeile unter ca. 70 Zeichen („Kontaktformular mit Server Action ergänzen“).
+- Nur committen oder pushen, wenn der Mensch darum bittet. Kein Force-Push ohne ausdrückliche Zustimmung.
+
+## Bilder
+
+### Immer `next/image`
 
 - Fotos und Grafiken **immer** über `import Image from "next/image"` einbinden. Kein `<img>`, keine CSS-`background-image` für Inhaltsbilder.
 - Lokale Bilder statisch importieren (`import foo from "~/assets/images/foo.jpg"`). Das liefert Breite, Höhe und `placeholder="blur"` automatisch.
 - Ausnahme: SVGs (Logo, Faultier) werden von Next nicht optimiert. Dort ist `next/image` trotzdem okay, `sizes` ist egal.
 - Referenz: `node_modules/next/dist/docs/01-app/03-api-reference/02-components/image.md` (Abschnitte `sizes`, `fill`, `deviceSizes`, `imageSizes`).
 
-## Richtige Auflösung pro Bildschirmbreite (`sizes`)
+### Richtige Auflösung pro Bildschirmbreite (`sizes`)
 
 Next erzeugt aus jedem Bild ein `srcset` mit mehreren Breiten. Welche davon der Browser lädt, entscheidet er **ausschließlich anhand von `sizes`**. Ohne `sizes` nimmt er `100vw` an und lädt z. B. für ein 300px breites Bild eine 2000px-Datei. Das ist verboten.
 
@@ -35,7 +94,7 @@ Regeln:
 5. Nur das LCP-Bild (meist Hero) bekommt `loading="eager" fetchPriority="high"`. `priority` ist in Next 16 deprecated.
 6. Quelldateien max. ca. 2400px breit ablegen. Größere Originale vorher verkleinern.
 
-## Pflicht-Check nach jeder Bildänderung
+### Bild-Check nach jeder Bildänderung
 
 Im Browser auf **1440px und 375px** messen, ob geladene und angezeigte Breite zusammenpassen. Vorher Cache leeren oder ein privates Fenster nutzen, sonst verwendet Chrome eine bereits geladene größere Variante:
 

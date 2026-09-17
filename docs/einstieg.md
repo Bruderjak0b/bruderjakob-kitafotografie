@@ -96,7 +96,7 @@ baut die Website so, wie sie später live geht. Wenn das ohne Fehler durchläuft
 
 ### Pflichtlektüre
 
-1. `AGENTS.md`: **Next.js 16.** APIs können von deinem Trainingswissen abweichen. Lies vor neuem Code die passenden Guides in `node_modules/next/dist/docs/`.
+1. `AGENTS.md`: **Next.js 16** (APIs können von deinem Trainingswissen abweichen) und die **verbindlichen Projektregeln** inkl. Definition of Done.
 2. `prototype/` (lokal, gitignored): Designvorlage.
    - `Kitafotografie Standalone.dc.html`: Startseite (Referenz für den umgesetzten Stand)
    - `ablauf.dc.html`, `preise.dc.html`, `kontakt.dc.html`, `ueber-mich.dc.html`: Unterseiten
@@ -164,12 +164,12 @@ Konvention für neue Seiten: `src/app/<route>/page.tsx` setzt die Abschnitte aus
 
 ### Workflow für jede Änderung
 
+Die verbindlichen Regeln (Next.js/React, SEO, Barrierefreiheit, Code, Bilder, Git) und die **Definition of Done** stehen in `AGENTS.md`. Kurz:
+
 1. Relevante Next-Docs in `node_modules/next/dist/docs/` lesen, falls Next-APIs betroffen sind.
-2. Umsetzen mit vorhandenen Bausteinen (`Section`, `Container`, `SectionHeader`, `Button`, Tokens).
-3. `pnpm exec biome check --write`, dann `pnpm lint`, `pnpm exec tsc --noEmit`, `pnpm build`.
-4. Im Browser prüfen: Desktop (1440px) **und** Mobile (375px), kein horizontales Scrollen, interaktive Teile anklicken.
-5. Bei SEO-Inhalten: `curl -s http://localhost:3000/<route>` prüfen, ob der Text im HTML steht.
-6. Dem Menschen verständlich erklären, was geändert wurde. Er hat wenig Coding-Erfahrung.
+2. Mit vorhandenen Bausteinen und Tokens umsetzen.
+3. Checks, Browser-Prüfung und ggf. Bild- und `curl`-Check laut Definition of Done.
+4. Dem Menschen verständlich erklären, was geändert wurde. Er hat wenig Coding-Erfahrung.
 
 ### Nächste sinnvolle Aufgaben
 
