@@ -12,7 +12,7 @@
 
 ### Worum geht's?
 
-Das ist die neue Website für Bruderjakob Kitafotografie. Sie wurde auf Basis eines Prototyps aus Claude Design gebaut. Fertig ist bisher die **Startseite**. Header, Footer, Farben, Schriften und Grundbausteine sind so angelegt, dass die weiteren Seiten (Über mich, Ablauf, Preise, Kontakt, Impressum, Datenschutz) darauf aufbauen können.
+Hallo Das ist die neue Website für Bruderjakob Kitafotografie. Sie wurde auf Basis eines Prototyps aus Claude Design gebaut. Fertig ist bisher die **Startseite**. Header, Footer, Farben, Schriften und Grundbausteine sind so angelegt, dass die weiteren Seiten (Über mich, Ablauf, Preise, Kontakt, Impressum, Datenschutz) darauf aufbauen können.
 
 Die Technik in einfachen Worten:
 
