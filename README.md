@@ -33,10 +33,15 @@ Vercel mit Git-Integration. `main` wird produktiv veröffentlicht, alle anderen 
 - **[AGENTS.md](AGENTS.md):** verbindliche Projektregeln und Definition of Done.
 - **[docs/statischer-export.md](docs/statischer-export.md):** getestete, nicht umgesetzte Alternative zu Vercel (reines HTML/CSS/JS bei einem normalen Webhoster).
 
-## Branches
+## Branches (Git Flow)
+
+Das Repo folgt [Git Flow](https://nvie.com/posts/a-successful-git-branching-model/). Details und Regeln für AI-Agents: [AGENTS.md](AGENTS.md#git-git-flow).
 
 | Branch | Zweck |
 |---|---|
-| `main` | Livestand der Website |
-| `development` | aktueller Arbeitsstand, Basis für neue Branches |
-| `kotti` | Design-Vorschlag (Polish, Header, breiteres Layout), nicht gemerged |
+| `main` | Production. Vercel-Production-Branch, jeder Merge ist ein Release mit Tag `vX.Y.Z` |
+| `development` | Integrationsstand für das nächste Release |
+| `feature/*` | neue Funktionen, von und nach `development` |
+| `release/*` | Release-Vorbereitung, von `development` nach `main` und zurück |
+| `hotfix/*` | dringende Fehler, von `main` nach `main` und `development` |
+| `kotti` | Design-Vorschlag (Polish, Header, breiteres Layout), außerhalb des Flows, nicht gemerged |

@@ -68,12 +68,39 @@ Eine Änderung ist erst fertig, wenn alles davon erfüllt ist:
 4. Bei neuen Seiten oder Inhalten: `curl`-Check (siehe SEO).
 5. Dem Menschen in einfachen Worten erklärt, was geändert wurde.
 
-## Git
+## Git (Git Flow)
 
-- Auf `development` oder einem Branch davon arbeiten, **nie direkt auf `main`** (Livestand).
-- `kotti` ist ein Design-Vorschlag. Nicht ungefragt mergen oder cherry-picken, der Mensch entscheidet.
-- Commit-Nachrichten auf Deutsch, im Imperativ, erste Zeile unter ca. 70 Zeichen („Kontaktformular mit Server Action ergänzen“).
-- Nur committen oder pushen, wenn der Mensch darum bittet. Kein Force-Push ohne ausdrückliche Zustimmung.
+Das Repo folgt dem **Git-Flow-Modell** (Vincent Driessen). Halte dich **automatisch** daran, ohne dass der Mensch es extra sagen muss. Branch-Namen in diesem Repo: `development` entspricht `develop`, `main` entspricht `master`.
+
+### Branches
+
+| Branch | Zweck | Entsteht aus | Wird gemerged in |
+|---|---|---|---|
+| `main` | **Production.** Vercel veröffentlicht jeden Stand von `main` als Live-Website. Jeder Merge nach `main` ist ein Release mit Tag. | – | – |
+| `development` | Integrationsstand für das nächste Release. Vercel-Preview. | – | `release/*` |
+| `feature/<kurzname>` | Eine neue Funktion oder Seite, z. B. `feature/seite-ablauf` | `development` | `development` |
+| `release/<version>` | Release vorbereiten, z. B. `release/1.0.0`. Nur noch Bugfixes, Version, letzte Texte. | `development` | `main` **und** `development` |
+| `hotfix/<version>` | Dringender Fehler auf der Live-Website, z. B. `hotfix/1.0.1` | `main` | `main` **und** `development` (bzw. offenes `release/*`) |
+| `kotti` | Sonderfall: Design-Vorschlag eines Kollegen, außerhalb des Flows. Nicht ungefragt mergen oder cherry-picken, der Mensch entscheidet. | – | – |
+
+### Regeln
+
+- **Nie direkt auf `main` committen.** `main` ändert sich nur durch Merges aus `release/*` oder `hotfix/*`.
+- **Nicht direkt auf `development` entwickeln.** Für jede Aufgabe zu Beginn selbstständig einen passenden Branch von `development` anlegen (`git switch -c feature/<kurzname> development`). Der Mensch muss das nicht anweisen. Ausnahme nur, wenn der Mensch ausdrücklich etwas anderes sagt.
+- **Kurznamen** kleingeschrieben, Deutsch, mit Bindestrichen, ohne Umlaute (`feature/kontaktformular`, `feature/seo-sitemap`).
+- **Vor dem Anlegen** `development` bzw. `main` aktualisieren (`git fetch`, `git pull --ff-only`) und prüfen, dass der Working Tree sauber ist.
+- **Merges mit `--no-ff`**, damit die Historie zeigt, was zu einem Feature/Release gehörte.
+- **Versionen** nach SemVer ohne `v` im Branch-Namen, Tags mit `v` (`release/1.2.0` → Tag `v1.2.0`). Im Release- bzw. Hotfix-Branch zuerst `version` in `package.json` anheben. Erstes Live-Release ist `1.0.0`. Minor für neue Seiten/Funktionen, Patch für Fehlerbehebungen und Textkorrekturen.
+- **Release abschließen:** `release/x.y.z` → `main` (`--no-ff`), Tag `vx.y.z` auf dem Merge-Commit in `main`, dann `release/x.y.z` → `development` (`--no-ff`), Release-Branch löschen. Hotfix genauso, nur ausgehend von `main`.
+- **Vor jedem Merge nach `main`** muss `pnpm build` auf dem zu mergenden Branch grün sein (Definition of Done). Ein roter Build auf `main` bedeutet: nichts geht live.
+- **Feature-Branches nach dem Merge** lokal löschen. Remote-Branches nur nach Rückfrage löschen.
+
+### Was automatisch passiert und was nur auf Anweisung
+
+- **Automatisch:** passenden Branch anlegen bzw. wechseln, dem Menschen dabei kurz sagen, auf welchem Branch gearbeitet wird und warum.
+- **Nur auf Anweisung des Menschen:** committen, mergen, taggen, pushen, Branches remote löschen. Wenn der Mensch „committe/merge/veröffentliche das“ sagt, den dazu passenden Git-Flow-Schritt vollständig ausführen (z. B. bei „veröffentlichen“: Release-Branch, Version, Build, Merge nach `main`, Tag, Rückmerge nach `development`) und vorher in einem Satz ansagen, was passieren wird.
+- **Kein Force-Push** auf `main` oder `development`. Auf anderen Branches nur mit ausdrücklicher Zustimmung.
+- **Commit-Nachrichten** auf Deutsch, im Imperativ, erste Zeile unter ca. 70 Zeichen („Kontaktformular mit Server Action ergänzen“).
 
 ## Bilder
 
