@@ -88,9 +88,11 @@ macht dieselben Prüfungen und baut danach die Website so, wie sie später live 
 
 Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verknüpft, es gibt keine eigenen Deploy-Skripte.
 
-- **Push auf `main`** → Vercel baut und veröffentlicht die Live-Website.
+- **Push auf `main`** → Vercel baut und veröffentlicht die Live-Website. `main` ist der **Production Branch** und ändert sich nur über Releases und Hotfixes (Git Flow).
 - **Push auf jeden anderen Branch** (z. B. `development`, `kotti`) → Vercel baut eine **Vorschau** mit eigener Adresse. Die Adresse steht im Vercel-Dashboard und bei GitHub am Commit. Vorschauen werden von Google nicht indexiert.
 - **Schlägt der Build fehl** (Formatierung, Code-Regeln, Typfehler oder Build-Fehler), wird nichts veröffentlicht. Die Live-Website bleibt auf dem letzten funktionierenden Stand. Die Fehlermeldung steht im Vercel-Dashboard unter dem Deployment. Gib sie Claude Code zum Beheben.
+
+**Alternative ohne Vercel:** Die Website lässt sich auch als reine HTML/CSS/JS-Dateien bei einem normalen Webhoster betreiben. Das ist getestet, aber nicht umgesetzt, weil es Umbauten braucht und ein Kontaktformular dann einen externen Dienst benötigt. Details: [statischer-export.md](statischer-export.md).
 
 ### So arbeitest du gut mit Claude Code
 
@@ -99,9 +101,14 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 - **Lass dir Pläne zeigen.** Bei größeren Sachen: *„Mach erst einen Plan, bevor du Code schreibst.“*
 - **Selbst anschauen.** Prüfe das Ergebnis im Browser, auch auf dem Handy (oder mit schmalem Browserfenster). Claude kann auch selbst Screenshots machen, wenn du danach fragst.
 - **Vor dem Speichern prüfen lassen:** *„Führe lint und build aus und prüfe, ob alles funktioniert.“*
-- **Git nutzen:** Lass Claude Commits erstellen (*„Committe das mit einer passenden Nachricht“*). So kannst du jederzeit zurück. Die Branches:
-  - `development`: dein Arbeitsstand. Hier oder auf eigenen Branches davon arbeiten.
-  - `main`: der Livestand. Nur fertige, geprüfte Stände von `development` hierher übernehmen, nie direkt darauf arbeiten.
+- **Git nutzen:** Das Repo folgt dem Modell **Git Flow**. Claude Code hält sich automatisch daran, du musst dir die Details nicht merken. So sieht es aus:
+  - `main`: die **Live-Website**. Alles, was hier landet, veröffentlicht Vercel sofort. Hier wird nie direkt gearbeitet.
+  - `development`: der Sammelstand für das nächste Update der Website.
+  - `feature/…`: für jede neue Aufgabe legt Claude automatisch einen eigenen Branch an, z. B. `feature/seite-ablauf`. Ist die Aufgabe fertig, wird sie nach `development` übernommen.
+  - `release/…`: wenn du sagst *„Veröffentliche den aktuellen Stand“*, bereitet Claude ein Release vor (z. B. `release/1.1.0`), prüft den Build, übernimmt es nach `main` und markiert die Version.
+  - `hotfix/…`: für dringende Fehler auf der Live-Website, direkt ausgehend von `main`.
+
+  Was du sagen kannst: *„Committe das“*, *„Übernimm das Feature nach development“*, *„Veröffentliche den aktuellen Stand“*, *„Auf der Live-Seite ist ein Fehler, mach einen Hotfix“*. Commits, Merges und Veröffentlichungen passieren **nur, wenn du darum bittest**. So kannst du jederzeit zurück.
   - `kotti`: ein **Design-Vorschlag** deines Kollegen (feinere Abschnitte, neuer Sticky-Header, breiteres Layout). Er ist bewusst nicht übernommen. Anschauen mit *„Wechsle auf den Branch kotti und starte den Dev-Server“*. Ob du ihn ganz, teilweise oder gar nicht übernimmst, entscheidest du.
 - **Bei Unsicherheit fragen:** *„Erklär mir, was du geändert hast und warum.“* Das ist ausdrücklich erwünscht.
 
@@ -209,6 +216,7 @@ Konvention für neue Seiten: `src/app/<route>/page.tsx` setzt die Abschnitte aus
 6. **Dev-Server:** Läuft ggf. schon, vorher Port 3000 prüfen. Der Auftraggeber startet ihn gern in tmux (`tmux new-session -d -s bruderjakob-dev 'pnpm dev'`).
 7. **Vercel und pnpm-Version:** Vercel unterstützt automatisch nur pnpm bis Version 10. Darum bleibt das Projekt bewusst auf pnpm 10. **Nicht auf pnpm 11 upgraden**, solange Vercel es nicht nativ unterstützt, sonst scheitert das Deployment an `engines.pnpm`. pnpm-11-Einstellungen wie `allowBuilds` funktionieren in pnpm 10 nicht, stattdessen `onlyBuiltDependencies`/`ignoredBuiltDependencies` nutzen. Beim Wechsel der pnpm-Version `engines.pnpm` und `packageManager` gemeinsam ändern.
 8. **`tsc` im frischen Klon:** Ohne `next typegen` fehlen die Typen für Bild- und SVG-Importe (`next-env.d.ts` ist gitignored). Darum `pnpm typecheck`/`pnpm check` statt nacktem `tsc --noEmit`.
+9. **Statischer Export:** `output: "export"` allein baut grün, aber alle Fotos fehlen danach beim Hoster. Nicht ungefragt auf Export umstellen. Vorgehen und Einschränkungen stehen in `docs/statischer-export.md`.
 
 ### Workflow für jede Änderung
 
