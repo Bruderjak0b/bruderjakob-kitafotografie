@@ -15,7 +15,7 @@ export function HeroSection() {
         placeholder="blur"
         loading="eager"
         fetchPriority="high"
-        sizes="100vw"
+        sizes="(min-width: 960px) 100vw, 960px"
         className="-z-10 object-cover object-[72%_22%]"
       />
       <div

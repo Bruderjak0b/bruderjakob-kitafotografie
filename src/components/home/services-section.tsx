@@ -98,7 +98,7 @@ function GalleryImage({
         alt={alt}
         fill
         placeholder="blur"
-        sizes="(min-width: 768px) 260px, 50vw"
+        sizes="(min-width: 768px) 300px, 240px"
         className="object-cover"
       />
     </div>
