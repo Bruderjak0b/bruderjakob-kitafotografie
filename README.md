@@ -6,11 +6,11 @@ Gebaut mit Next.js 16, React 19, Tailwind CSS 4 und shadcn/ui.
 
 ## Schnellstart
 
-Voraussetzungen: **Node.js 24** (siehe `.nvmrc`) und **pnpm 11**.
+Voraussetzungen: [nvm](https://github.com/nvm-sh/nvm) und **pnpm 10**. Die Node-Version steht in `.nvmrc` (aktuell 24).
 
 ```bash
-nvm use            # oder Node 24 direkt installieren
-corepack enable    # aktiviert pnpm in der Version aus package.json
+nvm install        # installiert und aktiviert die Version aus .nvmrc
+npm install -g pnpm@10
 pnpm install
 pnpm dev           # http://localhost:3000
 ```
@@ -19,9 +19,13 @@ Weitere Befehle:
 
 | Befehl | Zweck |
 |---|---|
-| `pnpm lint` | Code mit Biome prüfen |
 | `pnpm format` | Code formatieren |
-| `pnpm build` | Produktions-Build erstellen |
+| `pnpm check` | Formatierung, Lint-Regeln und Typen prüfen |
+| `pnpm build` | `check` plus Produktions-Build, genau wie bei Vercel |
+
+## Deployment
+
+Vercel mit Git-Integration. `main` wird produktiv veröffentlicht, alle anderen Branches erhalten Preview-Deployments. Vercel nutzt seine Standardbefehle (`pnpm install`, `pnpm run build`), es gibt kein `vercel.json`. Der Build bricht bei Format-, Lint- oder Typfehlern ab. Einrichtung des Vercel-Projekts: siehe [docs/einstieg.md](docs/einstieg.md#offene-punkte-vor-dem-livegang).
 
 ## Dokumentation
 

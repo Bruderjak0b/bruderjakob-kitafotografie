@@ -27,39 +27,70 @@ Die Technik in einfachen Worten:
 
 ### Einmalige Einrichtung
 
-1. **Node.js 24** installieren. Das Projekt ist auf Version 24 festgelegt, mit einer anderen Version bricht `pnpm install` mit einer Fehlermeldung ab.
-   - Einfachster Weg: die LTS-Version 24 von https://nodejs.org installieren.
-   - Wer `nvm` nutzt: im Projektordner `nvm install` ausführen. Die Version steht in `.nvmrc`.
-   - Prüfen mit `node -v`, die Ausgabe muss mit `v24` beginnen.
-2. **pnpm** aktivieren: im Terminal `corepack enable` ausführen. Corepack ist in Node 24 enthalten und nimmt automatisch die richtige pnpm-Version aus `package.json`.
-3. Repository klonen und Pakete installieren:
+Das Projekt nutzt **nvm** (Node Version Manager). nvm installiert genau die Node-Version, die in der Datei `.nvmrc` steht, und schaltet pro Projekt darauf um. So musst du dir die Version nie merken. Mit einer falschen Node- oder pnpm-Version bricht `pnpm install` mit einer Fehlermeldung ab.
+
+1. **nvm installieren** (macOS/Linux). Im Terminal:
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
+   ```
+   Danach das Terminal **schließen und neu öffnen**. Prüfen mit `nvm --version`.
+   Unter Windows gibt es stattdessen [nvm-windows](https://github.com/coreybutler/nvm-windows). Es liest `.nvmrc` nicht automatisch, dort die Version aus `.nvmrc` von Hand angeben (`nvm install 24`, `nvm use 24`).
+2. **Repository klonen:**
    ```bash
    git clone https://github.com/KoTTi97/bruderjakob-kitafotografie.git
    cd bruderjakob-kitafotografie
    git checkout development
+   ```
+3. **Node installieren und aktivieren.** Im Projektordner:
+   ```bash
+   nvm install
+   ```
+   nvm liest `.nvmrc`, installiert die passende Version und aktiviert sie. Prüfen mit `node -v`, die Ausgabe muss zur Zahl in `.nvmrc` passen.
+   Damit neue Terminals direkt diese Version nutzen: `nvm alias default` ausführen, dann ist sie die Standardversion.
+4. **pnpm 10 installieren** (gehört zur gerade aktiven Node-Version, deshalb erst nach Schritt 3):
+   ```bash
+   npm install -g pnpm@10
+   ```
+   Prüfen mit `pnpm -v`, die Ausgabe muss mit `10` beginnen.
+5. **Pakete installieren:**
+   ```bash
    pnpm install
    ```
-4. **Den Prototyp-Ordner besorgen:** Der Ordner `prototype/` ist absichtlich *nicht* im Git. Er enthält die Entwürfe aus Claude Design, Screenshots aller geplanten Seiten und die Original-Fotos. Lass ihn dir separat schicken und leg ihn als `prototype/` in den Projektordner. Er ist die wichtigste Vorlage für die noch fehlenden Seiten.
+6. **Den Prototyp-Ordner besorgen:** Der Ordner `prototype/` ist absichtlich *nicht* im Git. Er enthält die Entwürfe aus Claude Design, Screenshots aller geplanten Seiten und die Original-Fotos. Lass ihn dir separat schicken und leg ihn als `prototype/` in den Projektordner. Er ist die wichtigste Vorlage für die noch fehlenden Seiten.
 
 ### Website lokal starten
 
 ```bash
+nvm use
 pnpm dev
 ```
 
-Danach im Browser http://localhost:3000 öffnen. Änderungen am Code erscheinen automatisch, ohne Neuladen.
+`nvm use` stellt sicher, dass die richtige Node-Version aktiv ist (nötig in jedem neuen Terminal, außer du hast sie mit `nvm alias default` als Standard gesetzt). Danach im Browser http://localhost:3000 öffnen. Änderungen am Code erscheinen automatisch, ohne Neuladen.
 
 Weitere Befehle:
 
 ```bash
-pnpm lint
+pnpm format
 ```
-prüft den Code auf Fehler und Formatierung.
+formatiert den Code automatisch.
+
+```bash
+pnpm check
+```
+prüft Formatierung, Code-Regeln und Typen, ohne die Website zu bauen. Schnell, gut für zwischendurch.
 
 ```bash
 pnpm build
 ```
-baut die Website so, wie sie später live geht. Wenn das ohne Fehler durchläuft, ist alles in Ordnung.
+macht dieselben Prüfungen und baut danach die Website so, wie sie später live geht. **Genau das passiert auch bei Vercel.** Läuft es bei dir durch, klappt auch das Deployment.
+
+### Veröffentlichen mit Vercel
+
+Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verknüpft, es gibt keine eigenen Deploy-Skripte.
+
+- **Push auf `main`** → Vercel baut und veröffentlicht die Live-Website.
+- **Push auf jeden anderen Branch** (z. B. `development`, `kotti`) → Vercel baut eine **Vorschau** mit eigener Adresse. Die Adresse steht im Vercel-Dashboard und bei GitHub am Commit. Vorschauen werden von Google nicht indexiert.
+- **Schlägt der Build fehl** (Formatierung, Code-Regeln, Typfehler oder Build-Fehler), wird nichts veröffentlicht. Die Live-Website bleibt auf dem letzten funktionierenden Stand. Die Fehlermeldung steht im Vercel-Dashboard unter dem Deployment. Gib sie Claude Code zum Beheben.
 
 ### So arbeitest du gut mit Claude Code
 
@@ -96,6 +127,12 @@ baut die Website so, wie sie später live geht. Wenn das ohne Fehler durchläuft
 - [ ] Unterseiten fehlen noch: `/ueber-mich`, `/ablauf`, `/preise`, `/kontakt`, `/impressum`, `/datenschutz`.
 - [ ] Kontaktformular auf `/kontakt` inkl. E-Mail-Versand (Anbieter muss noch gewählt werden).
 - [ ] Ein eigenes Favicon, falls gewünscht (aktuell das Faultier).
+- [ ] **Vercel-Projekt anlegen** (einmalig):
+  1. Bei Vercel „Add New → Project“, das GitHub-Repo importieren.
+  2. Framework „Next.js“ wird erkannt. **Build-, Install- und Output-Einstellungen nicht überschreiben.** Vercel nimmt automatisch `pnpm install` und das `build`-Skript aus `package.json`.
+  3. Nach dem Import unter *Settings → Environments → Production* den **Production Branch auf `main`** stellen (Vercel nimmt sonst `development`, weil das der Standard-Branch auf GitHub ist).
+  4. Unter *Settings → Build and Deployment* prüfen, dass **Node.js 24.x** eingestellt ist (wird aus `package.json` übernommen).
+  5. Eigene Domain unter *Settings → Domains* verbinden, danach `metadataBase` im Code setzen lassen.
 
 ---
 
@@ -117,7 +154,9 @@ baut die Website so, wie sie später live geht. Wenn das ohne Fehler durchläuft
 - Tailwind CSS v4 (CSS-first, keine `tailwind.config`), `tw-animate-css`
 - shadcn/ui (Style `radix-nova`, Radix-Primitives, lucide-Icons), `components.json`
 - Biome für Lint und Format (kein ESLint/Prettier)
-- Node 24 (`.nvmrc`, `engines`, `engineStrict: true` in `pnpm-workspace.yaml`), pnpm 11 über Corepack (`packageManager`). `allowBuilds: sharp: false`
+- Node-Version über **nvm**: `.nvmrc` ist die einzige Quelle für die lokale Version.
+- Node 24 und pnpm 10, erzwungen über `engines` in `package.json` plus `engineStrict: true` in `pnpm-workspace.yaml`. `.nvmrc` für nvm, `packageManager` pinnt die genaue pnpm-Version. Build-Skripte von `sharp` und `unrs-resolver` sind per `ignoredBuiltDependencies` abgeschaltet.
+- Deployment: Vercel mit Git-Integration, keine GitHub Actions, kein `vercel.json`. Vercel nutzt seine Standardbefehle.
 - Import-Alias: `~/*` → `src/*`
 
 ### Verzeichnisstruktur
@@ -168,6 +207,8 @@ Konvention für neue Seiten: `src/app/<route>/page.tsx` setzt die Abschnitte aus
 4. **Ungültiges HTML vermeiden:** z. B. kein `<div>` direkt in `<ol>`/`<ul>`.
 5. **Rich Results:** Google zeigt FAQ-Rich-Results seit 2023 kaum noch für normale Websites an. Das Markup bleibt trotzdem sinnvoll. Dem Menschen keine sichtbaren FAQ-Snippets bei Google versprechen. Weitere sinnvolle Schemas später: `LocalBusiness`/`ProfessionalService` (braucht echte Adresse und Einzugsgebiet, beim Menschen erfragen).
 6. **Dev-Server:** Läuft ggf. schon, vorher Port 3000 prüfen. Der Auftraggeber startet ihn gern in tmux (`tmux new-session -d -s bruderjakob-dev 'pnpm dev'`).
+7. **Vercel und pnpm-Version:** Vercel unterstützt automatisch nur pnpm bis Version 10. Darum bleibt das Projekt bewusst auf pnpm 10. **Nicht auf pnpm 11 upgraden**, solange Vercel es nicht nativ unterstützt, sonst scheitert das Deployment an `engines.pnpm`. pnpm-11-Einstellungen wie `allowBuilds` funktionieren in pnpm 10 nicht, stattdessen `onlyBuiltDependencies`/`ignoredBuiltDependencies` nutzen. Beim Wechsel der pnpm-Version `engines.pnpm` und `packageManager` gemeinsam ändern.
+8. **`tsc` im frischen Klon:** Ohne `next typegen` fehlen die Typen für Bild- und SVG-Importe (`next-env.d.ts` ist gitignored). Darum `pnpm typecheck`/`pnpm check` statt nacktem `tsc --noEmit`.
 
 ### Workflow für jede Änderung
 

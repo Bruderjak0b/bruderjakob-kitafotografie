@@ -12,6 +12,13 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Verbindliche Regeln für jede Änderung. Hintergründe, Stack, Design-Tokens und bekannte Fallstricke stehen in `docs/einstieg.md` (Teil B). Next-Doku liegt unter `node_modules/next/dist/docs/01-app/`.
 
+## Umgebung (Node, nvm, pnpm)
+
+- **Node-Version kommt ausschließlich über nvm aus `.nvmrc`.** Vor dem ersten Node-/pnpm-Befehl einer Sitzung `node -v` mit `.nvmrc` vergleichen. Passt die Hauptversion nicht, zuerst `nvm use` ausführen (bzw. `nvm install`, falls sie fehlt). In nicht-interaktiven Shells, in denen `nvm` nicht gefunden wird: `source "$HOME/.nvm/nvm.sh" && nvm use`.
+- **Nie Node global über Homebrew o. ä. installieren oder die Version „passend machen“**, indem `engines` gelockert wird.
+- **pnpm 10** (`packageManager` in `package.json`). Nie `npm install`/`yarn` für Projektabhängigkeiten. Nicht auf pnpm 11 upgraden (siehe Fallstricke in `docs/einstieg.md`).
+- **Node-Upgrade** nur in einem eigenen Commit und nur, wenn Vercel die neue Hauptversion für Builds und Functions offiziell unterstützt (https://vercel.com/docs/functions/runtimes/node-js/node-js-versions). Immer gemeinsam ändern: `.nvmrc`, `engines.node` in `package.json`, Versionsangaben in `README.md` und `docs/einstieg.md`. Danach `nvm install`, `pnpm install`, `pnpm build`.
+
 ## Next.js und React
 
 - **Server Components sind Standard.** `"use client"` nur für kleine interaktive Blätter (Vorbild: `nav-link.tsx`, `mobile-nav.tsx`), nie für ganze Abschnitte, Seiten oder Layouts. Interaktive Teile herauslösen, statt die Grenze nach oben zu ziehen. Doku: `01-getting-started/05-server-and-client-components.md`.
@@ -55,7 +62,7 @@ Verbindliche Regeln für jede Änderung. Hintergründe, Stack, Design-Tokens und
 
 Eine Änderung ist erst fertig, wenn alles davon erfüllt ist:
 
-1. `pnpm exec biome check --write`, `pnpm lint`, `pnpm exec tsc --noEmit` und `pnpm build` laufen fehlerfrei.
+1. `pnpm exec biome check --write` ausgeführt, danach läuft `pnpm build` fehlerfrei. Der Build prüft Formatierung, Lint und Typen genau wie das Vercel-Deployment. Die Skripte in `package.json` nicht abschwächen, um einen Build grün zu bekommen. Fehler beheben.
 2. Im Browser auf **1440px und 375px** geprüft: kein horizontales Scrollen, interaktive Teile angeklickt, keine Konsolenfehler.
 3. Bei neuen oder geänderten Bildern: Bild-Check (siehe unten).
 4. Bei neuen Seiten oder Inhalten: `curl`-Check (siehe SEO).
