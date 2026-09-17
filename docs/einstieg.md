@@ -27,12 +27,16 @@ Die Technik in einfachen Worten:
 
 ### Einmalige Einrichtung
 
-1. **Node.js** installieren (Version 24 oder neuer): https://nodejs.org
-2. **pnpm** aktivieren: im Terminal `corepack enable` ausführen.
+1. **Node.js 24** installieren. Das Projekt ist auf Version 24 festgelegt, mit einer anderen Version bricht `pnpm install` mit einer Fehlermeldung ab.
+   - Einfachster Weg: die LTS-Version 24 von https://nodejs.org installieren.
+   - Wer `nvm` nutzt: im Projektordner `nvm install` ausführen. Die Version steht in `.nvmrc`.
+   - Prüfen mit `node -v`, die Ausgabe muss mit `v24` beginnen.
+2. **pnpm** aktivieren: im Terminal `corepack enable` ausführen. Corepack ist in Node 24 enthalten und nimmt automatisch die richtige pnpm-Version aus `package.json`.
 3. Repository klonen und Pakete installieren:
    ```bash
    git clone https://github.com/KoTTi97/bruderjakob-kitafotografie.git
    cd bruderjakob-kitafotografie
+   git checkout development
    pnpm install
    ```
 4. **Den Prototyp-Ordner besorgen:** Der Ordner `prototype/` ist absichtlich *nicht* im Git. Er enthält die Entwürfe aus Claude Design, Screenshots aller geplanten Seiten und die Original-Fotos. Lass ihn dir separat schicken und leg ihn als `prototype/` in den Projektordner. Er ist die wichtigste Vorlage für die noch fehlenden Seiten.
@@ -64,7 +68,10 @@ baut die Website so, wie sie später live geht. Wenn das ohne Fehler durchläuft
 - **Lass dir Pläne zeigen.** Bei größeren Sachen: *„Mach erst einen Plan, bevor du Code schreibst.“*
 - **Selbst anschauen.** Prüfe das Ergebnis im Browser, auch auf dem Handy (oder mit schmalem Browserfenster). Claude kann auch selbst Screenshots machen, wenn du danach fragst.
 - **Vor dem Speichern prüfen lassen:** *„Führe lint und build aus und prüfe, ob alles funktioniert.“*
-- **Git nutzen:** Arbeite auf dem Branch `development`. `main` ist für den fertigen Stand. Lass Claude Commits erstellen (*„Committe das mit einer passenden Nachricht“*). So kannst du jederzeit zurück.
+- **Git nutzen:** Lass Claude Commits erstellen (*„Committe das mit einer passenden Nachricht“*). So kannst du jederzeit zurück. Die Branches:
+  - `development`: dein Arbeitsstand. Hier oder auf eigenen Branches davon arbeiten.
+  - `main`: der Livestand. Nur fertige, geprüfte Stände von `development` hierher übernehmen, nie direkt darauf arbeiten.
+  - `kotti`: ein **Design-Vorschlag** deines Kollegen (feinere Abschnitte, neuer Sticky-Header, breiteres Layout). Er ist bewusst nicht übernommen. Anschauen mit *„Wechsle auf den Branch kotti und starte den Dev-Server“*. Ob du ihn ganz, teilweise oder gar nicht übernimmst, entscheidest du.
 - **Bei Unsicherheit fragen:** *„Erklär mir, was du geändert hast und warum.“* Das ist ausdrücklich erwünscht.
 
 ### Wo ändere ich was? (Kurzübersicht)
@@ -110,7 +117,7 @@ baut die Website so, wie sie später live geht. Wenn das ohne Fehler durchläuft
 - Tailwind CSS v4 (CSS-first, keine `tailwind.config`), `tw-animate-css`
 - shadcn/ui (Style `radix-nova`, Radix-Primitives, lucide-Icons), `components.json`
 - Biome für Lint und Format (kein ESLint/Prettier)
-- pnpm 11. `pnpm-workspace.yaml` → `allowBuilds: sharp: false`
+- Node 24 (`.nvmrc`, `engines`, `engineStrict: true` in `pnpm-workspace.yaml`), pnpm 11 über Corepack (`packageManager`). `allowBuilds: sharp: false`
 - Import-Alias: `~/*` → `src/*`
 
 ### Verzeichnisstruktur

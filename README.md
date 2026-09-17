@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bruderjakob Kitafotografie
 
-## Getting Started
+Website für Bruderjakob Kitafotografie, Kita-Fotograf in Göppingen und Umgebung.
 
-First, run the development server:
+Gebaut mit Next.js 16, React 19, Tailwind CSS 4 und shadcn/ui.
+
+## Schnellstart
+
+Voraussetzungen: **Node.js 24** (siehe `.nvmrc`) und **pnpm 11**.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+nvm use            # oder Node 24 direkt installieren
+corepack enable    # aktiviert pnpm in der Version aus package.json
+pnpm install
+pnpm dev           # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Weitere Befehle:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Befehl | Zweck |
+|---|---|
+| `pnpm lint` | Code mit Biome prüfen |
+| `pnpm format` | Code formatieren |
+| `pnpm build` | Produktions-Build erstellen |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Dokumentation
 
-## Learn More
+- **[docs/einstieg.md](docs/einstieg.md):** Einstieg ins Projekt für Menschen und AI-Agents (Einrichtung, Arbeitsweise, Struktur, offene Punkte). **Hier anfangen.**
+- **[AGENTS.md](AGENTS.md):** verbindliche Projektregeln und Definition of Done.
 
-To learn more about Next.js, take a look at the following resources:
+## Branches
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Branch | Zweck |
+|---|---|
+| `main` | Livestand der Website |
+| `development` | aktueller Arbeitsstand, Basis für neue Branches |
+| `kotti` | Design-Vorschlag (Polish, Header, breiteres Layout), nicht gemerged |

@@ -63,7 +63,8 @@ Eine Änderung ist erst fertig, wenn alles davon erfüllt ist:
 
 ## Git
 
-- Auf einem eigenen Branch oder `development` arbeiten, **nie direkt auf `main`**.
+- Auf `development` oder einem Branch davon arbeiten, **nie direkt auf `main`** (Livestand).
+- `kotti` ist ein Design-Vorschlag. Nicht ungefragt mergen oder cherry-picken, der Mensch entscheidet.
 - Commit-Nachrichten auf Deutsch, im Imperativ, erste Zeile unter ca. 70 Zeichen („Kontaktformular mit Server Action ergänzen“).
 - Nur committen oder pushen, wenn der Mensch darum bittet. Kein Force-Push ohne ausdrückliche Zustimmung.
 
