@@ -19,7 +19,7 @@ export function NavLink({
       href={href}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "font-semibold transition-colors duration-150 hover:text-terracotta-300 aria-[current=page]:text-terracotta-400",
+        "relative py-1 font-semibold text-terracotta-100 transition-colors duration-150 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-terracotta-400 after:opacity-0 after:transition-opacity after:duration-150 hover:text-white aria-[current=page]:text-white aria-[current=page]:after:opacity-100",
         className,
       )}
       {...props}

@@ -5,7 +5,7 @@ import type * as React from "react";
 import { cn } from "~/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 rounded-sm border border-transparent font-semibold whitespace-nowrap transition-colors duration-150 outline-none select-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-transparent font-semibold whitespace-nowrap transition-colors duration-150 outline-none select-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
@@ -16,11 +16,13 @@ const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-terracotta-200",
         ghost: "hover:bg-muted hover:text-foreground",
+        inverse:
+          "bg-white text-terracotta-700 hover:bg-terracotta-100 active:bg-terracotta-200",
         link: "text-terracotta-600 underline-offset-4 hover:underline",
       },
       size: {
         default: "h-11 px-6 text-base",
-        lg: "h-13 px-8 text-base",
+        lg: "h-14 px-8 text-base",
         sm: "h-9 px-4 text-sm",
         icon: "size-10",
         "icon-sm": "size-8",

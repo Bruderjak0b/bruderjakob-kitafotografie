@@ -49,7 +49,9 @@ export function ProcessSection() {
               <h3 className="mb-3 text-2xl font-extrabold lg:text-h3">
                 {step.title}
               </h3>
-              <p className="max-w-sm text-muted-foreground">{step.text}</p>
+              <p className="max-w-sm text-lg text-muted-foreground">
+                {step.text}
+              </p>
             </li>
           ))}
         </ol>
