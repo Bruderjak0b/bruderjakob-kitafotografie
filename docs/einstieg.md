@@ -92,6 +92,8 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 - **Push auf jeden anderen Branch** (z. B. `development`, `kotti`) → Vercel baut eine **Vorschau** mit eigener Adresse. Die Adresse steht im Vercel-Dashboard und bei GitHub am Commit. Vorschauen werden von Google nicht indexiert.
 - **Schlägt der Build fehl** (Formatierung, Code-Regeln, Typfehler oder Build-Fehler), wird nichts veröffentlicht. Die Live-Website bleibt auf dem letzten funktionierenden Stand. Die Fehlermeldung steht im Vercel-Dashboard unter dem Deployment. Gib sie Claude Code zum Beheben.
 
+**Alternative ohne Vercel:** Die Website lässt sich auch als reine HTML/CSS/JS-Dateien bei einem normalen Webhoster betreiben. Das ist getestet, aber nicht umgesetzt, weil es Umbauten braucht und ein Kontaktformular dann einen externen Dienst benötigt. Details: [statischer-export.md](statischer-export.md).
+
 ### So arbeitest du gut mit Claude Code
 
 - **Beschreibe das Ziel, nicht den Code.** Zum Beispiel: *„Baue die Seite /ablauf nach dem Screenshot `prototype/uploads/Ablauf.png`. Nutze die vorhandenen Bausteine.“*
@@ -209,6 +211,7 @@ Konvention für neue Seiten: `src/app/<route>/page.tsx` setzt die Abschnitte aus
 6. **Dev-Server:** Läuft ggf. schon, vorher Port 3000 prüfen. Der Auftraggeber startet ihn gern in tmux (`tmux new-session -d -s bruderjakob-dev 'pnpm dev'`).
 7. **Vercel und pnpm-Version:** Vercel unterstützt automatisch nur pnpm bis Version 10. Darum bleibt das Projekt bewusst auf pnpm 10. **Nicht auf pnpm 11 upgraden**, solange Vercel es nicht nativ unterstützt, sonst scheitert das Deployment an `engines.pnpm`. pnpm-11-Einstellungen wie `allowBuilds` funktionieren in pnpm 10 nicht, stattdessen `onlyBuiltDependencies`/`ignoredBuiltDependencies` nutzen. Beim Wechsel der pnpm-Version `engines.pnpm` und `packageManager` gemeinsam ändern.
 8. **`tsc` im frischen Klon:** Ohne `next typegen` fehlen die Typen für Bild- und SVG-Importe (`next-env.d.ts` ist gitignored). Darum `pnpm typecheck`/`pnpm check` statt nacktem `tsc --noEmit`.
+9. **Statischer Export:** `output: "export"` allein baut grün, aber alle Fotos fehlen danach beim Hoster. Nicht ungefragt auf Export umstellen. Vorgehen und Einschränkungen stehen in `docs/statischer-export.md`.
 
 ### Workflow für jede Änderung
 

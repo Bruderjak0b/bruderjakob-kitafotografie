@@ -31,6 +31,7 @@ Vercel mit Git-Integration. `main` wird produktiv veröffentlicht, alle anderen 
 
 - **[docs/einstieg.md](docs/einstieg.md):** Einstieg ins Projekt für Menschen und AI-Agents (Einrichtung, Arbeitsweise, Struktur, offene Punkte). **Hier anfangen.**
 - **[AGENTS.md](AGENTS.md):** verbindliche Projektregeln und Definition of Done.
+- **[docs/statischer-export.md](docs/statischer-export.md):** getestete, nicht umgesetzte Alternative zu Vercel (reines HTML/CSS/JS bei einem normalen Webhoster).
 
 ## Branches
 
