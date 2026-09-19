@@ -1,4 +1,4 @@
-import { ArrowRightIcon, CameraIcon, CheckIcon } from "lucide-react";
+import { ArrowRightIcon, CheckIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -52,30 +52,17 @@ export function HeroSection() {
           </ul>
         </div>
 
-        <div className="relative">
-          <div className="relative aspect-[5/4] overflow-hidden rounded-3xl bg-terracotta-100 sm:aspect-[4/3] lg:aspect-[4/5] lg:rounded-t-[50%_40%]">
-            <Image
-              src={heroImage}
-              alt="Mädchen lacht auf einer Rutsche im Kita-Garten"
-              fill
-              placeholder="blur"
-              loading="eager"
-              fetchPriority="high"
-              sizes="(min-width: 1440px) 1150px, (min-width: 1024px) 80vw, 120vw"
-              className="object-cover object-[74%_30%]"
-            />
-          </div>
-          <div className="absolute right-4 -bottom-6 left-4 flex items-center sm:right-auto gap-4 rounded-2xl bg-white py-4 pr-6 pl-4 shadow-card sm:left-8 lg:-left-8 lg:bottom-12">
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-terracotta-100 text-terracotta-600">
-              <CameraIcon aria-hidden className="size-5" />
-            </span>
-            <p className="font-heading text-base font-semibold text-ink-900">
-              Fotografiert im freien Spiel
-              <span className="block font-sans text-sm font-normal text-ink-700">
-                Kein Blitzlicht, kein Drängen in Pose
-              </span>
-            </p>
-          </div>
+        <div className="relative aspect-[5/4] overflow-hidden rounded-3xl bg-terracotta-100 sm:aspect-[4/3] lg:aspect-[4/5] lg:rounded-t-[50%_40%]">
+          <Image
+            src={heroImage}
+            alt="Mädchen lacht auf einer Rutsche im Kita-Garten"
+            fill
+            placeholder="blur"
+            loading="eager"
+            fetchPriority="high"
+            sizes="(min-width: 1440px) 1150px, (min-width: 1024px) 80vw, 120vw"
+            className="object-cover object-[74%_30%]"
+          />
         </div>
       </Container>
     </section>

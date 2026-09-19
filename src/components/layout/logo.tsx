@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import logo from "~/assets/brand/logo.svg";
+import logo from "~/assets/brand/LogoBright.svg";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
 
