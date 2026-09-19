@@ -12,7 +12,7 @@
 
 ### Worum geht's?
 
-Das ist die neue Website für Bruderjakob Kitafotografie. Sie wurde auf Basis eines Prototyps aus Claude Design gebaut. Fertig ist bisher die **Startseite**. Header, Footer, Farben, Schriften und Grundbausteine sind so angelegt, dass die weiteren Seiten (Über mich, Ablauf, Preise, Kontakt, Impressum, Datenschutz) darauf aufbauen können.
+Das ist Kotti die neue Website für Bruderjakob Kitafotografie. Sie wurde auf Basis eines Prototyps aus Claude Design gebaut. Fertig ist bisher die **Startseite**. Header, Footer, Farben, Schriften und Grundbausteine sind so angelegt, dass die weiteren Seiten (Über mich, Ablauf, Preise, Kontakt, Impressum, Datenschutz) darauf aufbauen können.
 
 Die Technik in einfachen Worten:
 
@@ -145,6 +145,19 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 
 ## Teil B – Für den AI-Agent
 
+### Hinweis: Dieser Branch ist ein Design-Vorschlag
+
+Du bist auf `kotti`. Dieser Branch baut auf `development` auf und enthält **zusätzliche Commits** mit einem Design-Vorschlag und dieser Beschreibung. Er ist bewusst nicht nach `development` gemerged. Der Mensch entscheidet, ob er ihn übernimmt. Ohne ausdrücklichen Auftrag hier nicht weiterentwickeln und nichts davon nach `development` bringen. Unterschiede zu `development` anzeigen: `git diff development kotti`.
+
+Abweichungen gegenüber `development`:
+
+- **Header** (`site-header.tsx`, `nav-link.tsx`): sticky, Logo links, Navigation und Kontakt-Button rechts, 64/80px hoch. Aktiver Menüpunkt mit Terracotta-Unterstrich. Anker-Ziele haben deshalb `scroll-margin-top: 6rem` in `globals.css`.
+- **Breiteres Layout** (`container.tsx`): Container 1408/1280/896px statt 1280/1152/768px, Seitenabstand Desktop 48px statt 80px. Innere Textbreiten jeweils eine Stufe größer.
+- **Neuer Abschnittston `subtle`** (`section.tsx`) für Creme-Hintergrund, genutzt im Ablauf.
+- **Typografie** (`globals.css`): Überschriften mit `tracking-tight`, Absätze mit `text-pretty`, Fließtext in Abschnitten meist `text-lg`.
+- **Hero:** Eyebrow „Kitafotografie“ und Subline, 720px hoch. Deshalb `sizes="(min-width: 1080px) 100vw, 1080px"` statt der 960px-Variante auf `development`.
+- **Abschnitte:** Portrait mit versetztem Kreis, Versprechen mit Häkchen und Schatten, Ablauf mit Terracotta-Linie, Stimmen-Karten mit Schatten, FAQ größer, dunkle Kontakt-Karte, Dienstleistungen mit Eyebrow und größerer Galerie.
+
 ### Pflichtlektüre
 
 1. `AGENTS.md`: **Next.js 16** (APIs können von deinem Trainingswissen abweichen) und die **verbindlichen Projektregeln** inkl. Definition of Done.
@@ -191,7 +204,7 @@ Konvention für neue Seiten: `src/app/<route>/page.tsx` setzt die Abschnitte aus
 - **Farben:** nur zwei Paletten: `ink-{100,200,500,600,700,800,900}` und `terracotta-{100…800}`. Keine neuen Farbtöne einführen.
 - **Semantische Farben für shadcn:** `primary` = terracotta-500, `muted-foreground` = ink-700 (ink-600 ist auf Weiß nicht AA-konform), `border` = ink-200, `secondary`/`accent` = terracotta-100.
 - **Typo:** `font-heading` (Libre Franklin) für Überschriften, `font-sans` (Work Sans) für Text. Größen `text-h1`/`text-h2`/`text-h3`/`text-label` sind Desktopwerte, mobil kleiner, z. B. `text-3xl lg:text-h2`.
-- **Layout:** `<Section tone="default|warm">` liefert den vertikalen Rhythmus (`py-20 lg:py-section`). `<Container size="default|narrow|prose">` liefert Breite und Seitenabstand.
+- **Layout:** `<Section tone="default|subtle|warm">` liefert Hintergrund (Weiß, Creme `ink-100`, Warm `terracotta-100`) und vertikalen Rhythmus (`py-20 lg:py-section`). Töne benachbarter Abschnitte abwechseln. `<Container size="default|narrow|prose">` liefert Breite (1408/1280/896px) und Seitenabstand (`px-4 sm:px-8 lg:px-12`).
 - **Radien:** `rounded-sm` (4px) für Controls, `rounded-2xl` (16px) für Karten und Bilder. **Schatten:** `shadow-card`.
 - **Button-Varianten:** `default`, `outline`, `secondary`, `ghost`, `link`. Größen: `default`, `lg`, `sm`, `icon`, `icon-sm`. Links immer über `<Button asChild><Link/></Button>`.
 - **Brand-Regeln aus dem Design-System:** kein Dark Mode, keine Verläufe als Deko (Ausnahme: Overlay im Hero-Bild), kein Blur/Glassmorphism, keine Emojis, dezente Hover-Effekte (150ms Farbwechsel), keine Bounce- oder Scale-Animationen.

@@ -17,9 +17,9 @@ export default function HomePage() {
       <ProcessSection />
       <ApproachSection />
       <TestimonialsSection />
+      <ServicesSection />
       <FaqSection />
       <ContactSection />
-      <ServicesSection />
     </>
   );
 }

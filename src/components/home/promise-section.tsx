@@ -1,5 +1,9 @@
+import type { LucideIcon } from "lucide-react";
+import { CheckIcon, GiftIcon, HeartIcon, SchoolIcon } from "lucide-react";
+
 import { Container } from "~/components/layout/container";
 import { Section, SectionHeader } from "~/components/layout/section";
+import { cn } from "~/lib/utils";
 
 type PromiseItem = string | { text: string; details: string[] };
 
@@ -30,52 +34,103 @@ const forDaycares: PromiseItem[] = [
 
 export function PromiseSection() {
   return (
-    <Section id="versprechen">
-      <Container size="narrow">
-        <SectionHeader eyebrow="Versprechen" title="Was ihr von mir bekommt" />
-
-        <div className="overflow-hidden rounded-2xl border">
-          <p className="bg-primary px-6 py-5 text-center font-heading text-lg font-semibold text-primary-foreground lg:px-16 lg:text-label">
+    <Section tone="subtle" id="versprechen">
+      <Container>
+        <SectionHeader eyebrow="Versprechen" title="Was ihr von mir bekommt">
+          <p className="mt-2 inline-flex items-center gap-3 rounded-2xl bg-terracotta-100 px-5 py-3 text-left sm:rounded-full text-base font-semibold text-terracotta-700">
+            <GiftIcon aria-hidden className="size-5 shrink-0" />
             Jedes Kind und jede Einrichtung erhält ein kostenloses digitales
             Gruppenbild
           </p>
+        </SectionHeader>
 
-          <div className="grid gap-10 p-6 sm:p-10 md:grid-cols-[1fr_1px_1fr] md:gap-14 lg:p-16">
-            <PromiseList title="Für Eltern" items={forParents} />
-            <div aria-hidden className="hidden bg-border md:block" />
-            <PromiseList title="Für Kitas" items={forDaycares} />
-          </div>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <PromiseCard title="Für Eltern" icon={HeartIcon} items={forParents} />
+          <PromiseCard
+            title="Für Kitas"
+            icon={SchoolIcon}
+            items={forDaycares}
+            dark
+          />
         </div>
       </Container>
     </Section>
   );
 }
 
-function PromiseList({
+function PromiseCard({
   title,
+  icon: Icon,
   items,
+  dark = false,
 }: {
   title: string;
+  icon: LucideIcon;
   items: PromiseItem[];
+  dark?: boolean;
 }) {
   return (
-    <div>
-      <h3 className="mb-5 text-2xl font-semibold lg:text-h3">{title}</h3>
-      <ul className="flex list-disc flex-col gap-3.5 pl-6 text-muted-foreground marker:text-terracotta-400">
-        {items.map((item) =>
-          typeof item === "string" ? (
-            <li key={item}>{item}</li>
-          ) : (
-            <li key={item.text}>
-              {item.text}
-              <ul className="mt-3 flex list-[circle] flex-col gap-2 pl-5 text-sm">
-                {item.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
-                ))}
-              </ul>
-            </li>
-          ),
+    <div
+      className={cn(
+        "rounded-3xl p-6 sm:p-10 lg:p-14",
+        dark ? "bg-ink-800 text-white" : "bg-white shadow-card",
+      )}
+    >
+      <div className="mb-8 flex items-center gap-4">
+        <span
+          className={cn(
+            "flex size-12 items-center justify-center rounded-full",
+            dark
+              ? "bg-terracotta-500 text-white"
+              : "bg-terracotta-100 text-terracotta-600",
+          )}
+        >
+          <Icon aria-hidden className="size-5" />
+        </span>
+        <h3 className="text-2xl font-extrabold lg:text-h3">{title}</h3>
+      </div>
+
+      <ul
+        className={cn(
+          "flex flex-col gap-4 text-lg",
+          dark ? "text-ink-200" : "text-muted-foreground",
         )}
+      >
+        {items.map((item) => {
+          const text = typeof item === "string" ? item : item.text;
+          return (
+            <li key={text} className="flex gap-3.5">
+              <CheckIcon
+                aria-hidden
+                className={cn(
+                  "mt-1 size-5 shrink-0",
+                  dark ? "text-terracotta-300" : "text-terracotta-600",
+                )}
+                strokeWidth={2.5}
+              />
+              <div>
+                {text}
+                {typeof item !== "string" && (
+                  <ul className="mt-3 flex flex-wrap gap-2 text-sm">
+                    {item.details.map((detail) => (
+                      <li
+                        key={detail}
+                        className={cn(
+                          "rounded-full px-3 py-1",
+                          dark
+                            ? "bg-ink-700 text-white"
+                            : "bg-ink-100 text-ink-800",
+                        )}
+                      >
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -124,7 +124,7 @@ Regeln:
    sizes="(min-width: 1408px) 420px, (min-width: 768px) 33vw, 100vw"
    ```
    Die Pixeldichte (Retina) rechnet der Browser selbst drauf. Nicht manuell verdoppeln.
-3. **`object-cover` beachten:** Wird ein Bild in einen Container mit anderem Seitenverhältnis beschnitten, ist die gerenderte Breite größer als der Container. Beispiel: Querformat 3:2 in einem 375×640px hohen Hero wird 960px breit gerendert (640 × 1,5), also `sizes="(min-width: 960px) 100vw, 960px"`, nicht `100vw`.
+3. **`object-cover` beachten:** Wird ein Bild in einen Container mit anderem Seitenverhältnis beschnitten, ist die gerenderte Breite größer als der Container. Beispiel: Querformat 3:2 in einem 375×720px hohen Hero wird 1080px breit gerendert (720 × 1,5), also `sizes="(min-width: 1080px) 100vw, 1080px"`, nicht `100vw`.
 4. Lieber leicht zu groß als zu klein schätzen (unscharf ist schlimmer als 20 % mehr Bytes), aber nie pauschal `100vw` für Bilder, die nicht bildschirmbreit sind.
 5. Nur das LCP-Bild (meist Hero) bekommt `loading="eager" fetchPriority="high"`. `priority` ist in Next 16 deprecated.
 6. Quelldateien max. ca. 2400px breit ablegen. Größere Originale vorher verkleinern.
