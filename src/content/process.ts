@@ -19,7 +19,7 @@ export const processSteps: ProcessStep[] = [
     summary:
       "Die Kinder spielen frei im Garten, ich halte die schönsten Momente fest.",
     detail:
-      "Am Fototag komme ich bereits früh in die Einrichtung. Optimalerweise lernen mich die Kinder direkt kennen, viele erinnern sich sogar vom letzten Jahr noch an mich und es gibt ein freudiges Hallo. Ich beginne mit einem kurzen Einzelportrait und einem Gespräch über Lieblingsspielzeug, Alter und Name. Danach spielen die Kinder frei im Garten, während ich weiter fotografiere, so sind sie ganz in ihrem Element und ganz sie selbst. Jedes Kind ist anders, deshalb entstehen viele individuelle Bilder. Gruppenbilder runden den Fototermin ab. Pro Gruppe dauert das Ganze ein bis zwei Stunden, danach läuft der Tag wieder ganz normal weiter, damit der gewohnte Rhythmus der Kita nicht gestört wird.",
+      "Am Fototag komme ich bereits früh in die Einrichtung, damit die Kinder mich in Ruhe kennenlernen können, bevor es losgeht. Ich beginne mit einem kurzen Einzelportrait und einem Gespräch über Lieblingsspielzeug, Alter und Name. Danach spielen die Kinder frei im Garten, während ich weiter fotografiere, so sind sie ganz in ihrem Element und ganz sie selbst. Jedes Kind ist anders, deshalb entstehen viele individuelle Bilder. Gruppenbilder runden den Fototermin ab. Pro Gruppe dauert das Ganze ein bis zwei Stunden, danach läuft der Tag wieder ganz normal weiter, damit der gewohnte Rhythmus der Kita nicht gestört wird.",
   },
   {
     title: "Übergabe",
