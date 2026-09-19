@@ -61,7 +61,7 @@ export function HeroSection() {
             loading="eager"
             fetchPriority="high"
             sizes="(min-width: 1408px) 660px, (min-width: 1024px) 48vw, 100vw"
-            className="object-cover object-[45%_45%]"
+            className="object-cover object-[45%_70%] lg:object-[45%_50%]"
           />
         </div>
       </Container>
