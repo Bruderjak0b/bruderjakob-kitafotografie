@@ -2,7 +2,7 @@ import { ArrowRightIcon, CheckIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import heroImage from "~/assets/images/hero-rutsche.jpg";
+import heroImage from "~/assets/images/hero-spielplatz.jpg";
 import { Container } from "~/components/layout/container";
 import { Eyebrow } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
@@ -55,13 +55,13 @@ export function HeroSection() {
         <div className="relative aspect-[5/4] overflow-hidden rounded-3xl bg-terracotta-100 sm:aspect-[4/3] lg:aspect-[4/5] lg:rounded-t-[50%_40%]">
           <Image
             src={heroImage}
-            alt="Mädchen lacht auf einer Rutsche im Kita-Garten"
+            alt="Kind läuft über den Spielplatz auf ein Klettergerüst zu"
             fill
             placeholder="blur"
             loading="eager"
             fetchPriority="high"
-            sizes="(min-width: 1440px) 1150px, (min-width: 1024px) 80vw, 120vw"
-            className="object-cover object-[74%_30%]"
+            sizes="(min-width: 1408px) 660px, (min-width: 1024px) 48vw, 100vw"
+            className="object-cover object-[45%_70%] lg:object-[45%_50%]"
           />
         </div>
       </Container>

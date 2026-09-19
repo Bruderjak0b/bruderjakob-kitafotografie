@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import familyImage from "~/assets/images/familienshooting.jpg";
 import weddingImage from "~/assets/images/hochzeit.jpg";
-import christmasImage from "~/assets/images/weihnachtsfotos.jpg";
+import coupleImage from "~/assets/images/paarshooting.jpg";
 import { Container } from "~/components/layout/container";
 import { Section, SectionHeader } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
@@ -83,12 +83,12 @@ export function ServicesSection() {
             <div className="grid h-72 grid-cols-2 grid-rows-2 gap-1.5 sm:h-96 lg:h-[26rem]">
               <GalleryImage
                 src={familyImage}
-                alt="Familienshooting im Freien"
+                alt="Kind läuft beim Familienshooting auf seine Eltern zu"
                 className="row-span-2"
               />
               <GalleryImage
-                src={christmasImage}
-                alt="Weihnachtsfotos im Studio"
+                src={coupleImage}
+                alt="Paar umarmt sich bei einem Paarshooting"
               />
               <GalleryImage src={weddingImage} alt="Hochzeitspaar" />
             </div>

@@ -22,7 +22,7 @@ export function BioSection() {
               loading="eager"
               fetchPriority="high"
               sizes="(min-width: 1408px) 520px, (min-width: 1024px) 42vw, (min-width: 480px) 448px, 100vw"
-              className="object-cover object-[50%_35%]"
+              className="object-cover object-[50%_100%]"
             />
           </div>
         </div>

@@ -20,15 +20,15 @@ export function AboutSection() {
               fill
               placeholder="blur"
               sizes="(min-width: 1440px) 520px, (min-width: 1024px) 37vw, (min-width: 480px) 448px, 100vw"
-              className="object-cover object-[50%_35%]"
+              className="object-cover object-[50%_100%]"
             />
           </div>
           <figcaption className="absolute right-4 -bottom-6 left-4 flex items-center gap-4 rounded-2xl bg-white py-4 pr-6 pl-4 shadow-card sm:right-auto lg:bottom-10 lg:-left-8">
             <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-terracotta-100 text-terracotta-600">
               <QuoteIcon aria-hidden className="size-5 fill-current" />
             </span>
-            <span className="font-heading text-base font-semibold text-ink-900">
-              Ich fotografiere leise und unauffällig.
+            <span className="font-heading text-base font-semibold text-balance text-ink-900">
+              Ich halte lebhafte Momente für immer fest.
             </span>
           </figcaption>
         </figure>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import portrait from "~/assets/images/portrait-marius.jpg";
+import portrait from "~/assets/images/portrait-marius-sitzend.jpg";
 import { ContactForm } from "~/components/kontakt/contact-form";
 import { Container } from "~/components/layout/container";
 import { PageHero } from "~/components/layout/page-hero";
@@ -36,10 +36,10 @@ export default function KontaktPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-terracotta-200">
               <Image
                 src={portrait}
-                alt="Portrait von Marius, Fotograf bei Bruderjakob"
+                alt="Marius sitzt mit seiner Kamera auf einer Mauer"
                 fill
                 placeholder="blur"
-                sizes="(min-width: 1408px) 520px, (min-width: 1024px) 40vw, 100vw"
+                sizes="(min-width: 1408px) 520px, (min-width: 1024px) 36vw, 100vw"
                 className="object-cover object-[50%_30%]"
               />
             </div>
