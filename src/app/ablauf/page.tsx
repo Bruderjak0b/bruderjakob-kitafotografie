@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { ProcessDetailSection } from "~/components/ablauf/process-detail-section";
 import { ContactSection } from "~/components/home/contact-section";
 import { FaqSection } from "~/components/home/faq-section";
-import { ProcessSection } from "~/components/home/process-section";
 import { PageHero } from "~/components/layout/page-hero";
 
 export const metadata: Metadata = {
@@ -23,7 +22,6 @@ export default function AblaufPage() {
           Drei Schritte, bei denen euer Kita-Alltag den Takt vorgibt.
         </p>
       </PageHero>
-      <ProcessSection withDetailsLink={false} />
       <ProcessDetailSection />
       <FaqSection />
       <ContactSection />
