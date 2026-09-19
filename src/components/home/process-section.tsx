@@ -3,23 +3,16 @@ import Link from "next/link";
 import { Container } from "~/components/layout/container";
 import { Section, SectionHeader } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
+import { processSteps } from "~/content/process";
 
-const steps = [
-  {
-    title: "Kennenlernen",
-    text: "Wir besprechen Termin und Ablauf, damit für euch alles reibungslos passt.",
-  },
-  {
-    title: "Fototag",
-    text: "Die Kinder spielen frei im Garten, ich halte die schönsten Momente fest.",
-  },
-  {
-    title: "Übergabe",
-    text: "Jedes Kind bekommt eine eigene Online-Galerie zur Auswahl und Bestellung.",
-  },
-];
+type ProcessSectionProps = {
+  /** Hidden on /ablauf itself, where the link would point to the page you are on. */
+  withDetailsLink?: boolean;
+};
 
-export function ProcessSection() {
+export function ProcessSection({
+  withDetailsLink = true,
+}: ProcessSectionProps) {
   return (
     <Section id="ablauf">
       <Container>
@@ -28,14 +21,16 @@ export function ProcessSection() {
           title="Euer Weg zu natürlichen Kindergartenfotos"
           align="left"
           action={
-            <Button asChild size="lg" variant="outline">
-              <Link href="/ablauf">Mehr zum Ablauf</Link>
-            </Button>
+            withDetailsLink && (
+              <Button asChild size="lg" variant="outline">
+                <Link href="/ablauf">Mehr zum Ablauf</Link>
+              </Button>
+            )
           }
         />
 
         <ol className="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
-          {steps.map((step, index) => (
+          {processSteps.map((step, index) => (
             <li
               key={step.title}
               className="relative border-t border-ink-200 pt-8 before:absolute before:-top-px before:left-0 before:h-0.5 before:w-16 before:bg-primary"
@@ -50,7 +45,7 @@ export function ProcessSection() {
                 {step.title}
               </h3>
               <p className="max-w-sm text-lg text-muted-foreground">
-                {step.text}
+                {step.summary}
               </p>
             </li>
           ))}
