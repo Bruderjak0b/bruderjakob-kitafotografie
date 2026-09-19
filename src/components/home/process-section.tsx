@@ -5,14 +5,7 @@ import { Section, SectionHeader } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
 import { processSteps } from "~/content/process";
 
-type ProcessSectionProps = {
-  /** Hidden on /ablauf itself, where the link would point to the page you are on. */
-  withDetailsLink?: boolean;
-};
-
-export function ProcessSection({
-  withDetailsLink = true,
-}: ProcessSectionProps) {
+export function ProcessSection() {
   return (
     <Section id="ablauf">
       <Container>
@@ -21,11 +14,9 @@ export function ProcessSection({
           title="Euer Weg zu natürlichen Kindergartenfotos"
           align="left"
           action={
-            withDetailsLink && (
-              <Button asChild size="lg" variant="outline">
-                <Link href="/ablauf">Mehr zum Ablauf</Link>
-              </Button>
-            )
+            <Button asChild size="lg" variant="outline">
+              <Link href="/ablauf">Mehr zum Ablauf</Link>
+            </Button>
           }
         />
 
