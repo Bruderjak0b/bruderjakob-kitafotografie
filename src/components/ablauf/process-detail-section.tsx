@@ -7,7 +7,7 @@ export function ProcessDetailSection() {
     <Section tone="warm" id="ablauf-im-detail">
       <Container>
         <SectionHeader
-          eyebrow="Im Detail"
+          eyebrow="Schritt für Schritt"
           title="Ablauf im Detail"
           align="left"
         />
