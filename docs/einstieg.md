@@ -84,6 +84,46 @@ pnpm build
 ```
 macht dieselben Prüfungen und baut danach die Website so, wie sie später live geht. **Genau das passiert auch bei Vercel.** Läuft es bei dir durch, klappt auch das Deployment.
 
+### E-Mails testen mit Mailpit
+
+Das Kontaktformular verschickt echte E-Mails über SMTP. Damit beim Ausprobieren niemand Post bekommt, läuft lokal **Mailpit**: ein kleiner Mailserver, der jede Nachricht annimmt, aber **nichts nach außen schickt**. Stattdessen sammelt er alles und zeigt es in einem Postfach im Browser.
+
+Einmalig installiert (schon erledigt):
+
+```bash
+brew install mailpit
+```
+
+Starten, sodass er auch nach einem Neustart des Macs wieder läuft:
+
+```bash
+brew services start mailpit
+```
+
+Danach:
+
+- **Postfach ansehen:** http://localhost:8025 im Browser öffnen. Jede über das Formular verschickte Nachricht taucht dort sofort auf, mit Absender, Empfänger, Betreff und Text.
+- **Stoppen:** `brew services stop mailpit`
+- **Läuft er?** `brew services list` zeigt den Status.
+
+Wenn du das Formular auf http://localhost:3000/kontakt absendest und in Mailpit nichts ankommt, läuft Mailpit vermutlich nicht.
+
+### E-Mail-Einstellungen (`.env.local`)
+
+Die Zugangsdaten für den Mailversand stehen in `.env.local`. Diese Datei ist **nicht im Git** und darf es auch nie sein.
+
+| Variable | Lokal (Mailpit) | Später live |
+|---|---|---|
+| `SMTP_HOST` | `localhost` | Mailserver deines Anbieters |
+| `SMTP_PORT` | `1025` | meist `587` |
+| `SMTP_SECURE` | `false` | `false` bei Port 587, `true` bei Port 465 |
+| `SMTP_USER` | leer | Benutzername des Postfachs |
+| `SMTP_PASSWORD` | leer | Passwort des Postfachs |
+| `MAIL_FROM` | beliebig | Absenderadresse, muss zu deiner Domain gehören |
+| `MAIL_TO` | beliebig | Adresse, an die die Anfragen gehen sollen |
+
+Für den Livebetrieb müssen dieselben Variablen bei **Vercel** unter *Settings → Environment Variables* eingetragen werden, sonst kann die Live-Website keine Mails verschicken.
+
 ### Veröffentlichen mit Vercel
 
 Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verknüpft, es gibt keine eigenen Deploy-Skripte.
@@ -129,11 +169,10 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 ### Offene Punkte vor dem Livegang
 
 - [ ] **Kundenstimmen sind erfunden** (Platzhalter aus dem Prototyp) → durch echte ersetzen oder den Abschnitt entfernen.
-- [ ] FAQ „Was kosten die Fotos?“ enthält noch **„X €“ und „Y €“**.
 - [ ] Links zu **Bruderimfokus** und zum **Onlineshop** fehlen (stehen auf `#` in `src/config/site.ts`).
-- [ ] Unterseiten fehlen noch: `/ueber-mich`, `/ablauf`, `/preise`, `/kontakt`, `/impressum`, `/datenschutz`.
-- [ ] Kontaktformular auf `/kontakt` inkl. E-Mail-Versand (Anbieter muss noch gewählt werden).
-- [ ] Ein eigenes Favicon, falls gewünscht (aktuell das Faultier).
+- [ ] Unterseiten fehlen noch: `/impressum`, `/datenschutz`.
+- [ ] SMTP-Zugangsdaten des echten Postfachs in `.env.local` und bei Vercel eintragen (das Kontaktformular steht, lokal läuft es gegen Mailpit).
+- [ ] Datenschutz-Häkchen im Kontaktformular auf `/datenschutz` verlinken, sobald es die Seite gibt.
 - [ ] **Vercel-Projekt anlegen** (einmalig):
   1. Bei Vercel „Add New → Project“, das GitHub-Repo importieren.
   2. Framework „Next.js“ wird erkannt. **Build-, Install- und Output-Einstellungen nicht überschreiben.** Vercel nimmt automatisch `pnpm install` und das `build`-Skript aus `package.json`.
