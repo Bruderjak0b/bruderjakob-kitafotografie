@@ -6,6 +6,7 @@ import portrait from "~/assets/images/portrait-marius.jpg";
 import { Container } from "~/components/layout/container";
 import { Eyebrow, Section } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
+import { aboutIntro } from "~/content/about";
 
 export function AboutSection() {
   return (
@@ -42,18 +43,11 @@ export function AboutSection() {
           </p>
           <div className="space-y-5 text-lg text-muted-foreground">
             <p className="text-xl leading-relaxed text-ink-800 lg:text-2xl lg:leading-relaxed">
-              Bevor ich zur Kamera gegriffen habe, habe ich als Designer
-              gearbeitet und ein freiwilliges soziales Jahr mit Kindern
-              verbracht. Genau diese Zeit hat mir gezeigt, wie viel in einem
-              ganz normalen Kita-Tag passiert, wenn man genau hinschaut.
+              {aboutIntro[0]}
             </p>
-            <p>
-              Heute verbinde ich beides. Den Blick fürs Gestalten und die
-              Erfahrung im Umgang mit Kindern. Ich fotografiere leise und
-              unauffällig, damit der Alltag genau so bleibt, wie er ist. Kein
-              Blitzlichtgewitter, kein Drängen in Pose, sondern echte Kindheit,
-              wie sie wirklich aussieht.
-            </p>
+            {aboutIntro.slice(1).map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
           <Button asChild size="lg" variant="outline" className="mt-10">
             <Link href="/ueber-mich">Mehr über mich</Link>
