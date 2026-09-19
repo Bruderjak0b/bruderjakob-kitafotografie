@@ -29,7 +29,9 @@ export function ProcessDetailSection() {
               >
                 <div
                   className={cn(
-                    "flex items-baseline gap-5",
+                    // Sticks while its own paragraph scrolls past, so the step
+                    // stays readable next to the text it belongs to.
+                    "flex items-baseline gap-5 lg:sticky lg:top-28 lg:self-start",
                     textOnLeft && "lg:order-2",
                   )}
                 >
