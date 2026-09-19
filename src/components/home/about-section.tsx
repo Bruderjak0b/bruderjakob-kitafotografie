@@ -35,12 +35,9 @@ export function AboutSection() {
 
         <div className="max-w-2xl">
           <Eyebrow className="mb-6">Über mich</Eyebrow>
-          <h2 className="mb-3 text-4xl font-extrabold lg:text-h2">
+          <h2 className="mb-8 text-4xl font-extrabold lg:text-h2">
             Hallo, ich bin Marius
           </h2>
-          <p className="mb-8 font-heading text-label font-semibold text-terracotta-700">
-            Fotograf aus Leidenschaft
-          </p>
           <div className="space-y-5 text-lg text-muted-foreground">
             <p className="text-xl leading-relaxed text-ink-800 lg:text-2xl lg:leading-relaxed">
               {aboutIntro[0]}

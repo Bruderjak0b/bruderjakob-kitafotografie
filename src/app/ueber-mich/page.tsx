@@ -15,11 +15,7 @@ export const metadata: Metadata = {
 export default function UeberMichPage() {
   return (
     <>
-      <PageHero eyebrow="Über mich" title="Hallo, ich bin Marius">
-        <p className="font-heading text-label font-semibold text-terracotta-700">
-          Fotograf aus Leidenschaft
-        </p>
-      </PageHero>
+      <PageHero eyebrow="Über mich" title="Hallo, ich bin Marius" />
       <BioSection />
       <ApproachSection />
       <ServicesSection />
