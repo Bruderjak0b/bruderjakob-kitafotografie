@@ -81,7 +81,7 @@ Das Repo folgt dem **Git-Flow-Modell** (Vincent Driessen). Halte dich **automati
 | `feature/<kurzname>` | Eine neue Funktion oder Seite, z. B. `feature/seite-ablauf` | `development` | `development` |
 | `release/<version>` | Release vorbereiten, z. B. `release/1.0.0`. Nur noch Bugfixes, Version, letzte Texte. | `development` | `main` **und** `development` |
 | `hotfix/<version>` | Dringender Fehler auf der Live-Website, z. B. `hotfix/1.0.1` | `main` | `main` **und** `development` (bzw. offenes `release/*`) |
-| `kotti` | Sonderfall: Design-Vorschlag eines Kollegen, außerhalb des Flows. Nicht ungefragt mergen oder cherry-picken, der Mensch entscheidet. | – | – |
+| `kotti` | Sonderfall: Design-Vorschlag eines Kollegen, außerhalb des Flows. Am 19.09.2026 nach `development` übernommen, der Branch ruht seitdem. Nicht mehr darauf entwickeln. | – | – |
 
 ### Regeln
 

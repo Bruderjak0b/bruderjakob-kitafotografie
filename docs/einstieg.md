@@ -12,7 +12,7 @@
 
 ### Worum geht's?
 
-Das ist Kotti die neue Website für Bruderjakob Kitafotografie. Sie wurde auf Basis eines Prototyps aus Claude Design gebaut. Fertig ist bisher die **Startseite**. Header, Footer, Farben, Schriften und Grundbausteine sind so angelegt, dass die weiteren Seiten (Über mich, Ablauf, Preise, Kontakt, Impressum, Datenschutz) darauf aufbauen können.
+Das ist die neue Website für Bruderjakob Kitafotografie. Sie wurde auf Basis eines Prototyps aus Claude Design gebaut. Fertig ist bisher die **Startseite**. Header, Footer, Farben, Schriften und Grundbausteine sind so angelegt, dass die weiteren Seiten (Über mich, Ablauf, Preise, Kontakt, Impressum, Datenschutz) darauf aufbauen können.
 
 Die Technik in einfachen Worten:
 
@@ -109,7 +109,7 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
   - `hotfix/…`: für dringende Fehler auf der Live-Website, direkt ausgehend von `main`.
 
   Was du sagen kannst: *„Committe das“*, *„Übernimm das Feature nach development“*, *„Veröffentliche den aktuellen Stand“*, *„Auf der Live-Seite ist ein Fehler, mach einen Hotfix“*. Commits, Merges und Veröffentlichungen passieren **nur, wenn du darum bittest**. So kannst du jederzeit zurück.
-  - `kotti`: ein **Design-Vorschlag** deines Kollegen (feinere Abschnitte, neuer Sticky-Header, breiteres Layout). Er ist bewusst nicht übernommen. Anschauen mit *„Wechsle auf den Branch kotti und starte den Dev-Server“*. Ob du ihn ganz, teilweise oder gar nicht übernimmst, entscheidest du.
+  - `kotti`: der **Design-Vorschlag** deines Kollegen (feinere Abschnitte, Sticky-Header, breiteres Layout). Am 19.09.2026 nach `development` übernommen, sein Stand ist jetzt der normale Stand der Website. Der Branch bleibt als Nachweis liegen, es wird nicht mehr darauf gearbeitet.
 - **Bei Unsicherheit fragen:** *„Erklär mir, was du geändert hast und warum.“* Das ist ausdrücklich erwünscht.
 
 ### Wo ändere ich was? (Kurzübersicht)
@@ -145,18 +145,16 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 
 ## Teil B – Für den AI-Agent
 
-### Hinweis: Dieser Branch ist ein Design-Vorschlag
+### Aufbau der Startseite (Stand nach dem kotti-Design)
 
-Du bist auf `kotti`. Dieser Branch baut auf `development` auf und enthält **zusätzliche Commits** mit einem Design-Vorschlag und dieser Beschreibung. Er ist bewusst nicht nach `development` gemerged. Der Mensch entscheidet, ob er ihn übernimmt. Ohne ausdrücklichen Auftrag hier nicht weiterentwickeln und nichts davon nach `development` bringen. Unterschiede zu `development` anzeigen: `git diff development kotti`.
-
-Abweichungen gegenüber `development`:
+Der Design-Vorschlag von `kotti` ist am 19.09.2026 nach `development` übernommen worden und damit der verbindliche Stand. Neue Seiten folgen diesen Mustern:
 
 - **Header** (`site-header.tsx`, `nav-link.tsx`): sticky, Logo links, Navigation und Kontakt-Button rechts, 64/80px hoch. Aktiver Menüpunkt mit Terracotta-Unterstrich. Anker-Ziele haben deshalb `scroll-margin-top: 6rem` in `globals.css`.
-- **Breiteres Layout** (`container.tsx`): Container 1408/1280/896px statt 1280/1152/768px, Seitenabstand Desktop 48px statt 80px. Innere Textbreiten jeweils eine Stufe größer.
-- **Neuer Abschnittston `subtle`** (`section.tsx`) für Creme-Hintergrund, genutzt im Ablauf.
+- **Layout** (`container.tsx`): Container 1408/1280/896px, Seitenabstand `px-4 sm:px-8 lg:px-12`.
+- **Abschnittstöne** (`section.tsx`): `default` (Weiß), `subtle` (Creme `ink-100`), `warm` (`terracotta-100`). Töne benachbarter Abschnitte abwechseln.
 - **Typografie** (`globals.css`): Überschriften mit `tracking-tight`, Absätze mit `text-pretty`, Fließtext in Abschnitten meist `text-lg`.
-- **Hero:** Eyebrow „Kitafotografie“ und Subline, 720px hoch. Deshalb `sizes="(min-width: 1080px) 100vw, 1080px"` statt der 960px-Variante auf `development`.
-- **Abschnitte:** Portrait mit versetztem Kreis, Versprechen mit Häkchen und Schatten, Ablauf mit Terracotta-Linie, Stimmen-Karten mit Schatten, FAQ größer, dunkle Kontakt-Karte, Dienstleistungen mit Eyebrow und größerer Galerie.
+- **Hero:** Eyebrow „Kitafotografie“ und Subline, 720px hoch, Bild mit `sizes="(min-width: 1080px) 100vw, 1080px"`.
+- **Abschnitte:** Portrait mit versetztem Kreis, Versprechen mit Häkchen und Schatten, Ablauf mit Terracotta-Linie, Stimmen-Karten mit Schatten, dunkle Kontakt-Karte, Dienstleistungen mit Eyebrow und größerer Galerie.
 
 ### Pflichtlektüre
 
