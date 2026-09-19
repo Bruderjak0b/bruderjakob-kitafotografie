@@ -1,10 +1,18 @@
+import type * as React from "react";
+
 import { FaqList } from "~/components/faq/faq-list";
 import { Container } from "~/components/layout/container";
 import { Section, SectionHeader } from "~/components/layout/section";
 import { siteConfig } from "~/config/site";
-import { faqItems } from "~/content/faq";
+import { type FaqItem, faqItems } from "~/content/faq";
 
-export function FaqSection() {
+type FaqSectionProps = {
+  items?: FaqItem[];
+  /** Rendered below the intro, e.g. a link to the full FAQ. */
+  action?: React.ReactNode;
+};
+
+export function FaqSection({ items = faqItems, action }: FaqSectionProps) {
   return (
     <Section tone="subtle" id="faq">
       <Container className="grid gap-4 lg:grid-cols-[4fr_7fr] lg:gap-20">
@@ -20,9 +28,10 @@ export function FaqSection() {
               </a>
               .
             </p>
+            {action}
           </SectionHeader>
         </div>
-        <FaqList items={faqItems} />
+        <FaqList items={items} />
       </Container>
     </Section>
   );
