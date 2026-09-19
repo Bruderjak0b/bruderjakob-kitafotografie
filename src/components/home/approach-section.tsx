@@ -1,7 +1,7 @@
 import { SunIcon } from "lucide-react";
 import Image from "next/image";
 
-import detailImage from "~/assets/images/detail-seil.jpg";
+import detailImage from "~/assets/images/detail-haengebruecke.jpg";
 import { Container } from "~/components/layout/container";
 import { Eyebrow, Section } from "~/components/layout/section";
 
@@ -40,11 +40,11 @@ export function ApproachSection() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-terracotta-200 lg:aspect-square lg:rounded-t-[50%]">
             <Image
               src={detailImage}
-              alt="Kinderhand hält sich an einem blauen Kletterseil fest"
+              alt="Kinderbeine balancieren über eine Seilbrücke auf dem Spielplatz"
               fill
               placeholder="blur"
-              sizes="(min-width: 1440px) 850px, (min-width: 1024px) 60vw, 113vw"
-              className="object-cover object-[62%_50%]"
+              sizes="(min-width: 1408px) 560px, (min-width: 1024px) 45vw, 100vw"
+              className="object-cover object-[50%_40%]"
             />
           </div>
         </div>
