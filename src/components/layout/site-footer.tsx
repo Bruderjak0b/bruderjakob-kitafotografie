@@ -38,6 +38,9 @@ export function SiteFooter() {
             <FooterLink href={siteConfig.links.onlineshop}>
               Onlineshop
             </FooterLink>
+            <FooterLink href={siteConfig.whatsapp.href}>
+              {siteConfig.whatsapp.label}
+            </FooterLink>
             <FooterLink href={`mailto:${siteConfig.email}`}>
               {siteConfig.email}
             </FooterLink>

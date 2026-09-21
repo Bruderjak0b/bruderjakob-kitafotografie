@@ -26,6 +26,9 @@ export function LegalProse({
         "[&_p]:mt-4 [&_p]:text-pretty",
         "[&_ul]:mt-4 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-3 [&_ul]:pl-5",
         "[&_li]:list-disc [&_li]:text-pretty",
+        // Links here sit inside running ink-700 text, where the terracotta only
+        // reaches 1.13:1 against its surroundings. Colour alone would not mark
+        // them, so the legal pages keep the underline the rest of the site drops.
         "[&_a]:font-medium [&_a]:text-terracotta-600 [&_a]:underline [&_a]:underline-offset-4 [&_a]:transition-colors [&_a]:duration-150",
         "[&_a:hover]:text-terracotta-700",
         className,

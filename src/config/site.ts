@@ -6,6 +6,11 @@ export const siteConfig = {
   email: "kontakt@bruderjakob-kitafotografie.de",
   phone: "0152 33934815",
   phoneHref: "tel:+4915233934815",
+  /** WhatsApp Business runs on the same number; wa.me needs it without "+" or spaces. */
+  whatsapp: {
+    label: "WhatsApp",
+    href: "https://wa.me/4915233934815?text=Hallo%20Marius%2C%20ich%20habe%20eine%20Frage%20zur%20Kitafotografie%3A%20",
+  },
   /** Postal details as published in the Impressum. */
   address: {
     name: "Marius Jakob",
