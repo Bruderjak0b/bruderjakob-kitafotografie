@@ -464,6 +464,58 @@ export default function DatenschutzPage() {
               insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
             </p>
 
+            <h3>Anfrage per WhatsApp</h3>
+            <p>
+              Auf dieser Website verlinken wir auf einen WhatsApp-Chat mit uns.
+              Der Link führt zum Dienst WhatsApp, Anbieter ist die WhatsApp
+              Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin
+              2, Irland. Wir binden WhatsApp nicht in die Website ein; erst wenn
+              Sie den Link anklicken, öffnet sich WhatsApp und es werden Daten
+              an den Anbieter übertragen.
+            </p>
+            <p>
+              Wenn Sie uns über WhatsApp kontaktieren, wird Ihre Anfrage
+              inklusive aller daraus hervorgehenden personenbezogenen Daten
+              (insbesondere Name, Mobilfunknummer und Inhalt der Nachricht) zum
+              Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und
+              verarbeitet. Wir nutzen WhatsApp Business. Der Nachrichtenversand
+              erfolgt Ende-zu-Ende-verschlüsselt, Metadaten (z. B. wer wann mit
+              wem kommuniziert) werden jedoch vom Anbieter verarbeitet. Eine
+              Übermittlung von Daten in Länder außerhalb der EU, insbesondere in
+              die USA, kann nicht ausgeschlossen werden.
+            </p>
+            <p>
+              Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6
+              Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines
+              Vertrags zusammenhängt oder zur Durchführung vorvertraglicher
+              Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die
+              Verarbeitung auf unserem berechtigten Interesse an der effektiven
+              Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f
+              DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO),
+              die Sie durch das bewusste Anschreiben über WhatsApp erteilen; die
+              Einwilligung ist jederzeit widerrufbar.
+            </p>
+            <p>
+              Ihre Nachrichten verbleiben bei uns, bis Sie uns zur Löschung
+              auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der
+              Zweck für die Datenspeicherung entfällt (z. B. nach
+              abgeschlossener Bearbeitung Ihres Anliegens). Zwingende
+              gesetzliche Bestimmungen – insbesondere gesetzliche
+              Aufbewahrungsfristen – bleiben unberührt. Wenn Sie keine Daten an
+              WhatsApp übermitteln möchten, nutzen Sie bitte das
+              Kontaktformular, E-Mail oder Telefon. Weitere Informationen finden
+              Sie in der Datenschutzerklärung von WhatsApp:{" "}
+              <a
+                href="https://www.whatsapp.com/legal/privacy-policy-eea"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://www.whatsapp.com/legal/privacy-policy-eea
+                <span className="sr-only"> (öffnet in einem neuen Tab)</span>
+              </a>
+              .
+            </p>
+
             <h2>5. Plugins und Tools</h2>
 
             <h3>Google Fonts (lokales Hosting)</h3>

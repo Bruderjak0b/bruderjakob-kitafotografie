@@ -218,7 +218,7 @@ export function ContactForm() {
             <Link
               href="/datenschutz"
               target="_blank"
-              className="font-semibold text-terracotta-600 underline underline-offset-4 transition-colors duration-150 hover:text-terracotta-700"
+              className="font-semibold text-terracotta-600 underline-offset-4 transition-colors duration-150 hover:text-terracotta-700 hover:underline focus-visible:underline"
             >
               Datenschutzerklärung
               <span className="sr-only"> (öffnet in einem neuen Tab)</span>
@@ -238,9 +238,19 @@ export function ContactForm() {
           Lieber direkt?{" "}
           <a
             href={`mailto:${siteConfig.email}`}
-            className="font-semibold break-all text-terracotta-600 underline underline-offset-4 transition-colors duration-150 hover:text-terracotta-700"
+            className="font-semibold break-all text-terracotta-600 underline-offset-4 transition-colors duration-150 hover:text-terracotta-700 hover:underline focus-visible:underline"
           >
             {siteConfig.email}
+          </a>{" "}
+          oder{" "}
+          <a
+            href={siteConfig.whatsapp.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-terracotta-600 underline-offset-4 transition-colors duration-150 hover:text-terracotta-700 hover:underline focus-visible:underline"
+          >
+            per WhatsApp
+            <span className="sr-only"> (öffnet in einem neuen Tab)</span>
           </a>
         </p>
       </div>

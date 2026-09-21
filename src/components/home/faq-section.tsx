@@ -22,7 +22,7 @@ export function FaqSection({ items = faqItems, action }: FaqSectionProps) {
               Deine Frage ist nicht dabei? Schreib mir einfach an{" "}
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="font-semibold break-words text-terracotta-600 underline underline-offset-4 transition-colors duration-150 hover:text-terracotta-700"
+                className="font-semibold break-words text-terracotta-600 underline-offset-4 transition-colors duration-150 hover:text-terracotta-700 hover:underline focus-visible:underline"
               >
                 {siteConfig.email}
               </a>
