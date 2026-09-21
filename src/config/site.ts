@@ -3,7 +3,17 @@ export const siteConfig = {
   shortName: "Bruderjakob",
   description:
     "Natürliche Kitafotografie in Göppingen und Umgebung. Echte Momente aus dem Kita-Alltag – datenschutzkonform, ohne Mehraufwand für die Einrichtung.",
-  email: "info@bruderjakob-kitafotografie.de",
+  email: "kontakt@bruderjakob-kitafotografie.de",
+  phone: "0152 33934815",
+  phoneHref: "tel:+4915233934815",
+  /** Postal details as published in the Impressum. */
+  address: {
+    name: "Marius Jakob",
+    addition: "Kindergarten Fotografie",
+    street: "Ziegelstraße 15",
+    city: "73084 Salach",
+  },
+  vatId: "DE446262979",
   links: {
     // TODO: echte URLs eintragen
     bruderimfokus: "#",
