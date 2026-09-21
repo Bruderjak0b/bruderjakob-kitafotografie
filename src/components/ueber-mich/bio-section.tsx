@@ -1,12 +1,12 @@
-import { MailIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import portrait from "~/assets/images/portrait-marius.jpg";
 import { Container } from "~/components/layout/container";
 import { Section } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
-import { siteConfig } from "~/config/site";
-import { aboutDetails, aboutIntro } from "~/content/about";
+import { aboutClosing, aboutLead, aboutSections } from "~/content/about";
 
 export function BioSection() {
   return (
@@ -28,23 +28,30 @@ export function BioSection() {
         </div>
 
         <div className="max-w-2xl">
-          <div className="space-y-5 text-lg text-muted-foreground">
-            <p className="text-xl leading-relaxed text-ink-800 lg:text-2xl lg:leading-relaxed">
-              {aboutIntro[0]}
-            </p>
-            {aboutIntro.slice(1).map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            {aboutDetails.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          <p className="text-xl leading-relaxed text-ink-800 lg:text-2xl lg:leading-relaxed">
+            {aboutLead}
+          </p>
+
+          {aboutSections.map((section) => (
+            <section key={section.title} className="mt-12">
+              <h2 className="mb-4 text-2xl font-extrabold lg:text-h3">
+                {section.title}
+              </h2>
+              <div className="space-y-5 text-lg text-muted-foreground">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </section>
+          ))}
+
+          <p className="mt-12 text-lg text-muted-foreground">{aboutClosing}</p>
 
           <Button asChild size="lg" className="mt-10">
-            <a href={`mailto:${siteConfig.email}`}>
-              <MailIcon aria-hidden />
-              Schreib mir
-            </a>
+            <Link href="/kontakt">
+              Kontakt aufnehmen
+              <ArrowRightIcon aria-hidden />
+            </Link>
           </Button>
         </div>
       </Container>
