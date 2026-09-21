@@ -17,7 +17,11 @@ const { address, email, phone, phoneHref, vatId } = siteConfig;
 export default function ImpressumPage() {
   return (
     <>
-      <PageHero eyebrow="Rechtliches" title="Impressum" />
+      <PageHero
+        className="hyphens-auto"
+        eyebrow="Rechtliches"
+        title="Impressum"
+      />
 
       <Section>
         <Container size="prose">

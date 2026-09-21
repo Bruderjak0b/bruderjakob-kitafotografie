@@ -105,9 +105,12 @@ export function ServicesSection() {
               </p>
               <a
                 href={siteConfig.links.bruderimfokus}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-auto inline-flex items-center gap-2 self-start font-semibold text-terracotta-300 underline-offset-4 transition-colors duration-150 hover:text-terracotta-200 hover:underline"
               >
                 Zu Bruderimfokus
+                <span className="sr-only"> (öffnet in einem neuen Tab)</span>
                 <ArrowUpRightIcon aria-hidden className="size-4" />
               </a>
             </div>
