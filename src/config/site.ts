@@ -15,9 +15,8 @@ export const siteConfig = {
   },
   vatId: "DE446262979",
   links: {
-    // TODO: echte URLs eintragen
-    bruderimfokus: "#",
-    onlineshop: "#",
+    bruderimfokus: "https://www.instagram.com/bruderimfokus/",
+    onlineshop: "https://marius-jakob-202.fotograf.de/login",
   },
 } as const;
 

@@ -17,7 +17,11 @@ const { address, email, phone, phoneHref } = siteConfig;
 export default function DatenschutzPage() {
   return (
     <>
-      <PageHero eyebrow="Rechtliches" title="Datenschutzerklärung" />
+      <PageHero
+        className="hyphens-auto"
+        eyebrow="Rechtliches"
+        title="Datenschutzerklärung"
+      />
 
       <Section>
         <Container size="prose">
@@ -32,6 +36,24 @@ export default function DatenschutzPage() {
               denen Sie persönlich identifiziert werden können. Ausführliche
               Informationen zum Thema Datenschutz entnehmen Sie unserer unter
               diesem Text aufgeführten Datenschutzerklärung.
+            </p>
+
+            <h3>Geltungsbereich</h3>
+            <p>
+              Diese Datenschutzerklärung gilt für diese Website. Die Bilder aus
+              den Fototerminen werden über einen separaten Onlineshop angeboten,
+              der technisch von der Fotografen Online Service GmbH (fotograf.de)
+              betrieben wird. Für den Shop gelten eine eigene
+              Datenschutzerklärung und eigene Hinweise des Betreibers, die Sie{" "}
+              <a
+                href={siteConfig.links.onlineshop}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                im Shop
+                <span className="sr-only"> (öffnet in einem neuen Tab)</span>
+              </a>{" "}
+              abrufen können.
             </p>
 
             <h3>Datenerfassung auf dieser Website</h3>

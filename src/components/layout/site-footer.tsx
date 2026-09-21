@@ -50,12 +50,15 @@ export function SiteFooter() {
             <p className="text-sm leading-relaxed text-white">
               Familienshootings, Portraits, Hochzeiten und Events.
             </p>
-            <Link
+            <a
               href={siteConfig.links.bruderimfokus}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-semibold text-terracotta-300 transition-colors hover:text-terracotta-200"
             >
               Zu Bruderimfokus
-            </Link>
+              <span className="sr-only"> (öffnet in einem neuen Tab)</span>
+            </a>
           </FooterColumn>
         </div>
 
@@ -109,10 +112,23 @@ function FooterLink({
   const className =
     "text-sm break-words transition-colors hover:text-terracotta-300";
 
+  // mailto:/tel: stay in place, http(s) links leave the site and open in a new tab.
   if (!href.startsWith("/")) {
+    const isExternalPage = href.startsWith("http");
+
     return (
-      <a href={href} className={className}>
+      <a
+        href={href}
+        className={className}
+        {...(isExternalPage && {
+          target: "_blank",
+          rel: "noopener noreferrer",
+        })}
+      >
         {children}
+        {isExternalPage && (
+          <span className="sr-only"> (öffnet in einem neuen Tab)</span>
+        )}
       </a>
     );
   }
