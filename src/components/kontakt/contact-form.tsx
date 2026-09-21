@@ -1,6 +1,7 @@
 "use client";
 
 import { CheckIcon, SendIcon } from "lucide-react";
+import Link from "next/link";
 import type * as React from "react";
 import { useActionState, useId } from "react";
 
@@ -212,10 +213,17 @@ export function ContactForm() {
             }
             className="mt-1 size-4 shrink-0 accent-primary"
           />
-          {/* TODO: auf /datenschutz verlinken, sobald die Seite existiert. */}
           <span>
-            Ich habe die Datenschutzerklärung gelesen und stimme der
-            Verarbeitung meiner Daten zu. (Pflichtfeld)
+            Ich habe die{" "}
+            <Link
+              href="/datenschutz"
+              target="_blank"
+              className="font-semibold text-terracotta-600 underline underline-offset-4 transition-colors duration-150 hover:text-terracotta-700"
+            >
+              Datenschutzerklärung
+              <span className="sr-only"> (öffnet in einem neuen Tab)</span>
+            </Link>{" "}
+            gelesen und stimme der Verarbeitung meiner Daten zu. (Pflichtfeld)
           </span>
         </label>
         <FieldError id={errorId("privacy")} message={state.errors.privacy} />

@@ -170,15 +170,15 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 
 - [ ] **Kundenstimmen sind erfunden** (Platzhalter aus dem Prototyp) → durch echte ersetzen oder den Abschnitt entfernen.
 - [ ] Links zu **Bruderimfokus** und zum **Onlineshop** fehlen (stehen auf `#` in `src/config/site.ts`).
-- [ ] Unterseiten fehlen noch: `/impressum`, `/datenschutz`.
+- [x] Unterseiten `/impressum` und `/datenschutz` sind gebaut (Texte aus dem e-recht24-Generator).
 - [ ] SMTP-Zugangsdaten des echten Postfachs in `.env.local` und bei Vercel eintragen (das Kontaktformular steht, lokal läuft es gegen Mailpit).
-- [ ] Datenschutz-Häkchen im Kontaktformular auf `/datenschutz` verlinken, sobald es die Seite gibt.
-- [ ] **Vercel-Projekt anlegen** (einmalig):
-  1. Bei Vercel „Add New → Project“, das GitHub-Repo importieren.
-  2. Framework „Next.js“ wird erkannt. **Build-, Install- und Output-Einstellungen nicht überschreiben.** Vercel nimmt automatisch `pnpm install` und das `build`-Skript aus `package.json`.
-  3. Nach dem Import unter *Settings → Environments → Production* den **Production Branch auf `main`** stellen (Vercel nimmt sonst `development`, weil das der Standard-Branch auf GitHub ist).
-  4. Unter *Settings → Build and Deployment* prüfen, dass **Node.js 24.x** eingestellt ist (wird aus `package.json` übernommen).
-  5. Eigene Domain unter *Settings → Domains* verbinden, danach `metadataBase` im Code setzen lassen.
+- [x] Datenschutz-Häkchen im Kontaktformular verlinkt auf `/datenschutz` (öffnet in neuem Tab, damit das Formular erhalten bleibt).
+- [ ] Vercel-Plan prüfen: Der Hobby-Plan ist auf nicht-kommerzielle Nutzung beschränkt, eine Geschäfts-Website braucht **Pro**. Davon hängt auch der AV-Vertrag (AVV) für die Datenschutzerklärung ab.
+- [ ] Die als „Wirtschaftsidentifikationsnummer“ geführte Nummer im Impressum prüfen — das Format entspricht einer Umsatzsteuer-IdNr.
+- [ ] **Vercel-Projekt einrichten.** Das Projekt `bruderjakob-kitafotografie` existiert bereits und ist lokal verknüpft (`.vercel/project.json`). Zu prüfen bleibt:
+  1. Unter *Settings → Environments → Production* den **Production Branch auf `main`** stellen (Vercel nimmt sonst `development`, weil das der Standard-Branch auf GitHub ist).
+  2. Unter *Settings → Build and Deployment* prüfen, dass **Node.js 24.x** eingestellt ist (wird aus `package.json` übernommen).
+  3. Eigene Domain unter *Settings → Domains* verbinden, danach `metadataBase` im Code setzen lassen.
 
 ---
 
