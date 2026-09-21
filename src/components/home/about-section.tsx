@@ -6,7 +6,7 @@ import portrait from "~/assets/images/portrait-marius.jpg";
 import { Container } from "~/components/layout/container";
 import { Eyebrow, Section } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
-import { aboutIntro } from "~/content/about";
+import { aboutTeaser } from "~/content/about";
 
 export function AboutSection() {
   return (
@@ -40,9 +40,9 @@ export function AboutSection() {
           </h2>
           <div className="space-y-5 text-lg text-muted-foreground">
             <p className="text-xl leading-relaxed text-ink-800 lg:text-2xl lg:leading-relaxed">
-              {aboutIntro[0]}
+              {aboutTeaser[0]}
             </p>
-            {aboutIntro.slice(1).map((paragraph) => (
+            {aboutTeaser.slice(1).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
