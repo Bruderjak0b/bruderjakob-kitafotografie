@@ -23,6 +23,10 @@ export function SiteFooter() {
             <p className="max-w-64 text-sm leading-relaxed text-terracotta-200">
               Natürliche Kitafotografie in Göppingen und Umgebung.
             </p>
+            <p className="max-w-64 text-sm leading-relaxed text-terracotta-200">
+              Unterwegs in {siteConfig.areaServed.slice(0, -1).join(", ")} und{" "}
+              {siteConfig.areaServed.at(-1)}.
+            </p>
           </div>
 
           <FooterColumn title="Seiten">

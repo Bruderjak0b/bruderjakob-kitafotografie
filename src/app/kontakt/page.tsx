@@ -11,9 +11,10 @@ import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/config/site";
 
 export const metadata: Metadata = {
-  title: "Kontakt",
+  title: "Fototermin anfragen",
   description:
     "Schreib mir, wenn ihr einen Fototermin in eurer Kita plant oder erst einmal nur Fragen habt. Ich melde mich innerhalb von zwei Tagen zurück.",
+  alternates: { canonical: "/kontakt" },
 };
 
 export default function KontaktPage() {

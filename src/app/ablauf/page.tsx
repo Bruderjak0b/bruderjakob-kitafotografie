@@ -5,9 +5,10 @@ import { ContactSection } from "~/components/home/contact-section";
 import { FaqSection } from "~/components/home/faq-section";
 
 export const metadata: Metadata = {
-  title: "Ablauf",
+  title: "So läuft der Fototag in eurer Kita ab",
   description:
     "Vom ersten Gespräch über den Fototag bis zur Online-Galerie: So läuft ein Fototermin in eurer Kita ab, ohne den gewohnten Tagesrhythmus zu stören.",
+  alternates: { canonical: "/ablauf" },
 };
 
 export default function AblaufPage() {
