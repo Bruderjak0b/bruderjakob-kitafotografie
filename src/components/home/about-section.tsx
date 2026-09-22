@@ -1,4 +1,4 @@
-import { QuoteIcon } from "lucide-react";
+import { ArrowRightIcon, QuoteIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -46,9 +46,17 @@ export function AboutSection() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <Button asChild size="lg" variant="outline" className="mt-10">
-            <Link href="/ueber-mich">Mehr über mich</Link>
-          </Button>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Button asChild size="lg">
+              <Link href="/kontakt">
+                Kontakt aufnehmen
+                <ArrowRightIcon aria-hidden />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/ueber-mich">Mehr über mich</Link>
+            </Button>
+          </div>
         </div>
       </Container>
     </Section>
