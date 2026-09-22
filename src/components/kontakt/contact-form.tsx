@@ -10,7 +10,6 @@ import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
-import { siteConfig } from "~/config/site";
 import {
   contactRoles,
   contactSubjects,
@@ -229,31 +228,15 @@ export function ContactForm() {
         <FieldError id={errorId("privacy")} message={state.errors.privacy} />
       </div>
 
-      <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-        <Button type="submit" size="lg" disabled={isPending}>
-          {isPending ? "Wird gesendet…" : "Jetzt kontaktieren"}
-          <SendIcon aria-hidden />
-        </Button>
-        <p className="text-sm text-muted-foreground">
-          Lieber direkt?{" "}
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="font-semibold break-all text-terracotta-600 underline-offset-4 transition-colors duration-150 hover:text-terracotta-700 hover:underline focus-visible:underline"
-          >
-            {siteConfig.email}
-          </a>{" "}
-          oder{" "}
-          <a
-            href={siteConfig.whatsapp.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-terracotta-600 underline-offset-4 transition-colors duration-150 hover:text-terracotta-700 hover:underline focus-visible:underline"
-          >
-            per WhatsApp
-            <span className="sr-only"> (öffnet in einem neuen Tab)</span>
-          </a>
-        </p>
-      </div>
+      <Button
+        type="submit"
+        size="lg"
+        disabled={isPending}
+        className="self-start"
+      >
+        {isPending ? "Wird gesendet…" : "Jetzt kontaktieren"}
+        <SendIcon aria-hidden />
+      </Button>
     </form>
   );
 }
