@@ -10,9 +10,10 @@ export const metadata: Metadata = {
   title: "Impressum",
   description:
     "Anbieterkennzeichnung nach § 5 DDG: Name, Anschrift und Kontaktdaten von Marius Jakob, Kindergarten Fotografie in Salach.",
+  alternates: { canonical: "/impressum" },
 };
 
-const { address, email, phone, phoneHref, vatId } = siteConfig;
+const { address, email, phone, phoneHref, businessId } = siteConfig;
 
 export default function ImpressumPage() {
   return (
@@ -45,7 +46,7 @@ export default function ImpressumPage() {
             </LegalAddress>
 
             <h2>Wirtschaftsidentifikationsnummer</h2>
-            <p>{vatId}</p>
+            <p>{businessId}</p>
 
             <h2>Verbraucherstreitbeilegung und Universalschlichtungsstelle</h2>
             <p>

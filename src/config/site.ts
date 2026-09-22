@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Bruderjakob Kitafotografie",
+  url: "https://bruderjakob-kitafotografie.de",
   shortName: "Bruderjakob",
   description:
     "Natürliche Kitafotografie in Göppingen und Umgebung. Echte Momente aus dem Kita-Alltag – datenschutzkonform, ohne Mehraufwand für die Einrichtung.",
@@ -16,9 +17,23 @@ export const siteConfig = {
     name: "Marius Jakob",
     addition: "Kindergarten Fotografie",
     street: "Ziegelstraße 15",
+    postalCode: "73084",
+    locality: "Salach",
+    /** Postal code and town on one line, as written in a German address block. */
     city: "73084 Salach",
   },
-  vatId: "DE446262979",
+  /**
+   * Towns covered, matching the service area of the Google Business profile.
+   * Shown in the footer and used for the LocalBusiness structured data.
+   */
+  areaServed: [
+    "Göppingen",
+    "Kirchheim unter Teck",
+    "Schwäbisch Gmünd",
+    "Geislingen an der Steige",
+  ],
+  /** Wirtschafts-Identifikationsnummer (W-IdNr.). Kleinunternehmer nach § 19 UStG, daher keine USt-IdNr. */
+  businessId: "DE446262979",
   links: {
     bruderimfokus: "https://www.instagram.com/bruderimfokus/",
     onlineshop: "https://marius-jakob-202.fotograf.de/login",

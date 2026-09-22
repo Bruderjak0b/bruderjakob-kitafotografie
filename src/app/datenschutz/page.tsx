@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description:
     "Wie diese Website mit personenbezogenen Daten umgeht: Hosting, Kontaktformular, Schriftarten und die Rechte, die euch nach der DSGVO zustehen.",
+  alternates: { canonical: "/datenschutz" },
 };
 
 const { address, email, phone, phoneHref } = siteConfig;

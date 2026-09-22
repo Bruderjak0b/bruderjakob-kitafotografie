@@ -6,9 +6,10 @@ import { ServicesSection } from "~/components/home/services-section";
 import { BioSection } from "~/components/ueber-mich/bio-section";
 
 export const metadata: Metadata = {
-  title: "Über mich",
+  title: "Marius Jakob, Kitafotograf aus Salach",
   description:
     "Marius fotografiert Kitas in Göppingen und Umgebung. Wie ich arbeite, warum ich leise fotografiere und was das für euren Kita-Alltag bedeutet.",
+  alternates: { canonical: "/ueber-mich" },
 };
 
 export default function UeberMichPage() {
