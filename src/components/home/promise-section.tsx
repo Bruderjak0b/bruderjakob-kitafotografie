@@ -9,7 +9,7 @@ type PromiseItem = string | { text: string; details: string[] };
 
 const forParents: PromiseItem[] = [
   "Individuelle und authentische Fotos im Freien",
-  "Große Auswahl an Motiven von jedem Kind",
+  "Große Auswahl an Motiven von eurem Kind",
   "Passwortgeschützte Onlinegalerie für jedes Kind",
   "Anmeldung und Bestellung bequem online, egal wann",
   "Geschwister werden gemeinsam fotografiert",
@@ -28,15 +28,18 @@ const forDaycares: PromiseItem[] = [
   },
   "Alle Informationen für Eltern werden von mir bereitgestellt",
   "Ich bin direkter Ansprechpartner für alle Fragen der Eltern",
-  "Der Fototag richtet sich nach dem Kita-Alltag, ohne laufende Abläufe zu unterbrechen",
-  "Neben Kinderfotos entstehen auch Portraits der Pädagoginnen und Pädagogen sowie Aufnahmen der Einrichtung",
+  "Ich richte mich nach eurem Kita-Alltag, ohne laufende Abläufe zu unterbrechen",
+  "Neben Kinderfotos kann ich optional Portraits der Pädagoginnen und Pädagogen sowie Aufnahmen der Einrichtung fotografieren",
 ];
 
 export function PromiseSection() {
   return (
     <Section tone="subtle" id="versprechen">
       <Container>
-        <SectionHeader eyebrow="Versprechen" title="Was ihr von mir bekommt">
+        <SectionHeader
+          eyebrow="Versprechen"
+          title="Die wichtigsten Punkte zusammengefasst"
+        >
           <p className="mt-2 inline-flex items-center gap-3 rounded-2xl bg-terracotta-100 px-5 py-3 text-left sm:rounded-full text-base font-semibold text-terracotta-700">
             <GiftIcon aria-hidden className="size-5 shrink-0" />
             Jedes Kind und jede Einrichtung erhält ein kostenloses digitales
