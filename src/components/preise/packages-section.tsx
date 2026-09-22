@@ -13,10 +13,22 @@ export function PackagesSection() {
   return (
     <Section id="pakete">
       <Container>
-        <SectionHeader eyebrow="Pakete" title="Fotopakete" align="left">
-          <p className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
-            <TagIcon aria-hidden className="size-4 shrink-0" />
-            Einzelfotos ab {singlePhotoPrice}
+        <SectionHeader
+          as="h1"
+          eyebrow="Preise"
+          title="Diese Pakete stehen zur Auswahl"
+          align="left"
+        >
+          <p>
+            Ob einzelnes Foto oder umfangreiches Paket, hier findest du die
+            passende Auswahl für eure Erinnerungen. Alle Pakete gibt es sowohl
+            gedruckt als auch digital.
+          </p>
+          <p className="mt-6">
+            <span className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
+              <TagIcon aria-hidden className="size-4 shrink-0" />
+              Einzelfotos ab {singlePhotoPrice}
+            </span>
           </p>
         </SectionHeader>
 
@@ -31,9 +43,9 @@ export function PackagesSection() {
                 item.featured ? "bg-terracotta-100" : "bg-white shadow-card",
               )}
             >
-              <h3 className="text-2xl font-extrabold lg:text-h3">
+              <h2 className="text-2xl font-extrabold lg:text-h3">
                 {item.name}
-              </h3>
+              </h2>
               <p className="mt-1 font-heading text-3xl font-extrabold text-terracotta-600">
                 {item.price}
               </p>
@@ -62,9 +74,9 @@ export function PackagesSection() {
               <DownloadIcon aria-hidden className="size-5" />
             </span>
             <div>
-              <h3 className="mb-2 font-heading text-sm font-semibold tracking-[0.14em] text-terracotta-300 uppercase">
+              <h2 className="mb-2 font-heading text-sm font-semibold tracking-[0.14em] text-terracotta-300 uppercase">
                 {digitalPackage.eyebrow}
-              </h3>
+              </h2>
               <p className="max-w-xl text-lg text-ink-200">
                 {digitalPackage.text}
               </p>

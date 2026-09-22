@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { ContactSection } from "~/components/home/contact-section";
 import { PromiseSection } from "~/components/home/promise-section";
-import { PageHero } from "~/components/layout/page-hero";
 import { PackagesSection } from "~/components/preise/packages-section";
 
 export const metadata: Metadata = {
@@ -14,13 +13,6 @@ export const metadata: Metadata = {
 export default function PreisePage() {
   return (
     <>
-      <PageHero eyebrow="Preise" title="Diese Pakete stehen zur Auswahl">
-        <p className="text-lg text-ink-700 lg:text-xl">
-          Ob einzelnes Foto oder umfangreiches Paket, hier findest du die
-          passende Auswahl für eure Erinnerungen. Alle Pakete gibt es sowohl
-          gedruckt als auch digital.
-        </p>
-      </PageHero>
       <PackagesSection />
       <PromiseSection />
       <ContactSection />
