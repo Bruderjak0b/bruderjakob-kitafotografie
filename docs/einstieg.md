@@ -175,8 +175,7 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 - [ ] **Vercel-Projekt fertig einrichten:**
   1. Unter *Settings → Environments → Production* den **Production Branch auf `main`** stellen (Vercel nimmt sonst `development`, weil das der Standard-Branch auf GitHub ist).
   2. Unter *Settings → Build and Deployment* prüfen, dass **Node.js 24.x** eingestellt ist (wird aus `package.json` übernommen).
-  3. Domain `bruderjakob-kitafotografie.de` unter *Settings → Domains* verbinden.
-- [ ] **Mailversand einmal echt testen.** Die Zugangsdaten liegen bei Vercel, aber ob IONOS das Passwort annimmt, zeigt sich erst beim ersten Absenden. Formular auf der Vorschau-Adresse abschicken, Postfach **und Spam-Ordner** prüfen, und testen, ob „Antworten“ an die Absenderadresse geht. Fehler stehen in den Vercel-Logs des Deployments.
+  3. ~~Domain verbinden~~ — erledigt: `bruderjakob-kitafotografie.de` und `www.…` sind dem Projekt zugeordnet, die A-Einträge zeigen auf Vercel, die Nameserver bleiben bei IONOS. **Die Nameserver nicht auf Vercel umstellen**, sonst gehen die MX-Einträge und damit der E-Mail-Empfang verloren. Die Domain zeigt bis zum ersten Release nach `main` einen 404, weil es noch kein Production-Deployment gibt.
 - [ ] **Nach dem Livegang:** Website in der [Google Search Console](https://search.google.com/search-console) anmelden und dort `https://bruderjakob-kitafotografie.de/sitemap.xml` einreichen. Im Google-Business-Eintrag (Kategorie „Fotograf“, in Verifizierung) die Website-Adresse eintragen.
 
 **Erledigt:**
@@ -184,7 +183,7 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 - [x] Unterseiten `/impressum` und `/datenschutz` sind gebaut (Texte aus dem e-recht24-Generator).
 - [x] Datenschutz-Häkchen im Kontaktformular verlinkt auf `/datenschutz` (öffnet in neuem Tab, damit das Formular erhalten bleibt).
 - [x] Links zu **Bruderimfokus** (Instagram) und zum **Onlineshop** (fotograf.de) sind in `src/config/site.ts` eingetragen.
-- [x] SMTP-Zugangsdaten bei Vercel hinterlegt, für Production und Preview. Lokal läuft der Versand weiter gegen Mailpit.
+- [x] SMTP-Zugangsdaten bei Vercel hinterlegt, für Production und Preview. **Am 22.09.2026 auf einer Vorschau-Adresse echt getestet, die Mail kam an.** Lokal läuft der Versand weiter gegen Mailpit.
 - [x] Die Nummer im Impressum ist geklärt: Marius rechnet nach der **Kleinunternehmerregelung** ab und hat keine USt-IdNr. `DE446262979` ist eine **Wirtschafts-Identifikationsnummer**, die Überschrift im Impressum stimmt so. Im Code heißt das Feld `siteConfig.businessId`.
 - [x] SEO-Grundausstattung: Domain in `siteConfig.url`, `metadataBase`, Canonical-URLs, `sitemap.ts`, `robots.ts` (sperrt Vorschau-Deployments aus), Open-Graph-Bild und LocalBusiness-Markup passend zum Google-Business-Eintrag.
 
