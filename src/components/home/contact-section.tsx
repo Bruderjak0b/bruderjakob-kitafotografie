@@ -1,10 +1,9 @@
-import { ArrowRightIcon, MailIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
 import { Container } from "~/components/layout/container";
 import { Eyebrow, Section } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
-import { siteConfig } from "~/config/site";
 
 export function ContactSection() {
   return (
@@ -21,21 +20,12 @@ export function ContactSection() {
           Gerne komme ich auch zu euch in den Kindergarten und fotografiere die
           Kinder draußen.
         </p>
-        <div className="flex flex-col items-center gap-6 sm:flex-row">
-          <Button asChild size="lg" variant="inverse">
-            <Link href="/kontakt">
-              Jetzt kontaktieren
-              <ArrowRightIcon aria-hidden />
-            </Link>
-          </Button>
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="inline-flex items-center gap-2 font-semibold break-all text-white underline-offset-4 transition-colors duration-150 hover:underline"
-          >
-            <MailIcon aria-hidden className="size-4 shrink-0" />
-            {siteConfig.email}
-          </a>
-        </div>
+        <Button asChild size="lg" variant="inverse">
+          <Link href="/kontakt">
+            Jetzt kontaktieren
+            <ArrowRightIcon aria-hidden />
+          </Link>
+        </Button>
       </Container>
     </Section>
   );

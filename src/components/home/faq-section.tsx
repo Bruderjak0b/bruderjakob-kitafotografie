@@ -28,7 +28,7 @@ export function FaqSection({ items = faqItems, action }: FaqSectionProps) {
               </a>
               .
             </p>
-            {action}
+            {action && <div className="mt-4">{action}</div>}
           </SectionHeader>
         </div>
         <FaqList items={items} />
