@@ -33,6 +33,8 @@ type SectionHeaderProps = {
   children?: React.ReactNode;
   /** Rendered next to the title on large screens (e.g. a button). */
   action?: React.ReactNode;
+  /** Heading level of the title. Use "h1" when the section opens a page. */
+  as?: "h1" | "h2";
   align?: "left" | "center";
   className?: string;
 };
@@ -42,6 +44,7 @@ export function SectionHeader({
   title,
   children,
   action,
+  as: Heading = "h2",
   align = "center",
   className,
 }: SectionHeaderProps) {
@@ -62,9 +65,16 @@ export function SectionHeader({
         )}
       >
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-        <h2 className="max-w-3xl text-4xl font-extrabold lg:text-h2">
+        <Heading
+          className={cn(
+            "max-w-3xl font-extrabold",
+            Heading === "h1"
+              ? "text-4xl leading-[1.06] sm:text-5xl lg:text-h1"
+              : "text-4xl lg:text-h2",
+          )}
+        >
           {title}
-        </h2>
+        </Heading>
         {children && (
           <div className="max-w-3xl text-lg text-muted-foreground">
             {children}
