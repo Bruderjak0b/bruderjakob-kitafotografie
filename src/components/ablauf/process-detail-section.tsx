@@ -13,10 +13,13 @@ export function ProcessDetailSection() {
     <Section id="ablauf-im-detail">
       <Container>
         <SectionHeader
+          as="h1"
           eyebrow="Ablauf"
-          title="Euer Weg zu natürlichen Kindergartenfotos"
+          title="Vom ersten Gespräch bis zu den fertigen Bildern"
           align="left"
-        />
+        >
+          <p>Drei Schritte, bei denen euer Kita-Alltag den Takt vorgibt.</p>
+        </SectionHeader>
 
         <ol className="flex flex-col">
           {processSteps.map((step, index) => {
@@ -41,9 +44,9 @@ export function ProcessDetailSection() {
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="text-2xl font-extrabold text-terracotta-700 lg:text-h2">
+                  <h2 className="text-2xl font-extrabold text-terracotta-700 lg:text-h2">
                     {step.title}
-                  </h3>
+                  </h2>
                 </div>
 
                 <div className={cn("max-w-2xl", textOnLeft && "lg:order-1")}>
