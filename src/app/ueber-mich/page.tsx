@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { ApproachSection } from "~/components/home/approach-section";
 import { ContactSection } from "~/components/home/contact-section";
 import { ServicesSection } from "~/components/home/services-section";
-import { PageHero } from "~/components/layout/page-hero";
 import { BioSection } from "~/components/ueber-mich/bio-section";
 
 export const metadata: Metadata = {
@@ -15,7 +14,6 @@ export const metadata: Metadata = {
 export default function UeberMichPage() {
   return (
     <>
-      <PageHero eyebrow="Über mich" title="Hallo, ich bin Marius" />
       <BioSection />
       <ApproachSection />
       <ServicesSection />

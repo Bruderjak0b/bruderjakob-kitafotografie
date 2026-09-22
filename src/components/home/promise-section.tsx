@@ -36,7 +36,10 @@ export function PromiseSection() {
   return (
     <Section tone="subtle" id="versprechen">
       <Container>
-        <SectionHeader eyebrow="Versprechen" title="Die wichtigsten Punkte zusammengefasst">
+        <SectionHeader
+          eyebrow="Versprechen"
+          title="Die wichtigsten Punkte zusammengefasst"
+        >
           <p className="mt-2 inline-flex items-center gap-3 rounded-2xl bg-terracotta-100 px-5 py-3 text-left sm:rounded-full text-base font-semibold text-terracotta-700">
             <GiftIcon aria-hidden className="size-5 shrink-0" />
             Jedes Kind und jede Einrichtung erhält ein kostenloses digitales
