@@ -11,7 +11,7 @@ export const aboutSections: AboutSection[] = [
   {
     title: "Wie ich zum Fotografieren kam",
     paragraphs: [
-      "Meine erste Kamera habe ich mir für Reisen gekauft. Ziemlich schnell habe ich eine Leidenschaft dafür entwickelt. Die Kombination aus technischem Veständnis, kreativer Bildkomposition und der Kontakt zum Menschen erfüllt mich. Seit 2022 fotografiere ich regelmäßig, vor allem Familien, Paare, Events und Hochzeiten. Dabei sorge ich dafür, dass die Menschen vor der Kamera sie selbst sein können und dadurch natürliche Momentaufnahmen entstehen.",
+      "Meine erste Kamera habe ich mir für Reisen gekauft. Ziemlich schnell habe ich eine Leidenschaft dafür entwickelt. Die Kombination aus technischem Verständnis, kreativer Bildkomposition und dem Kontakt zu Menschen erfüllt mich. Seit 2022 fotografiere ich regelmäßig, vor allem Familien, Paare, Events und Hochzeiten. Dabei sorge ich dafür, dass die Menschen vor der Kamera sie selbst sein können und dadurch natürliche Momentaufnahmen entstehen.",
       "Ich habe Design studiert und fünf Jahre in dem Beruf gearbeitet, daher kommt mein Blick für Bildaufbau und Licht. Den Umgang mit Kindern habe ich in meinem freiwilligen sozialen Jahr gelernt. Dabei habe ich ein Inklusionskind durch die erste Klasse begleitet. Was ich dort über Geduld und Verantwortung gelernt habe, hilft mir heute mehr als jede Kameraeinstellung.",
       "In Kitas fotografiere ich, weil mich die Arbeit mit Kindern am meisten reizt. Kinder stellen sich nicht in Pose. Ihre Persönlichkeiten sind noch nicht ganz entwickelt und somit auch nicht verfälscht, und genau das macht die Bilder gut.",
     ],
