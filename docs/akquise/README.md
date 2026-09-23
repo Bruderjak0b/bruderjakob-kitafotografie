@@ -11,6 +11,7 @@ ohne Next.js, ohne Build. Öffnen, anschauen, als PDF speichern.
 | `email-vorlagen.html` | 14 E-Mail-Vorlagen für Kitas und Eltern, mit Kopieren-Knopf je Vorlage | – |
 | `email-vorlagen.md` | Quelltext der E-Mail-Vorlagen, hier werden die Texte bearbeitet | – |
 | `email-vorlagen-html.mjs` | Baut aus der `.md` die `.html` | – |
+| `signatur.html` | E-Mail-Signatur mit Logo zum Kopieren, plus Anleitung für Apple Mail und Outlook | – |
 | `ci.css` | Gemeinsames Stylesheet mit den Design-Tokens der Website | – |
 | `bilder/` | Verkleinerte Fotos, Logos und der QR-Code für den Druck | – |
 | `pdf/` | Die fertigen PDFs zum Verschicken (werden erzeugt, nicht in Git) | – |
@@ -38,6 +39,14 @@ node docs/akquise/email-vorlagen-html.mjs
 
 Dann http://localhost:4500/email-vorlagen.html öffnen. Jede Vorlage hat einen
 Kopieren-Knopf, der den Text in die Zwischenablage legt.
+
+## Signatur einbauen
+
+http://localhost:4500/signatur.html öffnen und der Anleitung dort folgen. Das Logo ist als
+Base64-Bild in die Signatur eingebettet, damit beim Empfänger nichts nachgeladen wird. Dieselbe
+Grafik liegt als `bilder/logo-signatur.png` (434 × 108 px) daneben, falls Outlook sie von Hand
+braucht. Erzeugt wurde sie aus `bilder/LogoDark.svg`; wenn sich das Logo ändert, muss sie neu
+exportiert und in `signatur.html` ausgetauscht werden.
 
 ## PDF erzeugen
 
@@ -78,7 +87,6 @@ den neuen Code einmal mit dem Handy scannen.
 
 Im Quelltext als `TODO Marius` markiert:
 
-- Prüfen, ob das erweiterte Führungszeugnis schon vorliegt oder nur beantragt ist
 - Google-Bewertungslink (`https://g.page/r/…`) für die E-Mail-Vorlagen 4 und 7
 - Anmeldelink bzw. QR-Code von Fotograf.de für E-Mail-Vorlage 8
 - Feste Laufzeit der Galerien festlegen (E-Mail-Vorlagen 5 und 6)

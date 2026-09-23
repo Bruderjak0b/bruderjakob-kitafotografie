@@ -25,8 +25,12 @@
 
 ## Signatur
 
-Diese Signatur im Mailprogramm als Standard hinterlegen. Sie ist bewusst schlicht, ohne Bilder und
-ohne Tracking, damit sie in jedem Mailprogramm lesbar bleibt.
+Es gibt zwei Fassungen. Die **Fassung mit Logo** steht in `signatur.html`, dort liegt auch die
+Einbau-Anleitung für Apple Mail und Outlook. Das Logo ist in die Signatur eingebettet, es wird
+nichts nachgeladen.
+
+Die reine Textfassung unten funktioniert überall und ist die Rückfallebene, wenn ein Mailprogramm
+keine Bilder in Signaturen erlaubt.
 
 ```
 Herzliche Grüße
