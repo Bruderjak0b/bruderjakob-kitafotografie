@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>E-Mail-Vorlagen – Bruderjakob Kitafotografie</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="ci.css">
+<style>
+/* Screen document, not a print sheet: one long page instead of A4 pages. */
+body {
+  background: var(--ink-200);
+  font-size: 11pt;
+}
+.doc {
+  max-width: 210mm;
+  margin: 0 auto 10mm;
+  padding: var(--gutter);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+}
+.doc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+  padding-bottom: 6mm;
+  border-bottom: 0.3mm solid var(--ink-200);
+  margin-bottom: 8mm;
+}
+.doc-head img { height: 11mm; width: auto; }
+.doc-head span {
+  font-family: var(--font-heading);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-700);
+}
+.doc h1 { font-size: 24pt; line-height: 1.1; margin-bottom: 2mm; }
+.doc h2.part {
+  margin: 16mm 0 6mm;
+  padding-top: 6mm;
+  border-top: 0.8mm solid var(--terracotta-200);
+  color: var(--terracotta-600);
+}
+.doc h3.mail-title {
+  margin: 12mm 0 3mm;
+  padding-top: 6mm;
+  border-top: 0.3mm solid var(--ink-200);
+}
+.doc h3.mail-title:first-of-type { border-top: 0; }
+.doc a { overflow-wrap: anywhere; }
+.toc { margin-bottom: 10mm; }
+.toc ul { list-style: none; columns: 2; column-gap: 10mm; }
+.toc li { break-inside: avoid; margin-bottom: 1.2mm; font-size: 10pt; }
+.toc li.toc-part {
+  margin-top: 4mm;
+  font-family: var(--font-heading);
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.toc li.toc-part a { color: var(--ink-700); text-decoration: none; }
+.doc p { margin-bottom: 3mm; }
+.doc ul.bullets { margin: 0 0 4mm 5mm; color: var(--ink-700); }
+.doc ul.bullets li { margin-bottom: 1.5mm; }
+.doc ul.nested { margin: 1.5mm 0 2mm 4mm; }
+.doc ul.todo { list-style: none; margin: 0 0 4mm; color: var(--ink-700); }
+.doc ul.todo li {
+  position: relative;
+  padding-left: 8mm;
+  margin-bottom: 3mm;
+}
+.doc ul.todo li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.2mm;
+  width: 4mm;
+  height: 4mm;
+  border: 0.5mm solid var(--terracotta-300);
+  border-radius: 1mm;
+}
+.callout.intro { display: block; margin-bottom: 8mm; }
+.callout.intro p:last-child { margin-bottom: 0; }
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--terracotta-100);
+  color: var(--terracotta-700);
+  padding: 0.1em 0.35em;
+  border-radius: 1mm;
+}
+.subject-label { margin: 5mm 0 2mm; }
+figure.tpl {
+  position: relative;
+  margin: 0 0 6mm;
+  border: 0.3mm solid var(--ink-200);
+  border-radius: 4mm;
+  background: var(--ink-100);
+}
+figure.tpl pre {
+  margin: 0;
+  padding: 7mm 34mm 7mm 7mm;
+  font-family: var(--font-sans);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  color: var(--ink-800);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+figure.tpl--subject pre {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding-top: 5mm;
+  padding-bottom: 5mm;
+}
+button.copy {
+  position: absolute;
+  top: 4mm;
+  right: 4mm;
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  font-weight: 500;
+  color: #ffffff;
+  background: var(--terracotta-500);
+  border: 0;
+  border-radius: 1.5mm;
+  padding: 1.5mm 3mm;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+button.copy:hover { background: var(--terracotta-600); }
+button.copy[data-done="true"] { background: var(--ink-700); }
+button.copy:focus-visible,
+a:focus-visible { outline: 0.5mm solid var(--terracotta-500); outline-offset: 1mm; }
+@media (max-width: 800px) {
+  .doc { padding: 8mm 5mm; margin-bottom: 0; }
+  .toc ul { columns: 1; }
+  figure.tpl pre { padding: 12mm 5mm 5mm; }
+}
+@media print {
+  body { background: none; }
+  .doc { box-shadow: none; max-width: none; margin: 0; padding: 12mm; }
+  figure.tpl { break-inside: avoid; background: #ffffff; }
+  figure.tpl pre { padding-right: 7mm; }
+  .doc h3.mail-title { break-before: page; }
+  .toc { display: none; }
+}
+</style>
+</head>
+<body>
+
+<aside class="hint screen-only">
+  <h2>So nutzt du diese Seite</h2>
+  <p class="muted">Jede Vorlage hat einen <strong>Kopieren</strong>-Knopf: anklicken, im Mailprogramm einfügen, alle Platzhalter in eckigen Klammern ersetzen, senden. Die Datei kannst du auch drucken oder als PDF sichern (Strg/Cmd + P). Bearbeitet wird der Text in <span class="mono">email-vorlagen.md</span>, danach <span class="mono">node docs/akquise/email-vorlagen-html.mjs</span> ausführen.</p>
+</aside>
+
+<article class="doc">
+  <header class="doc-head">
+    <img src="bilder/LogoDark.svg" alt="Bruderjakob Kitafotografie">
+    <span>Vorlagen für die Korrespondenz</span>
+  </header>
+
+  <p class="eyebrow">Kitas und Eltern</p>
+  <h1 class="h1">E-Mail-Vorlagen</h1>
+
+  <nav class="toc" aria-label="Inhalt">
+    <ul>
+<li><a href="#wie-diese-vorlagen-gedacht-sind">Wie diese Vorlagen gedacht sind</a></li>
+<li><a href="#signatur">Signatur</a></li>
+<li class="toc-part"><a href="#teil-1-mails-an-die-kita">Teil 1 – Mails an die Kita</a></li>
+<li><a href="#1-nach-dem-telefonat-die-kita-hat-bereits-einen-fotografen">1. Nach dem Telefonat: Die Kita hat bereits einen Fotografen</a></li>
+<li><a href="#2-nach-dem-telefonat-der-elternbeirat-entscheidet-zum-weiterleiten">2. Nach dem Telefonat: Der Elternbeirat entscheidet (zum Weiterleiten)</a></li>
+<li><a href="#3-dankeschoen-und-terminbestaetigung">3. Dankeschön und Terminbestätigung</a></li>
+<li><a href="#4-nach-dem-besuch-dankeschoen-an-die-kita-und-bitte-um-eine-google-bewertung">4. Nach dem Besuch: Dankeschön an die Kita und Bitte um eine Google-Bewertung</a></li>
+<li class="toc-part"><a href="#teil-2-mails-an-die-eltern">Teil 2 – Mails an die Eltern</a></li>
+<li><a href="#5-die-galerie-steht-bereit">5. Die Galerie steht bereit</a></li>
+<li><a href="#6-erinnerung-die-galerie-schliesst-bald">6. Erinnerung: Die Galerie schließt bald</a></li>
+<li><a href="#7-danke-fuer-die-bestellung-und-bitte-um-eine-google-bewertung">7. Danke für die Bestellung und Bitte um eine Google-Bewertung</a></li>
+<li class="toc-part"><a href="#teil-3-weitere-mails-die-sich-lohnen">Teil 3 – Weitere Mails, die sich lohnen</a></li>
+<li><a href="#8-infomail-an-die-eltern-vor-dem-fototag">8. Infomail an die Eltern vor dem Fototag</a></li>
+<li><a href="#9-erinnerung-an-die-kita-kurz-vor-dem-fototag">9. Erinnerung an die Kita kurz vor dem Fototag</a></li>
+<li><a href="#10-wiedervorlage-im-naechsten-kita-jahr">10. Wiedervorlage im nächsten Kita-Jahr</a></li>
+<li><a href="#11-absage-oder-verschiebung-wegen-wetter">11. Absage oder Verschiebung wegen Wetter</a></li>
+<li><a href="#12-nachfototermin-fuer-kinder-die-gefehlt-haben">12. Nachfototermin für Kinder, die gefehlt haben</a></li>
+<li><a href="#13-antwort-auf-eine-anfrage-ueber-das-kontaktformular">13. Antwort auf eine Anfrage über das Kontaktformular</a></li>
+<li><a href="#14-galerie-zugang-funktioniert-nicht">14. Galerie-Zugang funktioniert nicht</a></li>
+<li><a href="#noch-zu-klaeren">Noch zu klären</a></li>
+    </ul>
+  </nav>
+
+<aside class="callout intro">
+<p class="small">Stand: 22.09.2026. Fertige Textbausteine für die Kommunikation mit Kitas und Eltern.</p>
+<p class="small">Alles in eckigen Klammern (<span class="mono">&#91;…&#93;</span>) vor dem Senden ersetzen. Wenn ein Platzhalter nicht passt,</p>
+<p class="small">lieber den Satz streichen als etwas erfinden.</p>
+</aside>
+<h3 id="wie-diese-vorlagen-gedacht-sind" class="h3 mail-title">Wie diese Vorlagen gedacht sind</h3>
+<ul class="bullets">
+<li><strong>Tonalität wie auf der Website:</strong> ruhig, konkret, Ich-Perspektive, keine Superlative, keine Emojis. Beschreiben, was passiert, statt zu verkaufen.</li>
+<li><strong>Anrede:</strong> Kitas und Elternbeiräte werden gesiezt (erster geschäftlicher Kontakt, oft mehrere Mitlesende), Eltern werden geduzt – so wie auf der Website. Wenn du mit einer Leitung bereits per du bist, einfach umstellen: „Sie/Ihnen/Ihre“ → „du/dir/eure“.</li>
+<li><strong>Zwei verschiedene Galerien nicht verwechseln:</strong>
+<ul class="bullets nested">
+<li><strong>Portfolio (öffentlich, Pixieset):</strong> <a href="https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/" target="_blank" rel="noopener noreferrer">https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/</a> Das ist die Arbeitsprobe für Kitas und Elternbeiräte. Sie steht in der Signatur und wird in den Kita-Mails aktiv verlinkt.</li>
+<li><strong>Kind-Galerie (passwortgeschützt, fotograf.de):</strong> der individuelle Zugang für Eltern nach dem Fototag. Diesen Link nie öffentlich oder in Sammelmails ohne Passwort-Hinweis streuen.</li>
+</ul></li>
+<li><strong>Betreffzeilen</strong> kurz halten und den Kita-Namen nennen, damit die Mail in der Kita wiedergefunden wird.</li>
+<li><strong>Impressumspflicht:</strong> Geschäftliche E-Mails brauchen eine Anbieterkennzeichnung. Die Signatur unten erfüllt das (Name, Anschrift, Kontaktdaten).</li>
+</ul>
+<h3 id="signatur" class="h3 mail-title">Signatur</h3>
+<p class="muted">Diese Signatur im Mailprogramm als Standard hinterlegen. Sie ist bewusst schlicht, ohne Bilder und ohne Tracking, damit sie in jedem Mailprogramm lesbar bleibt.</p>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-1">Mail kopieren</button>
+<pre id="tpl-1">Herzliche Grüße
+Marius
+
+--
+Marius Jakob · Bruderjakob Kitafotografie
+Natürliche Kitafotografie im Kreis Göppingen
+
+Ziegelstraße 15 · 73084 Salach
+Telefon &amp; WhatsApp: 0152 33934815
+kontakt@bruderjakob-kitafotografie.de
+www.bruderjakob-kitafotografie.de
+
+Portfolio ansehen: https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+Instagram: @bruderimfokus
+
+Kleinunternehmer nach § 19 UStG, daher kein Ausweis von Umsatzsteuer.</pre>
+</figure>
+<p class="muted"><strong>Kurzvariante</strong> für laufende Konversationen (zweite, dritte Antwort im selben Thread):</p>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-2">Mail kopieren</button>
+<pre id="tpl-2">Herzliche Grüße
+Marius
+
+--
+Marius Jakob · Bruderjakob Kitafotografie
+0152 33934815 · kontakt@bruderjakob-kitafotografie.de
+www.bruderjakob-kitafotografie.de</pre>
+</figure>
+<p class="muted">In den Vorlagen unten steht am Ende jeweils nur <span class="mono">&#91;Signatur&#93;</span>.</p>
+<h2 id="teil-1-mails-an-die-kita" class="h2 part">Teil 1 – Mails an die Kita</h2>
+<h3 id="1-nach-dem-telefonat-die-kita-hat-bereits-einen-fotografen" class="h3 mail-title">1. Nach dem Telefonat: Die Kita hat bereits einen Fotografen</h3>
+<p class="muted">Ziel: freundlich abschließen, nichts aufdrängen, aber als Option im Kopf bleiben. Diese Mail ist die wichtigste im ganzen Set, weil sie oft ein Jahr später zum Auftrag führt. Termin zur Wiedervorlage im Kalender eintragen (siehe Vorlage 10).</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-3">Betreff kopieren</button>
+<pre id="tpl-3">Danke für das Gespräch – Kitafotografie [Kita-Name]</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-4">Mail kopieren</button>
+<pre id="tpl-4">Guten Tag Frau/Herr [Nachname],
+
+danke, dass Sie sich heute am Telefon Zeit genommen haben.
+
+Sie arbeiten bereits mit einem Fotografen zusammen, das ist völlig in Ordnung – ich wollte mich
+trotzdem kurz mit einem Dankeschön melden und mich für den Fall bereithalten, dass sich bei Ihnen
+etwas ändert.
+
+Falls Sie irgendwann vergleichen möchten, hier ein Einblick in meine Arbeit:
+https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+
+Kurz, was bei mir anders läuft:
+- Fotografiert wird draußen im Garten, im normalen Kita-Alltag. Kein Blitz, kein Studiohintergrund.
+- Für die Einrichtung entstehen keine Kosten, und es bleibt keine Organisation bei Ihnen hängen:
+  Anmeldung, Einverständniserklärungen, Galerien und Bestellungen laufen vollständig über mich.
+- Eltern bestellen online, nach Hause geliefert. Keine Listen, kein Bargeld im Gruppenraum,
+  keine Mappen, die zurückkommen müssen.
+
+Ich melde mich gern im [Monat/Jahreszeit] noch einmal, wenn Sie Ihre Termine für das kommende
+Kita-Jahr planen. Sagen Sie einfach Bescheid, wenn Ihnen das zu viel ist – dann lasse ich es.
+
+Bis dahin wünsche ich Ihnen und Ihrem Team eine gute Zeit.
+
+[Signatur]</pre>
+</figure>
+<h3 id="2-nach-dem-telefonat-der-elternbeirat-entscheidet-zum-weiterleiten" class="h3 mail-title">2. Nach dem Telefonat: Der Elternbeirat entscheidet (zum Weiterleiten)</h3>
+<p class="muted">Ziel: Die Leitung soll die Mail mit einem Klick weiterleiten können. Deshalb ist der untere Teil so geschrieben, dass er auch für jemanden funktioniert, der nie mit mir telefoniert hat. Alles Wichtige steht im Text selbst, nicht im Anhang.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-5">Betreff kopieren</button>
+<pre id="tpl-5">Kitafotografie [Kita-Name] – Infos für den Elternbeirat (gern weiterleiten)</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-6">Mail kopieren</button>
+<pre id="tpl-6">Guten Tag Frau/Herr [Nachname],
+
+danke für das freundliche Gespräch vorhin. Wie besprochen schicke ich Ihnen alle Infos in einer
+Mail, die Sie unverändert an den Elternbeirat weiterleiten können. Ab der Linie steht alles, was
+für die Entscheidung nötig ist.
+
+Wenn dabei Fragen aufkommen, dürfen sich die Eltern jederzeit direkt bei mir melden – unter
+0152 33934815 oder kontakt@bruderjakob-kitafotografie.de. Dann bleibt das nicht an Ihnen hängen.
+
+[Signatur]
+
+--------------------------------------------------------------
+
+Guten Tag,
+
+mein Name ist Marius Jakob, ich fotografiere unter dem Namen Bruderjakob Kitafotografie im Kreis
+Göppingen. Die Leitung der [Kita-Name] hat mir angeboten, mich bei Ihnen vorzustellen, weil Sie
+über die Kitafotografie entscheiden.
+
+So sehen meine Bilder aus:
+https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+
+Wie ich fotografiere
+Ich komme früh in die Einrichtung, damit die Kinder mich in Ruhe kennenlernen können. Wir reden
+erst kurz über Lieblingsspielzeug, Alter und Namen, dann entsteht ein Einzelportrait. Danach
+spielen die Kinder frei im Garten, während ich weiter fotografiere. Gruppenbilder runden den
+Termin ab. Pro Gruppe dauert das ein bis zwei Stunden, danach läuft der Tag ganz normal weiter.
+Ich arbeite nur mit dem vorhandenen Licht und den Spielgeräten, die die Kinder ohnehin benutzen:
+kein Blitz, kein Studiohintergrund, keine aufgebaute Kulisse.
+
+Was es kostet
+Für die Einrichtung entstehen keine Kosten. Eltern zahlen erst, wenn sie die fertigen Bilder
+gesehen haben und etwas bestellen möchten. Kein Vorabgeld, keine Mindestbestellmenge. Einzelbilder
+gibt es ab 5,90 €, Pakete ab 24,90 €. Die aktuelle Übersicht steht hier:
+https://bruderjakob-kitafotografie.de/preise
+
+Wie Auswahl und Bestellung laufen
+Jedes Kind bekommt eine eigene, passwortgeschützte Online-Galerie. Den Zugang bekommen Eltern per
+E-Mail oder als Zugangskarte über die Elternpost. Ausgewählt und bestellt wird in Ruhe von zuhause,
+geliefert wird direkt nach Hause. Gedruckt wird nur, was wirklich bestellt wird.
+
+Datenschutz
+Die Abwicklung läuft über Fotograf.de, eine deutsche Plattform mit Servern in Deutschland und
+DSGVO-konformer Zahlungsabwicklung. Fotografiert wird ausschließlich, wenn die Eltern vorher
+eingewilligt haben, auch bei Gruppenfotos. Die Einverständniserklärungen laufen über mich.
+
+Was die Kita tun muss
+Sehr wenig: einen Termin nennen und einen Platz im Freien zur Verfügung stellen. Anmeldung,
+Einverständniserklärungen, Galerien, Bestellungen und Elternfragen laufen über mich.
+
+Mehr zum Ablauf: https://bruderjakob-kitafotografie.de/ablauf
+Mehr zu mir: https://bruderjakob-kitafotografie.de/ueber-mich
+
+Für Rückfragen bin ich unter 0152 33934815 (auch WhatsApp) und
+kontakt@bruderjakob-kitafotografie.de erreichbar. Gern stelle ich mich auch kurz in einer
+Elternbeiratssitzung vor, vor Ort oder online.
+
+Herzliche Grüße
+Marius Jakob
+
+Marius Jakob · Bruderjakob Kitafotografie
+Ziegelstraße 15 · 73084 Salach
+0152 33934815 · kontakt@bruderjakob-kitafotografie.de
+www.bruderjakob-kitafotografie.de</pre>
+</figure>
+<h3 id="3-dankeschoen-und-terminbestaetigung" class="h3 mail-title">3. Dankeschön und Terminbestätigung</h3>
+<p class="muted">Ziel: Zusage schriftlich festhalten und alles klären, was am Fototag sonst zwischen Tür und Angel besprochen werden müsste.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-7">Betreff kopieren</button>
+<pre id="tpl-7">Fototermin [Kita-Name] am [Datum] – Bestätigung</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-8">Mail kopieren</button>
+<pre id="tpl-8">Guten Tag Frau/Herr [Nachname],
+
+vielen Dank für Ihre Zusage, ich freue mich sehr auf den Termin bei Ihnen.
+
+Hier alles Wichtige im Überblick:
+
+Termin: [Wochentag], [Datum], ab [Uhrzeit]
+Ort: [Kita-Name], [Straße, PLZ Ort]
+Gruppen: [Anzahl] Gruppen mit ca. [Anzahl] Kindern
+Dauer: ein bis zwei Stunden pro Gruppe
+Ansprechpartner vor Ort: [Name]
+
+So läuft der Tag ab
+Ich bin etwa [15–30] Minuten vor Beginn da, damit die Kinder mich in Ruhe kennenlernen können.
+Danach fotografiere ich pro Kind ein kurzes Einzelportrait, anschließend spielen die Kinder frei
+im Garten, während ich weiter fotografiere. Zum Schluss die Gruppenbilder. Der Tagesrhythmus muss
+dafür nicht umgestellt werden.
+
+Was ich von Ihnen brauche
+- Einen Platz im Freien, gern im Garten. Alles Weitere bringe ich mit.
+- Bei Regen fotografiere ich trotzdem: Ich bringe Schirme mit, Gummistiefel sind hilfreich.
+  Nur bei Sturm oder Dauerregen sprechen wir kurzfristig über einen Ersatztermin.
+- Optional: eine Liste mit den Vornamen der Kinder. Das hilft mir beim Zuordnen der Bilder,
+  nötig ist es aber nicht.
+
+Was ich übernehme
+Anmeldung, Einverständniserklärungen, Galerien, Bestellungen und alle Elternfragen. Ihr Team soll
+damit nichts zu tun haben. Die Infos für die Eltern schicke ich Ihnen rechtzeitig vorher zu, sodass
+Sie sie nur noch über die gewohnten Wege verteilen müssen.
+
+Nach dem Fototag dauert es etwa zwei Wochen, bis die Galerien online sind.
+
+Wenn sich bei Ihnen noch etwas ändert oder Fragen offen sind, melden Sie sich jederzeit unter
+0152 33934815.
+
+[Signatur]</pre>
+</figure>
+<h3 id="4-nach-dem-besuch-dankeschoen-an-die-kita-und-bitte-um-eine-google-bewertung" class="h3 mail-title">4. Nach dem Besuch: Dankeschön an die Kita und Bitte um eine Google-Bewertung</h3>
+<p class="muted">Ziel: sich bedanken und genau einmal um eine Bewertung bitten. Nicht erinnern, nicht nachfassen. Am besten 1–3 Tage nach dem Fototag senden, wenn der Eindruck noch frisch ist.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-9">Betreff kopieren</button>
+<pre id="tpl-9">Danke für den schönen Fototag in der [Kita-Name]</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-10">Mail kopieren</button>
+<pre id="tpl-10">Guten Tag Frau/Herr [Nachname],
+
+danke für den schönen Vormittag bei Ihnen. Die Kinder haben sich sehr schnell auf mich eingelassen,
+und Ihr Team hat es mir leicht gemacht – das merkt man den Bildern später an.
+
+[Optional, ein konkreter Satz vom Tag: z. B. „Besonders gefreut hat mich, dass die
+Vorschulgruppe am Ende unbedingt noch ein gemeinsames Bild auf dem Klettergerüst wollte.“]
+
+Die Bilder bereite ich jetzt auf. In etwa zwei Wochen sind die Galerien fertig, dann bekommen Sie
+von mir die Zugangskarten bzw. Mails für die Eltern.
+
+Eine Bitte hätte ich: Wenn Sie mit dem Tag zufrieden waren, würden Sie sich zwei Minuten nehmen und
+das bei Google kurz aufschreiben? Für kleine Einrichtungen ist es die wichtigste Orientierung, wenn
+andere Kitas nach einem Fotografen suchen.
+
+Hier geht es direkt zum Bewertungsfeld: [GOOGLE-BEWERTUNGSLINK]
+
+Wenn etwas nicht gepasst hat, sagen Sie es mir bitte direkt – das ist mir lieber als eine
+freundliche Bewertung.
+
+[Signatur]</pre>
+</figure>
+<h2 id="teil-2-mails-an-die-eltern" class="h2 part">Teil 2 – Mails an die Eltern</h2>
+<p class="muted">Eltern werden geduzt. Diese Mails gehen entweder über den Mailversand von Fotograf.de oder – wenn die Kita die Adressen nicht herausgibt – als Textvorlage an die Kita, die sie über die Elternpost verteilt. In dem Fall den Hinweis „Diese Nachricht kommt über die Kita“ oben ergänzen.</p>
+<h3 id="5-die-galerie-steht-bereit" class="h3 mail-title">5. Die Galerie steht bereit</h3>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-11">Betreff kopieren</button>
+<pre id="tpl-11">Die Fotos aus der [Kita-Name] sind online</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-12">Mail kopieren</button>
+<pre id="tpl-12">Hallo,
+
+die Bilder vom Fototag in der [Kita-Name] sind fertig. Ab sofort kannst du in Ruhe von zuhause aus
+schauen, welche dir gefallen.
+
+Zur Galerie: [GALERIE-LINK]
+Zugangscode: [CODE]
+
+In der Galerie findest du nur die Bilder deines Kindes [und die Gruppenbilder]. Sie ist
+passwortgeschützt, niemand sonst kann sie sehen.
+
+Bestellen kannst du direkt online, einzelne Bilder ab 5,90 €. Beliebter sind die Pakete ab 24,90 €,
+damit lässt sich im Vergleich zur Einzelbestellung deutlich sparen. Du entscheidest frei zwischen
+Abzügen, digitalen Dateien oder beidem. Geliefert wird direkt zu dir nach Hause, in der Kita muss
+nichts abgegeben oder abgeholt werden.
+
+Wichtig: Die Galerie ist bis zum [Datum] geöffnet. Danach werden die Bilder gelöscht, eine
+Nachbestellung ist dann nicht mehr möglich.
+
+Wenn der Zugang nicht funktioniert oder du unsicher bist, welches Format zu welchem Bild passt:
+Schreib mir einfach, ich helfe gern weiter.
+
+[Signatur]</pre>
+</figure>
+<h3 id="6-erinnerung-die-galerie-schliesst-bald" class="h3 mail-title">6. Erinnerung: Die Galerie schließt bald</h3>
+<p class="muted">Etwa 7–10 Tage vor dem Ablaufdatum senden. Nur an Eltern, die noch nicht bestellt haben, falls sich das über Fotograf.de filtern lässt.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-13">Betreff kopieren</button>
+<pre id="tpl-13">Erinnerung: Die Fotos aus der [Kita-Name] sind noch bis [Datum] online</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-14">Mail kopieren</button>
+<pre id="tpl-14">Hallo,
+
+kurze Erinnerung, damit nichts verloren geht: Die Fotogalerie deines Kindes aus der [Kita-Name] ist
+noch bis zum [Datum] geöffnet. Danach werden die Bilder gelöscht, und ich kann sie auch auf Nachfrage
+nicht wiederherstellen.
+
+Zur Galerie: [GALERIE-LINK]
+Zugangscode: [CODE]
+
+Wenn du bereits bestellt hast, kannst du diese Mail einfach ignorieren – dann ist alles bei dir
+unterwegs. Falls du die Galerie noch gar nicht öffnen konntest oder der Code nicht funktioniert,
+melde dich bitte kurz bei mir. Eine Verlängerung ist im Einzelfall möglich, wenn du dich vor dem
+[Datum] meldest.
+
+[Signatur]</pre>
+</figure>
+<h3 id="7-danke-fuer-die-bestellung-und-bitte-um-eine-google-bewertung" class="h3 mail-title">7. Danke für die Bestellung und Bitte um eine Google-Bewertung</h3>
+<p class="muted">Erst senden, wenn die Bestellung angekommen sein müsste, also etwa 1–2 Wochen nach dem Versand. Vorher wirkt die Bitte hohl, weil die Bilder noch gar nicht in der Hand waren.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-15">Betreff kopieren</button>
+<pre id="tpl-15">Danke für deine Bestellung</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-16">Mail kopieren</button>
+<pre id="tpl-16">Hallo,
+
+danke, dass du bei mir bestellt hast. Deine Bilder müssten inzwischen angekommen sein – ich hoffe,
+du hast dich gefreut.
+
+Falls du zufrieden warst, hätte ich eine Bitte: Zwei Sätze bei Google helfen mir sehr. Viele
+Kita-Leitungen schauen dort nach, bevor sie sich für einen Fotografen entscheiden, und eine ehrliche
+Rückmeldung von Eltern wiegt mehr als alles, was ich selbst über meine Arbeit schreiben kann.
+
+Hier geht es direkt zum Bewertungsfeld: [GOOGLE-BEWERTUNGSLINK]
+
+Und falls etwas nicht gepasst hat, mit den Bildern oder mit dem Druck: Schreib mir bitte direkt,
+dann finden wir eine Lösung.
+
+[Signatur]</pre>
+</figure>
+<h2 id="teil-3-weitere-mails-die-sich-lohnen" class="h2 part">Teil 3 – Weitere Mails, die sich lohnen</h2>
+<p class="muted">Diese Vorlagen decken die Lücken zwischen den oberen ab. Die wichtigsten sind Nummer 8 (spart die meisten Rückfragen) und Nummer 10 (bringt die meisten Folgeaufträge).</p>
+<h3 id="8-infomail-an-die-eltern-vor-dem-fototag" class="h3 mail-title">8. Infomail an die Eltern vor dem Fototag</h3>
+<p class="muted">Geht über die Kita raus, etwa zwei bis drei Wochen vorher. Beantwortet die Fragen, die sonst beim Team landen.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-17">Betreff kopieren</button>
+<pre id="tpl-17">Fototag in der [Kita-Name] am [Datum] – die wichtigsten Infos</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-18">Mail kopieren</button>
+<pre id="tpl-18">Hallo,
+
+am [Datum] komme ich in die [Kita-Name] und fotografiere die Kinder. Mein Name ist Marius Jakob,
+ich fotografiere unter dem Namen Bruderjakob Kitafotografie.
+
+So sehen meine Bilder aus:
+https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+
+Anmeldung
+Damit dein Kind fotografiert werden darf, brauche ich deine Einwilligung. Die Anmeldung läuft
+online über [LINK/QR-CODE], bitte bis zum [Datum]. Ohne Anmeldung wird dein Kind nicht
+fotografiert, auch nicht auf Gruppenbildern.
+
+Geschwister- oder Freundschaftsfotos
+Gib das am besten gleich bei der Anmeldung mit an. Dort wirst du gefragt, ob du solche Bilder
+möchtest und wer das Geschwisterkind bzw. die Freundin oder der Freund ist.
+
+Was dein Kind anziehen sollte
+Was es mag. Getobt wird nach Herzenslust, deshalb ist Festtagskleidung eher hinderlich. Aus
+Erfahrung empfehle ich ruhige, eher gedeckte Farben: Knallige Shirts mit großen Motiven lenken den
+Blick schnell vom Gesicht weg. Bei Kleid oder Rock eine kurze Hose drunterziehen. Bei Regenwetter
+sind Gummistiefel ideal, ich bringe Schirme mit.
+
+Wie es weitergeht
+Etwa zwei Wochen nach dem Fototag bekommst du einen Zugang zu einer passwortgeschützten Galerie mit
+den Bildern deines Kindes. Erst dann entscheidest du, ob du etwas bestellen möchtest. Vorab
+entstehen keine Kosten und es gibt keine Mindestbestellmenge.
+
+Fragen dazu bitte direkt an mich, nicht ans Kita-Team: 0152 33934815 (auch WhatsApp) oder
+kontakt@bruderjakob-kitafotografie.de
+
+[Signatur]</pre>
+</figure>
+<h3 id="9-erinnerung-an-die-kita-kurz-vor-dem-fototag" class="h3 mail-title">9. Erinnerung an die Kita kurz vor dem Fototag</h3>
+<p class="muted">Drei bis sieben Tage vorher. Kurz halten.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-19">Betreff kopieren</button>
+<pre id="tpl-19">Kurze Erinnerung: Fototag am [Datum]</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-20">Mail kopieren</button>
+<pre id="tpl-20">Guten Tag Frau/Herr [Nachname],
+
+nur eine kurze Erinnerung an unseren Termin am [Wochentag], [Datum], ab [Uhrzeit].
+
+Ich bringe alles mit, brauche von Ihnen nur den Platz im Freien. Falls sich bei Ihnen kurzfristig
+etwas geändert hat – Gruppenzahl, Uhrzeit, Krankheitswelle – sagen Sie mir gern bis [Datum]
+Bescheid, dann planen wir um.
+
+[Falls die Anmeldung noch läuft: Bisher sind [Anzahl] Anmeldungen eingegangen. Wenn Sie die Eltern
+noch einmal erinnern könnten, wäre das eine große Hilfe.]
+
+Bis [Wochentag],
+
+[Signatur]</pre>
+</figure>
+<h3 id="10-wiedervorlage-im-naechsten-kita-jahr" class="h3 mail-title">10. Wiedervorlage im nächsten Kita-Jahr</h3>
+<p class="muted">An Kitas, die abgesagt haben (siehe Vorlage 1), und an Kitas, bei denen ich schon war. Am besten im Frühjahr und im Spätsommer, wenn die Jahresplanung gemacht wird.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-21">Betreff kopieren</button>
+<pre id="tpl-21">Fototermin [Kita-Jahr] in der [Kita-Name]?</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-22">Mail kopieren</button>
+<pre id="tpl-22">Guten Tag Frau/Herr [Nachname],
+
+vor [Zeitraum] haben wir schon einmal über Kitafotografie gesprochen. Ich melde mich wie
+angekündigt noch einmal, weil bei Ihnen gerade die Planung für [Kita-Jahr] anstehen dürfte.
+
+[Für Bestandskunden: Im letzten Jahr durfte ich bei Ihnen fotografieren, das hat mir viel Freude
+gemacht. Wenn Sie wieder mögen, halte ich Ihnen gern einen Termin frei.]
+
+Meine Termine für [Frühjahr/Herbst] vergebe ich ab jetzt. Wenn Sie Interesse haben, nennen Sie mir
+einfach zwei, drei Wochen, die Ihnen passen, dann finden wir etwas.
+
+Falls es bei Ihnen weiterhin nicht passt, ist das auch völlig in Ordnung. Sagen Sie kurz Bescheid,
+dann melde ich mich nicht wieder.
+
+[Signatur]</pre>
+</figure>
+<h3 id="11-absage-oder-verschiebung-wegen-wetter" class="h3 mail-title">11. Absage oder Verschiebung wegen Wetter</h3>
+<p class="muted">Am Vortag oder am Morgen. Immer zusätzlich anrufen, eine Mail allein wird am Fototag zu spät gelesen.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-23">Betreff kopieren</button>
+<pre id="tpl-23">Fototag am [Datum] – Wetterlage</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-24">Mail kopieren</button>
+<pre id="tpl-24">Guten Tag Frau/Herr [Nachname],
+
+für [Wochentag] ist [Dauerregen/Sturm/Gewitter] angekündigt. Leichten Regen halte ich für kein
+Problem, dabei entstehen oft die schönsten Bilder. Bei dieser Vorhersage würde ich den Termin aber
+lieber verschieben, damit die Kinder nicht durchnässt werden.
+
+Mein Vorschlag: [Wochentag], [Datum], zur gleichen Uhrzeit. Passt Ihnen das? Wenn nicht, nennen Sie
+mir gern zwei Alternativen.
+
+Ich rufe Sie heute Nachmittag ohnehin kurz an, damit wir das schnell klären können.
+
+[Signatur]</pre>
+</figure>
+<h3 id="12-nachfototermin-fuer-kinder-die-gefehlt-haben" class="h3 mail-title">12. Nachfototermin für Kinder, die gefehlt haben</h3>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-25">Betreff kopieren</button>
+<pre id="tpl-25">Nachfototermin für die Kinder, die am [Datum] gefehlt haben</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-26">Mail kopieren</button>
+<pre id="tpl-26">Guten Tag Frau/Herr [Nachname],
+
+am Fototag haben [Anzahl] Kinder gefehlt. Damit niemand leer ausgeht, biete ich gern einen kurzen
+Nachtermin an – dafür reicht eine knappe Stunde.
+
+Mein Vorschlag: [Wochentag], [Datum], ab [Uhrzeit]. Wenn Ihnen ein anderer Tag lieber ist, nennen
+Sie mir einfach zwei Möglichkeiten.
+
+Die Galerien der übrigen Kinder gehen davon unabhängig wie geplant am [Datum] online.
+
+[Signatur]</pre>
+</figure>
+<h3 id="13-antwort-auf-eine-anfrage-ueber-das-kontaktformular" class="h3 mail-title">13. Antwort auf eine Anfrage über das Kontaktformular</h3>
+<p class="muted">Für den Alltag: schnelle, freundliche Erstantwort innerhalb von zwei Tagen (so steht es auf der Website, das sollte auch stimmen).</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-27">Betreff kopieren</button>
+<pre id="tpl-27">Ihre Anfrage zur Kitafotografie</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-28">Mail kopieren</button>
+<pre id="tpl-28">Guten Tag [Name],
+
+danke für Ihre Nachricht und Ihr Interesse an meiner Arbeit.
+
+[Ein bis zwei Sätze konkret auf die Anfrage eingehen.]
+
+Am einfachsten klären wir alles Weitere in einem kurzen Telefonat, zehn Minuten reichen meist.
+Wann passt es Ihnen diese oder nächste Woche? Alternativ rufe ich gern zurück, sagen Sie mir
+einfach Nummer und Zeitfenster.
+
+Falls Sie vorher einen Eindruck von meinen Bildern möchten:
+https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+Ablauf und Preise stehen hier: https://bruderjakob-kitafotografie.de/ablauf und
+https://bruderjakob-kitafotografie.de/preise
+
+[Signatur]</pre>
+</figure>
+<h3 id="14-galerie-zugang-funktioniert-nicht" class="h3 mail-title">14. Galerie-Zugang funktioniert nicht</h3>
+<p class="muted">Kurzer Baustein für den häufigsten Elternsupport-Fall.</p>
+<p class="eyebrow subject-label">Betreff</p>
+<figure class="tpl tpl--subject">
+<button class="copy screen-only" type="button" data-target="tpl-29">Betreff kopieren</button>
+<pre id="tpl-29">Dein Zugang zur Fotogalerie</pre>
+</figure>
+<figure class="tpl">
+<button class="copy screen-only" type="button" data-target="tpl-30">Mail kopieren</button>
+<pre id="tpl-30">Hallo,
+
+kein Problem, das lässt sich schnell lösen. Hier ist dein Zugang noch einmal:
+
+Zur Galerie: [GALERIE-LINK]
+Zugangscode: [CODE]
+
+Zwei häufige Stolpersteine: Der Code wird manchmal mit einem Leerzeichen kopiert – bitte einmal von
+Hand eintippen. Und falls du den Link aus einer Nachricht heraus geöffnet hast, probiere ihn einmal
+direkt im Browser.
+
+Wenn es dann immer noch nicht klappt, ruf mich gern an: 0152 33934815.
+
+[Signatur]</pre>
+</figure>
+<h3 id="noch-zu-klaeren" class="h3 mail-title">Noch zu klären</h3>
+<ul class="todo">
+<li><strong>Google-Bewertungslink besorgen.</strong> Im Google-Business-Profil unter „Rezensionen → Bewertungen erhalten“ gibt es einen kurzen Link der Form <span class="mono">https://g.page/r/…</span>. Diesen in den Vorlagen 4 und 7 für <span class="mono">&#91;GOOGLE-BEWERTUNGSLINK&#93;</span> einsetzen. Erst möglich, wenn das Profil verifiziert ist.</li>
+<li><strong>Anmeldelink bzw. QR-Code von Fotograf.de</strong> für Vorlage 8 eintragen.</li>
+<li><strong>Standard-Laufzeit der Galerien festlegen</strong> (z. B. vier Wochen) und in den Vorlagen 5 und 6 konsistent verwenden. Auf der Website steht bisher keine Frist – wenn sie fest ist, gehört sie in die FAQ.</li>
+</ul>
+</article>
+
+<script>
+document.querySelectorAll("button.copy").forEach((button) => {
+  const reset = (label) => {
+    setTimeout(() => {
+      button.textContent = label;
+      button.dataset.done = "false";
+    }, 2500);
+  };
+  button.addEventListener("click", async () => {
+    const label = button.textContent;
+    const box = document.getElementById(button.dataset.target);
+    try {
+      await navigator.clipboard.writeText(box.textContent);
+      button.textContent = "Kopiert";
+      button.dataset.done = "true";
+      reset(label);
+    } catch {
+      // Some browsers block the clipboard on local files: select the text instead.
+      const range = document.createRange();
+      range.selectNodeContents(box);
+      const selection = getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      button.textContent = "Markiert, jetzt Strg/Cmd + C";
+      button.dataset.done = "true";
+      reset(label);
+    }
+  });
+});
+</script>
+</body>
+</html>
