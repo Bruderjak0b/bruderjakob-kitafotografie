@@ -9,8 +9,7 @@ import { HeroSection } from "~/components/home/hero-section";
 import { ProcessSection } from "~/components/home/process-section";
 import { PromiseSection } from "~/components/home/promise-section";
 import { ServicesSection } from "~/components/home/services-section";
-// Disabled until real testimonials are available (placeholders were invented).
-// import { TestimonialsSection } from "~/components/home/testimonials-section";
+import { TestimonialsSection } from "~/components/home/testimonials-section";
 import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/config/site";
 import { homeFaqItems } from "~/content/faq";
@@ -32,7 +31,7 @@ export default function HomePage() {
       <PromiseSection />
       <ProcessSection />
       <ApproachSection />
-      {/* <TestimonialsSection /> */}
+      <TestimonialsSection />
       <ServicesSection />
       <FaqSection
         items={homeFaqItems}

@@ -170,7 +170,6 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 
 **Noch offen:**
 
-- [ ] **Kundenstimmen sind erfunden** (Platzhalter aus dem Prototyp). Der Abschnitt ist auf der Startseite auskommentiert, Texte und Code liegen weiter in `src/content/testimonials.ts` und `src/components/home/testimonials-section.tsx`. Entweder echte Stimmen einsetzen und wieder einblenden oder beides löschen.
 - [ ] **Vercel-Plan prüfen:** Der Hobby-Plan ist auf nicht-kommerzielle Nutzung beschränkt, eine Geschäfts-Website braucht **Pro**. Davon hängt auch der AV-Vertrag (AVV) für die Datenschutzerklärung ab.
 - [ ] **Vercel-Projekt fertig einrichten:**
   1. Unter *Settings → Environments → Production* den **Production Branch auf `main`** stellen (Vercel nimmt sonst `development`, weil das der Standard-Branch auf GitHub ist).
@@ -186,6 +185,7 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 - [x] SMTP-Zugangsdaten bei Vercel hinterlegt, für Production und Preview. **Am 22.09.2026 auf einer Vorschau-Adresse echt getestet, die Mail kam an.** Lokal läuft der Versand weiter gegen Mailpit.
 - [x] Die Nummer im Impressum ist geklärt: Marius rechnet nach der **Kleinunternehmerregelung** ab und hat keine USt-IdNr. `DE446262979` ist eine **Wirtschafts-Identifikationsnummer**, die Überschrift im Impressum stimmt so. Im Code heißt das Feld `siteConfig.businessId`.
 - [x] SEO-Grundausstattung: Domain in `siteConfig.url`, `metadataBase`, Canonical-URLs, `sitemap.ts`, `robots.ts` (sperrt Vorschau-Deployments aus), Open-Graph-Bild und LocalBusiness-Markup passend zum Google-Business-Eintrag.
+- [x] Kundenstimmen: drei echte Stimmen von Eltern (23.09.2026) in `src/content/testimonials.ts`, Abschnitt auf der Startseite wieder eingeblendet.
 
 ---
 
@@ -288,7 +288,7 @@ Die verbindlichen Regeln (Next.js/React, SEO, Barrierefreiheit, Code, Bilder, Gi
 
 Alle Seiten und die SEO-Basics stehen. Was bleibt:
 
-1. Offene Punkte aus Teil A abarbeiten, sobald die Infos vorliegen (`grep -rn TODO src`). Der größte ist der auskommentierte Stimmen-Abschnitt auf der Startseite.
+1. Offene Punkte aus Teil A abarbeiten, sobald die Infos vorliegen (`grep -rn TODO src`).
 2. Erstes Release `1.0.0` vorbereiten, sobald der Mensch den Livegang freigibt: Version in `package.json`, `release/1.0.0` → `main`, Tag `v1.0.0`, Rückmerge nach `development`.
 3. Beim Anlegen neuer öffentlicher Seiten: Eintrag in `src/app/sitemap.ts` und `alternates.canonical` in der `metadata` nicht vergessen.
 
