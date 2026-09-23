@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Bruderjakob Kitafotografie",
-  url: "https://bruderjakob-kitafotografie.de",
+  url: "https://www.bruderjakob-kitafotografie.de",
   shortName: "Bruderjakob",
   description:
     "Natürliche Kitafotografie in Göppingen und Umgebung. Echte Momente aus dem Kita-Alltag – datenschutzkonform, ohne Mehraufwand für die Einrichtung.",

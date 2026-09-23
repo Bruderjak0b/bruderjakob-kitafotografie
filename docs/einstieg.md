@@ -175,8 +175,8 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 - [ ] **Vercel-Projekt fertig einrichten:**
   1. Unter *Settings → Environments → Production* den **Production Branch auf `main`** stellen (Vercel nimmt sonst `development`, weil das der Standard-Branch auf GitHub ist).
   2. Unter *Settings → Build and Deployment* prüfen, dass **Node.js 24.x** eingestellt ist (wird aus `package.json` übernommen).
-  3. ~~Domain verbinden~~ — erledigt: `bruderjakob-kitafotografie.de` und `www.…` sind dem Projekt zugeordnet, die A-Einträge zeigen auf Vercel, die Nameserver bleiben bei IONOS. **Die Nameserver nicht auf Vercel umstellen**, sonst gehen die MX-Einträge und damit der E-Mail-Empfang verloren. Die Domain zeigt bis zum ersten Release nach `main` einen 404, weil es noch kein Production-Deployment gibt.
-- [ ] **Nach dem Livegang:** Website in der [Google Search Console](https://search.google.com/search-console) anmelden und dort `https://bruderjakob-kitafotografie.de/sitemap.xml` einreichen. Im Google-Business-Eintrag (Kategorie „Fotograf“, in Verifizierung) die Website-Adresse eintragen.
+  3. ~~Domain verbinden~~ — erledigt: `bruderjakob-kitafotografie.de` und `www.…` sind dem Projekt zugeordnet, die A-Einträge zeigen auf Vercel, die Nameserver bleiben bei IONOS. **Die Nameserver nicht auf Vercel umstellen**, sonst gehen die MX-Einträge und damit der E-Mail-Empfang verloren. **Hauptadresse ist `www.bruderjakob-kitafotografie.de`** (seit 1.0.1): Vercel leitet die Adresse ohne `www` dorthin um, und `siteConfig.url` nennt Google dieselbe Adresse. Beides muss zusammenpassen.
+- [ ] **Nach dem Livegang:** Website in der [Google Search Console](https://search.google.com/search-console) anmelden und dort `https://www.bruderjakob-kitafotografie.de/sitemap.xml` einreichen. Im Google-Business-Eintrag (Kategorie „Fotograf“, in Verifizierung) die Website-Adresse eintragen.
 
 **Erledigt:**
 
