@@ -1,8 +1,16 @@
 import type { LucideIcon } from "lucide-react";
-import { CheckIcon, GiftIcon, HeartIcon, SchoolIcon } from "lucide-react";
+import {
+  ArrowRightIcon,
+  CheckIcon,
+  GiftIcon,
+  HeartIcon,
+  SchoolIcon,
+} from "lucide-react";
+import Link from "next/link";
 
 import { Container } from "~/components/layout/container";
 import { Section, SectionHeader } from "~/components/layout/section";
+import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 
 type PromiseItem = string | { text: string; details: string[] };
@@ -55,6 +63,15 @@ export function PromiseSection() {
             items={forDaycares}
             dark
           />
+        </div>
+
+        <div className="mt-12 flex justify-end">
+          <Button asChild size="lg">
+            <Link href="/kontakt">
+              Verfügbarkeit anfragen
+              <ArrowRightIcon aria-hidden />
+            </Link>
+          </Button>
         </div>
       </Container>
     </Section>
