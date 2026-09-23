@@ -11,8 +11,17 @@ import { aboutTeaser } from "~/content/about";
 export function AboutSection() {
   return (
     <Section id="ueber-mich">
-      <Container className="grid items-center gap-14 lg:grid-cols-[5fr_7fr] lg:gap-20">
-        <figure className="relative mx-auto w-full max-w-md lg:max-w-none">
+      {/* Mobile: heading, portrait, text. Desktop: portrait left, heading and
+          text stacked and vertically centered on the right. */}
+      <Container className="grid gap-y-10 lg:grid-cols-[5fr_7fr] lg:grid-rows-[1fr_auto_auto_1fr] lg:gap-x-20 lg:gap-y-0">
+        <div className="max-w-2xl lg:col-start-2 lg:row-start-2">
+          <Eyebrow className="mb-6">Über mich</Eyebrow>
+          <h2 className="text-4xl font-extrabold lg:mb-8 lg:text-h2">
+            Hallo, ich bin Marius
+          </h2>
+        </div>
+
+        <figure className="relative mx-auto mb-4 w-full max-w-md self-center lg:col-start-1 lg:row-span-4 lg:row-start-1 lg:mb-0 lg:max-w-none">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-terracotta-100">
             <Image
               src={portrait}
@@ -33,11 +42,7 @@ export function AboutSection() {
           </figcaption>
         </figure>
 
-        <div className="max-w-2xl">
-          <Eyebrow className="mb-6">Über mich</Eyebrow>
-          <h2 className="mb-8 text-4xl font-extrabold lg:text-h2">
-            Hallo, ich bin Marius
-          </h2>
+        <div className="max-w-2xl lg:col-start-2 lg:row-start-3">
           <div className="space-y-5 text-lg text-muted-foreground">
             <p className="text-xl leading-relaxed text-ink-800 lg:text-2xl lg:leading-relaxed">
               {aboutTeaser[0]}
