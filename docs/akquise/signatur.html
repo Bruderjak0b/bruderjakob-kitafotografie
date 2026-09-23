@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>E-Mail-Signatur – Bruderjakob Kitafotografie</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="ci.css">
+<style>
+body { background: var(--ink-200); font-size: 11pt; }
+.doc {
+  max-width: 210mm;
+  margin: 0 auto 10mm;
+  padding: var(--gutter);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+}
+.doc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+  padding-bottom: 6mm;
+  border-bottom: 0.3mm solid var(--ink-200);
+  margin-bottom: 8mm;
+}
+.doc-head img { height: 11mm; width: auto; }
+.doc-head span {
+  font-family: var(--font-heading);
+  font-size: 9pt;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-700);
+}
+.doc h1 { font-size: 24pt; line-height: 1.1; margin-bottom: 2mm; }
+.doc h2 { margin: 12mm 0 4mm; }
+.doc h3 { margin: 7mm 0 2mm; }
+.doc p { margin-bottom: 3mm; }
+.doc a { overflow-wrap: anywhere; }
+.doc ol,
+.doc ul { margin: 0 0 4mm 5mm; color: var(--ink-700); }
+.doc li { margin-bottom: 1.5mm; }
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--terracotta-100);
+  color: var(--terracotta-700);
+  padding: 0.1em 0.35em;
+  border-radius: 1mm;
+}
+.stage {
+  position: relative;
+  margin: 0 0 6mm;
+  padding: 8mm;
+  border: 0.3mm solid var(--ink-200);
+  border-radius: 4mm;
+  background: #ffffff;
+}
+.stage--plain { background: var(--ink-100); }
+.stage pre {
+  margin: 0;
+  padding-right: 32mm;
+  font-family: var(--font-sans);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  color: var(--ink-800);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+button.copy {
+  position: absolute;
+  top: 4mm;
+  right: 4mm;
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  font-weight: 500;
+  color: #ffffff;
+  background: var(--terracotta-500);
+  border: 0;
+  border-radius: 1.5mm;
+  padding: 1.5mm 3mm;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+button.copy:hover { background: var(--terracotta-600); }
+button.copy[data-done="true"] { background: var(--ink-700); }
+button.copy:focus-visible,
+.doc a:focus-visible { outline: 0.5mm solid var(--terracotta-500); outline-offset: 1mm; }
+@media (max-width: 800px) {
+  .doc { padding: 8mm 5mm; margin-bottom: 0; }
+  .stage { padding: 12mm 5mm 5mm; }
+  .stage pre { padding-right: 0; }
+}
+@media print {
+  body { background: none; }
+  .doc { box-shadow: none; max-width: none; margin: 0; padding: 12mm; }
+  .stage { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<aside class="hint screen-only">
+  <h2>Kurz gesagt</h2>
+  <p class="muted">Auf <strong>Signatur kopieren</strong> klicken, im Mailprogramm die Signatur-Einstellungen &ouml;ffnen und einf&uuml;gen. Das Logo steckt in der Datei selbst, es wird nichts aus dem Internet nachgeladen.</p>
+</aside>
+
+<article class="doc">
+  <header class="doc-head">
+    <img src="bilder/LogoDark.svg" alt="Bruderjakob Kitafotografie">
+    <span>Signatur mit Logo</span>
+  </header>
+
+  <p class="eyebrow">F&uuml;r alle gesch&auml;ftlichen Mails</p>
+  <h1 class="h1">E-Mail-Signatur</h1>
+  <p class="lead">So sieht die Signatur beim Empf&auml;nger aus. Sie erf&uuml;llt die Impressumspflicht f&uuml;r gesch&auml;ftliche Mails: Name, Anschrift und Kontaktweg stehen darin.</p>
+
+  <h2 class="h3">Die Signatur</h2>
+  <div class="stage">
+    <button class="copy screen-only" type="button" data-target="signatur" data-rich="true">Signatur kopieren</button>
+    <div id="signatur">
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.55;color:#2d2724;">
+<tr>
+<td style="padding:0 0 4px;font-size:13px;color:#2d2724;">Herzliche Gr&uuml;&szlig;e<br>Marius</td>
+</tr>
+<tr>
+<td style="padding:16px 0 10px;">
+<img src="data:image/png;base64,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" width="163" height="40" alt="Bruderjakob Kitafotografie" style="display:block;border:0;outline:none;text-decoration:none;">
+</td>
+</tr>
+<tr>
+<td style="padding:0 0 8px;font-size:13px;color:#190c06;">
+<strong>Marius Jakob</strong><br>
+<span style="color:#665852;">Nat&uuml;rliche Kitafotografie im Kreis G&ouml;ppingen</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0 8px;font-size:13px;color:#665852;">
+Ziegelstra&szlig;e 15 &middot; 73084 Salach<br>
+Telefon &amp; WhatsApp: <a href="tel:+4915233934815" style="color:#c5602f;text-decoration:none;">0152 33934815</a><br>
+<a href="mailto:kontakt@bruderjakob-kitafotografie.de" style="color:#c5602f;text-decoration:none;">kontakt@bruderjakob-kitafotografie.de</a><br>
+<a href="https://bruderjakob-kitafotografie.de" style="color:#c5602f;text-decoration:none;">bruderjakob-kitafotografie.de</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0 10px;font-size:13px;color:#665852;">
+<a href="https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/" style="color:#c5602f;text-decoration:none;">Portfolio ansehen</a>
+&middot;
+<a href="https://www.instagram.com/bruderimfokus/" style="color:#c5602f;text-decoration:none;">Instagram</a>
+</td>
+</tr>
+<tr>
+<td style="padding:10px 0 0;border-top:1px solid #dfdad7;font-size:11px;line-height:1.5;color:#9b8b82;">
+Kleinunternehmer nach &sect; 19 UStG, daher kein Ausweis von Umsatzsteuer.
+</td>
+</tr>
+</table>
+    </div>
+  </div>
+
+  <h2 class="h3">Kurzvariante ohne Logo</h2>
+  <p class="muted">F&uuml;r die zweite, dritte Antwort im selben Gespr&auml;ch. Das spart den Bildanhang, wenn die Signatur ohnehin schon einmal im Verlauf steht. Als zweite Signatur im Mailprogramm anlegen, zum Beispiel unter dem Namen &bdquo;Kurz&ldquo;.</p>
+  <div class="stage stage--plain">
+    <button class="copy screen-only" type="button" data-target="kurz">Kopieren</button>
+    <pre id="kurz">Herzliche Gr&uuml;&szlig;e
+Marius
+
+--
+Marius Jakob &middot; Bruderjakob Kitafotografie
+0152 33934815 &middot; kontakt@bruderjakob-kitafotografie.de
+www.bruderjakob-kitafotografie.de</pre>
+  </div>
+
+  <h2 class="h2">Einbauen</h2>
+
+  <h3 class="h3">Apple Mail</h3>
+  <ol>
+    <li>Oben auf <strong>Signatur kopieren</strong> klicken. Falls der Browser das Kopieren blockiert: Die Signatur wird stattdessen markiert, dann Cmd + C dr&uuml;cken.</li>
+    <li>In Mail: <strong>Mail &rarr; Einstellungen &rarr; Signaturen</strong>.</li>
+    <li>Links das Postfach w&auml;hlen, unten auf <strong>+</strong> klicken, die neue Signatur benennen.</li>
+    <li>Im rechten Feld den vorgeschlagenen Text l&ouml;schen und mit Cmd + V einf&uuml;gen.</li>
+    <li><strong>Wichtig:</strong> Das H&auml;kchen bei &bdquo;Immer an Standardschriftart anpassen&ldquo; entfernen, sonst wirft Mail die Formatierung weg.</li>
+    <li>Unter <strong>Signatur ausw&auml;hlen</strong> die neue Signatur als Standard setzen.</li>
+  </ol>
+
+  <h3 class="h3">Outlook f&uuml;r Mac</h3>
+  <ol>
+    <li>Signatur kopieren wie oben.</li>
+    <li><strong>Outlook &rarr; Einstellungen &rarr; Signaturen</strong>, auf <strong>+</strong> klicken.</li>
+    <li>In das Bearbeitungsfeld einf&uuml;gen und speichern.</li>
+    <li>Unter <strong>Standardsignatur</strong> f&uuml;r neue Nachrichten und f&uuml;r Antworten ausw&auml;hlen.</li>
+  </ol>
+
+  <h3 class="h3">Outlook f&uuml;r Windows</h3>
+  <ol>
+    <li>Signatur kopieren wie oben.</li>
+    <li><strong>Datei &rarr; Optionen &rarr; E-Mail &rarr; Signaturen</strong>, <strong>Neu</strong> w&auml;hlen.</li>
+    <li>Einf&uuml;gen mit Strg + V. Wenn das Logo fehlt: im Editor auf <strong>Bild einf&uuml;gen</strong> klicken und die Datei <span class="mono">bilder/logo-signatur.png</span> aus diesem Ordner w&auml;hlen.</li>
+    <li>Rechts oben f&uuml;r <strong>Neue Nachrichten</strong> und <strong>Antworten/Weiterleitungen</strong> ausw&auml;hlen.</li>
+  </ol>
+
+  <h3 class="h3">Webmail bei IONOS, Gmail und &auml;hnlichen</h3>
+  <p class="muted">Dort gibt es meist ein Feld &bdquo;Signatur&ldquo; mit einem kleinen Editor. Das Einf&uuml;gen funktioniert genauso. Manche Webmailer erlauben keine eingebetteten Bilder, dann bleibt das Logo leer. In dem Fall die Kurzvariante ohne Logo nehmen.</p>
+
+  <h2 class="h2">Gut zu wissen</h2>
+  <ul>
+    <li><strong>Das Logo h&auml;ngt als kleiner Anhang an jeder Mail</strong> (rund 12 KB). Manche Programme zeigen deshalb eine B&uuml;roklammer an der Nachricht. Das ist normal und l&auml;sst sich bei eingebetteten Bildern nicht vermeiden.</li>
+    <li><strong>Einige Empf&auml;nger sehen das Logo erst nach einem Klick auf &bdquo;Bilder laden&ldquo;.</strong> Alle wichtigen Angaben stehen deshalb als Text darunter, nicht im Bild.</li>
+    <li><strong>Nichts wird nachgeladen.</strong> Das Logo steckt direkt in der Signatur, es gibt keinen externen Aufruf und damit kein Tracking der Empf&auml;nger.</li>
+    <li><strong>Keine Telefonnummer doppelt.</strong> Wenn du in einer Mail schon eine Nummer nennst, reicht die Signatur darunter.</li>
+    <li><strong>Antwortverl&auml;ufe:</strong> Bei langen Verl&auml;ufen die Kurzvariante nehmen, sonst sammeln sich mehrere Logos in einer Mail.</li>
+  </ul>
+
+  <h2 class="h2">&Auml;ndern</h2>
+  <p class="muted">Adresse, Nummer oder Links &auml;ndern sich? Diese Datei bearbeiten (<span class="mono">signatur.html</span>), die Angaben stehen im Block direkt unter &bdquo;Die Signatur&ldquo;. Das Logo liegt als <span class="mono">bilder/logo-signatur.png</span> daneben und ist zus&auml;tzlich in der Datei eingebettet. Die Kontaktdaten der Website stehen in <span class="mono">src/config/site.ts</span> und m&uuml;ssen hier von Hand nachgezogen werden.</p>
+</article>
+
+<script>
+document.querySelectorAll("button.copy").forEach((button) => {
+  const original = button.textContent;
+  const reset = () => {
+    setTimeout(() => {
+      button.textContent = original;
+      button.dataset.done = "false";
+    }, 2500);
+  };
+  const select = (node) => {
+    const range = document.createRange();
+    range.selectNodeContents(node);
+    const selection = getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  };
+  button.addEventListener("click", async () => {
+    const node = document.getElementById(button.dataset.target);
+    const rich = button.dataset.rich === "true";
+    try {
+      if (rich) {
+        // Keep the formatting: mail clients need the HTML flavour.
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([node.innerHTML], { type: "text/html" }),
+            "text/plain": new Blob([node.innerText], { type: "text/plain" }),
+          }),
+        ]);
+      } else {
+        await navigator.clipboard.writeText(node.innerText);
+      }
+      button.textContent = "Kopiert";
+      button.dataset.done = "true";
+      reset();
+    } catch {
+      // Some browsers block the clipboard on local files: select the text instead.
+      select(node);
+      button.textContent = "Markiert, jetzt Strg/Cmd + C";
+      button.dataset.done = "true";
+      reset();
+    }
+  });
+});
+</script>
+</body>
+</html>

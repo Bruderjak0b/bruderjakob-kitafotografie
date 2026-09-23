@@ -209,24 +209,6 @@ strong {
   margin-top: 0;
 }
 
-/* A .split whose columns should end flush at the bottom. */
-.split--even {
-  align-items: stretch;
-}
-
-/* The image fills the row height set by the taller text column instead of
-    stretching the row to its own intrinsic height. */
-.split--even .figure {
-  position: relative;
-  aspect-ratio: auto;
-  min-height: 42mm;
-}
-
-.split--even .figure img {
-  position: absolute;
-  inset: 0;
-}
-
 .section-head {
   margin-bottom: 6mm;
 }
@@ -339,11 +321,14 @@ strong {
   margin-top: auto;
   padding-top: 8mm;
   border-top: 1px solid rgb(255 255 255 / 0.18);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3mm 8mm;
   font-size: 9.5pt;
   color: var(--terracotta-100);
+}
+
+.cover__name {
+  margin-bottom: 3mm;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .cover__contact strong {
@@ -370,6 +355,24 @@ strong {
   grid-template-columns: 62mm 1fr;
   gap: 9mm;
   align-items: start;
+}
+
+/* A .split whose columns should end flush at the bottom. */
+.split--even {
+  align-items: stretch;
+}
+
+/* The image fills the row height set by the taller text column instead of
+    stretching the row to its own intrinsic height. */
+.split--even .figure {
+  position: relative;
+  aspect-ratio: auto;
+  min-height: 42mm;
+}
+
+.split--even .figure img {
+  position: absolute;
+  inset: 0;
 }
 
 .card {
@@ -427,6 +430,50 @@ strong {
 
 .page--warm .callout {
   background: #ffffff;
+}
+
+/* --- Contact details with icons ---------------------------------------- */
+
+.icon-list {
+  list-style: none;
+  display: grid;
+  gap: 2.5mm;
+}
+
+.icon-list li,
+.icon-row > span {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+}
+
+/* Inside the narrower contact cards the address needs to stay on one line. */
+.card .icon-list {
+  font-size: 9.5pt;
+}
+
+.icon-list svg,
+.icon-row svg {
+  width: 4.2mm;
+  height: 4.2mm;
+  flex: none;
+  color: var(--terracotta-500);
+}
+
+.page--dark .icon-list svg,
+.card--dark .icon-list svg,
+.cover .icon-row svg {
+  color: var(--terracotta-200);
+}
+
+/* Phone, mail and website side by side on a single line. */
+.icon-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 5mm;
+  white-space: nowrap;
+  font-size: 8.5pt;
 }
 
 /* --- Lists ------------------------------------------------------------- */

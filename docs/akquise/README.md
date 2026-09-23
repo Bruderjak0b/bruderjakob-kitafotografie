@@ -11,8 +11,10 @@ ohne Next.js, ohne Build. Öffnen, anschauen, als PDF speichern.
 | `email-vorlagen.html` | 14 E-Mail-Vorlagen für Kitas und Eltern, mit Kopieren-Knopf je Vorlage | – |
 | `email-vorlagen.md` | Quelltext der E-Mail-Vorlagen, hier werden die Texte bearbeitet | – |
 | `email-vorlagen-html.mjs` | Baut aus der `.md` die `.html` | – |
+| `signatur.html` | E-Mail-Signatur mit Logo zum Kopieren, plus Anleitung für Apple Mail und Outlook | – |
 | `ci.css` | Gemeinsames Stylesheet mit den Design-Tokens der Website | – |
 | `bilder/` | Verkleinerte Fotos, Logos und der QR-Code für den Druck | – |
+| `pdf/` | Die fertigen PDFs zum Verschicken (werden erzeugt, nicht in Git) | – |
 
 ## Anschauen
 
@@ -38,16 +40,34 @@ node docs/akquise/email-vorlagen-html.mjs
 Dann http://localhost:4500/email-vorlagen.html öffnen. Jede Vorlage hat einen
 Kopieren-Knopf, der den Text in die Zwischenablage legt.
 
+## Signatur einbauen
+
+http://localhost:4500/signatur.html öffnen und der Anleitung dort folgen. Das Logo ist als
+Base64-Bild in die Signatur eingebettet, damit beim Empfänger nichts nachgeladen wird. Dieselbe
+Grafik liegt als `bilder/logo-signatur.png` (434 × 108 px) daneben, falls Outlook sie von Hand
+braucht. Erzeugt wurde sie aus `bilder/LogoDark.svg`; wenn sich das Logo ändert, muss sie neu
+exportiert und in `signatur.html` ausgetauscht werden.
+
 ## PDF erzeugen
 
-Im Browser **Drucken** (Strg/Cmd + P) und einstellen:
+Der einfache Weg, ein Befehl für beide Dokumente:
 
-- Ziel: **Als PDF sichern**
-- Papierformat: **A4**
-- Ränder: **keine** (die Seiten bringen ihren eigenen Rand mit)
-- **Hintergrundgrafiken** aktivieren, sonst fehlen Farbflächen und Fotos
+```bash
+./scripts/akquise-pdf.sh
+```
 
-Der Hinweiskasten oben auf der Seite wird nicht mitgedruckt.
+Das legt `pdf/akquise-mappe.pdf` und `pdf/elternbrief-und-faq.pdf` an: A4, randlos,
+mit allen Farbflächen und Fotos. Dafür wird Google Chrome im Hintergrund gestartet,
+ohne dass ein Fenster aufgeht und ohne das eigene Chrome-Profil anzufassen. Nach jeder
+Textänderung am HTML den Befehl erneut laufen lassen.
+
+Die PDFs liegen bewusst **nicht in Git**: Sie entstehen jedes Mal neu aus dem HTML und
+wären als mehrere Megabyte große Dateien nur Ballast in der Versionsverwaltung. Das HTML
+ist die Quelle, das PDF das Ergebnis.
+
+**Von Hand geht es auch:** Datei im Browser öffnen, **Drucken** (Strg/Cmd + P), Ziel
+**Als PDF sichern**, Papierformat **A4**, Ränder **keine**, **Hintergrundgrafiken**
+aktivieren. Der Hinweiskasten oben auf der Seite wird nicht mitgedruckt.
 
 ## QR-Code
 
@@ -67,7 +87,6 @@ den neuen Code einmal mit dem Handy scannen.
 
 Im Quelltext als `TODO Marius` markiert:
 
-- Prüfen, ob das erweiterte Führungszeugnis schon vorliegt oder nur beantragt ist
 - Google-Bewertungslink (`https://g.page/r/…`) für die E-Mail-Vorlagen 4 und 7
 - Anmeldelink bzw. QR-Code von Fotograf.de für E-Mail-Vorlage 8
 - Feste Laufzeit der Galerien festlegen (E-Mail-Vorlagen 5 und 6)

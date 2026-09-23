@@ -1,0 +1,3 @@
+# Generated from the HTML next door by scripts/akquise-pdf.sh.
+# Not tracked: they are build output and several megabytes each.
+*.pdf
