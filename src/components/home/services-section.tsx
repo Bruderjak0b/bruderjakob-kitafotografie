@@ -2,9 +2,9 @@ import { ArrowUpRightIcon, ClockIcon, ImagesIcon, TagIcon } from "lucide-react";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 
+import babyBellyImage from "~/assets/images/babybelly.jpg";
 import familyImage from "~/assets/images/familienshooting.jpg";
 import weddingImage from "~/assets/images/hochzeit.jpg";
-import coupleImage from "~/assets/images/paarshooting.jpg";
 import { Container } from "~/components/layout/container";
 import { Section, SectionHeader } from "~/components/layout/section";
 import { Button } from "~/components/ui/button";
@@ -80,15 +80,16 @@ export function ServicesSection() {
           </article>
 
           <article className="flex flex-col overflow-hidden rounded-3xl bg-ink-800 text-white">
-            <div className="grid h-72 grid-cols-2 grid-rows-2 gap-1.5 sm:h-96 lg:h-[26rem]">
+            <div className="grid h-72 grid-cols-2 grid-rows-2 gap-1.5 sm:h-96 lg:h-[26rem] lg:grid-rows-[3fr_2fr]">
               <GalleryImage
                 src={familyImage}
                 alt="Kind läuft beim Familienshooting auf seine Eltern zu"
                 className="row-span-2"
               />
               <GalleryImage
-                src={coupleImage}
-                alt="Paar umarmt sich bei einem Paarshooting"
+                src={babyBellyImage}
+                alt="Plüschschildkröte liegt auf dem Babybauch einer Schwangeren"
+                imageClassName="object-[50%_75%]"
               />
               <GalleryImage src={weddingImage} alt="Hochzeitspaar" />
             </div>
@@ -125,10 +126,13 @@ function GalleryImage({
   src,
   alt,
   className,
+  imageClassName,
 }: {
   src: StaticImageData;
   alt: string;
   className?: string;
+  // Shifts the crop for photos whose subject is off-center, e.g. portrait shots
+  imageClassName?: string;
 }) {
   return (
     <div className={cn("relative overflow-hidden", className)}>
@@ -138,7 +142,7 @@ function GalleryImage({
         fill
         placeholder="blur"
         sizes="(min-width: 1440px) 330px, (min-width: 1024px) 23vw, 60vw"
-        className="object-cover"
+        className={cn("object-cover", imageClassName)}
       />
     </div>
   );
