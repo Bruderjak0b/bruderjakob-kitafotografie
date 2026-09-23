@@ -81,7 +81,7 @@ Das Repo folgt dem **Git-Flow-Modell** (Vincent Driessen). Halte dich **automati
 | `feature/<kurzname>` | Eine neue Funktion oder Seite, z. B. `feature/seite-ablauf` | `development` | `development` |
 | `release/<version>` | Release vorbereiten, z. B. `release/1.0.0`. Nur noch Bugfixes, Version, letzte Texte. | `development` | `main` **und** `development` |
 | `hotfix/<version>` | Dringender Fehler auf der Live-Website, z. B. `hotfix/1.0.1` | `main` | `main` **und** `development` (bzw. offenes `release/*`) |
-| `kotti` | Sonderfall: Design-Vorschlag eines Kollegen, außerhalb des Flows. Nicht ungefragt mergen oder cherry-picken, der Mensch entscheidet. | – | – |
+| `kotti` | Sonderfall: Design-Vorschlag eines Kollegen, außerhalb des Flows. Am 19.09.2026 nach `development` übernommen, der Branch ruht seitdem. Nicht mehr darauf entwickeln. | – | – |
 
 ### Regeln
 
@@ -124,7 +124,7 @@ Regeln:
    sizes="(min-width: 1408px) 420px, (min-width: 768px) 33vw, 100vw"
    ```
    Die Pixeldichte (Retina) rechnet der Browser selbst drauf. Nicht manuell verdoppeln.
-3. **`object-cover` beachten:** Wird ein Bild in einen Container mit anderem Seitenverhältnis beschnitten, ist die gerenderte Breite größer als der Container. Beispiel: Querformat 3:2 in einem 375×640px hohen Hero wird 960px breit gerendert (640 × 1,5), also `sizes="(min-width: 960px) 100vw, 960px"`, nicht `100vw`.
+3. **`object-cover` beachten:** Wird ein Bild in einen Container mit anderem Seitenverhältnis beschnitten, ist die gerenderte Breite größer als der Container. Beispiel: Querformat 3:2 in einem 375×720px hohen Hero wird 1080px breit gerendert (720 × 1,5), also `sizes="(min-width: 1080px) 100vw, 1080px"`, nicht `100vw`.
 4. Lieber leicht zu groß als zu klein schätzen (unscharf ist schlimmer als 20 % mehr Bytes), aber nie pauschal `100vw` für Bilder, die nicht bildschirmbreit sind.
 5. Nur das LCP-Bild (meist Hero) bekommt `loading="eager" fetchPriority="high"`. `priority` ist in Next 16 deprecated.
 6. Quelldateien max. ca. 2400px breit ablegen. Größere Originale vorher verkleinern.

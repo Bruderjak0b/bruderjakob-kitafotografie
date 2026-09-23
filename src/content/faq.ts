@@ -1,12 +1,14 @@
 export type FaqItem = {
   question: string;
   answer: string;
+  /** Also shown in the short FAQ teaser on the home page. */
+  onHome?: boolean;
 };
 
-// TODO: Preise in "Was kosten die Fotos?" final festlegen (X € / Y €)
 export const faqItems: FaqItem[] = [
   {
     question: "Sind Kindergartenfotos DSGVO-konform?",
+    onHome: true,
     answer:
       "Datenschutz ist mir besonders wichtig, gerade wenn es um Kinder geht. Deshalb arbeite ich ausschließlich über Fotograf.de, eine deutsche Plattform mit Servern in Deutschland, sicherer Zahlungsabwicklung und vollständiger DSGVO-Konformität. Fotografiert wird grundsätzlich nur, wenn die Eltern ihr Einverständnis gegeben haben, das gilt auch für Gruppenfotos. Einrichtungen und Eltern müssen sich um den Datenschutz also keine Gedanken machen.",
   },
@@ -17,13 +19,15 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Was passiert bei Regen?",
+    onHome: true,
     answer:
       "Auch bei Regenwetter entstehen tolle Fotos! Im echten Kita-Alltag scheint schließlich auch nicht immer die Sonne. Solange es nicht zu stark regnet oder stürmt, bringe ich Regenschirme mit und bitte die Kinder, ihre Gummistiefel anzuziehen. Am liebsten fotografiere ich nämlich draußen.",
   },
   {
     question: "Was kosten die Fotos?",
+    onHome: true,
     answer:
-      "Für die Einrichtung entstehen keine Kosten. Eltern zahlen erst, wenn sie die fertigen Bilder gesehen haben und etwas bestellen möchten – kein Vorabgeld, keine Mindestbestellmenge. Einzelne Bilder könnt ihr schon ab X € kaufen. Die Pakete starten ab Y €.",
+      "Für die Einrichtung entstehen keine Kosten. Eltern zahlen erst, wenn sie die fertigen Bilder gesehen haben und etwas bestellen möchten – kein Vorabgeld, keine Mindestbestellmenge. Einzelne Bilder könnt ihr schon ab 5,90 € kaufen. Die Pakete starten ab 24,90 €.",
   },
   {
     question: "Wie lange dauert es, bis unsere Fotos verfügbar sind?",
@@ -36,3 +40,6 @@ export const faqItems: FaqItem[] = [
       "Klar, Geschwisterfotos sind bei mir kein Problem! Meldet das am besten gleich bei der Online-Registrierung mit an, wenn ihr eure Kinder für den Fototag anmeldet. Dort werdet ihr gefragt, ob ihr Geschwister- oder Freund:innenfotos möchtet und wer das Geschwisterkind bzw. die Freundin oder der Freund ist.",
   },
 ];
+
+/** Short selection for the teaser on the home page. */
+export const homeFaqItems: FaqItem[] = faqItems.filter((item) => item.onHome);

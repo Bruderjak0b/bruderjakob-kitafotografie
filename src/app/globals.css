@@ -25,16 +25,18 @@
   --color-terracotta-800: #4a2412;
 
   /* Type scale (desktop values from the design system) */
+  --text-display: 4.25rem;
+  --text-display--line-height: 1.04;
   --text-h1: 3rem;
-  --text-h1--line-height: 1.15;
-  --text-h2: 2.0625rem;
-  --text-h2--line-height: 1.2;
-  --text-h3: 1.75rem;
+  --text-h1--line-height: 1.1;
+  --text-h2: 2.75rem;
+  --text-h2--line-height: 1.1;
+  --text-h3: 1.625rem;
   --text-h3--line-height: 1.25;
   --text-label: 1.1875rem;
   --text-label--line-height: 1.3;
 
-  --spacing-section: 7.5rem;
+  --spacing-section: 8rem;
 
   --shadow-card: 0 1px 2px rgb(25 12 6 / 0.06), 0 8px 24px rgb(25 12 6 / 0.08);
 }
@@ -101,7 +103,14 @@
   h2,
   h3,
   h4 {
-    @apply font-heading text-balance;
+    @apply font-heading tracking-tight text-balance;
+  }
+  p {
+    @apply text-pretty;
+  }
+  /* Anchor targets (e.g. /#faq) should not hide behind the top edge. */
+  [id] {
+    scroll-margin-top: 6rem;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {

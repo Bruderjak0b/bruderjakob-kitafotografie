@@ -1,6 +1,6 @@
 # Einstieg ins Projekt: Bruderjakob Kitafotografie
 
-> Stand: 17.09.2026. Dieses Dokument hat zwei Teile:
+> Stand: 22.09.2026. Dieses Dokument hat zwei Teile:
 > **Teil A** ist für dich als Mensch: was das Projekt ist, wie du es startest und wie du mit Claude Code daran arbeitest.
 > **Teil B** ist für deinen AI-Agent (Claude Code): technische Regeln, Fallstricke und offene Aufgaben.
 >
@@ -12,7 +12,7 @@
 
 ### Worum geht's?
 
-Das ist die neue Website für Bruderjakob Kitafotografie. Sie wurde auf Basis eines Prototyps aus Claude Design gebaut. Fertig ist bisher die **Startseite**. Header, Footer, Farben, Schriften und Grundbausteine sind so angelegt, dass die weiteren Seiten (Über mich, Ablauf, Preise, Kontakt, Impressum, Datenschutz) darauf aufbauen können.
+Das ist die neue Website für Bruderjakob Kitafotografie. Sie wurde auf Basis eines Prototyps aus Claude Design gebaut. **Alle Seiten stehen**: Startseite, Über mich, Ablauf, Preise, Kontakt (mit Formular), Impressum und Datenschutz. Was vor dem Livegang noch fehlt, steht weiter unten unter „Offene Punkte vor dem Livegang“.
 
 Die Technik in einfachen Worten:
 
@@ -56,7 +56,7 @@ Das Projekt nutzt **nvm** (Node Version Manager). nvm installiert genau die Node
    ```bash
    pnpm install
    ```
-6. **Den Prototyp-Ordner besorgen:** Der Ordner `prototype/` ist absichtlich *nicht* im Git. Er enthält die Entwürfe aus Claude Design, Screenshots aller geplanten Seiten und die Original-Fotos. Lass ihn dir separat schicken und leg ihn als `prototype/` in den Projektordner. Er ist die wichtigste Vorlage für die noch fehlenden Seiten.
+6. **Den Prototyp-Ordner besorgen:** Der Ordner `prototype/` ist absichtlich *nicht* im Git. Er enthält die Entwürfe aus Claude Design, Screenshots aller geplanten Seiten und die Original-Fotos. Lass ihn dir separat schicken und leg ihn als `prototype/` in den Projektordner. Er ist die Vorlage, an der sich die gebauten Seiten orientieren.
 
 ### Website lokal starten
 
@@ -84,12 +84,52 @@ pnpm build
 ```
 macht dieselben Prüfungen und baut danach die Website so, wie sie später live geht. **Genau das passiert auch bei Vercel.** Läuft es bei dir durch, klappt auch das Deployment.
 
+### E-Mails testen mit Mailpit
+
+Das Kontaktformular verschickt echte E-Mails über SMTP. Damit beim Ausprobieren niemand Post bekommt, läuft lokal **Mailpit**: ein kleiner Mailserver, der jede Nachricht annimmt, aber **nichts nach außen schickt**. Stattdessen sammelt er alles und zeigt es in einem Postfach im Browser.
+
+Einmalig installiert (schon erledigt):
+
+```bash
+brew install mailpit
+```
+
+Starten, sodass er auch nach einem Neustart des Macs wieder läuft:
+
+```bash
+brew services start mailpit
+```
+
+Danach:
+
+- **Postfach ansehen:** http://localhost:8025 im Browser öffnen. Jede über das Formular verschickte Nachricht taucht dort sofort auf, mit Absender, Empfänger, Betreff und Text.
+- **Stoppen:** `brew services stop mailpit`
+- **Läuft er?** `brew services list` zeigt den Status.
+
+Wenn du das Formular auf http://localhost:3000/kontakt absendest und in Mailpit nichts ankommt, läuft Mailpit vermutlich nicht.
+
+### E-Mail-Einstellungen (`.env.local`)
+
+Die Zugangsdaten für den Mailversand stehen in `.env.local`. Diese Datei ist **nicht im Git** und darf es auch nie sein.
+
+| Variable | Lokal (Mailpit) | Später live |
+|---|---|---|
+| `SMTP_HOST` | `localhost` | Mailserver deines Anbieters |
+| `SMTP_PORT` | `1025` | meist `587` |
+| `SMTP_SECURE` | `false` | `false` bei Port 587, `true` bei Port 465 |
+| `SMTP_USER` | leer | Benutzername des Postfachs |
+| `SMTP_PASSWORD` | leer | Passwort des Postfachs |
+| `MAIL_FROM` | beliebig | Absenderadresse, muss zu deiner Domain gehören |
+| `MAIL_TO` | beliebig | Adresse, an die die Anfragen gehen sollen |
+
+Für den Livebetrieb müssen dieselben Variablen bei **Vercel** unter *Settings → Environment Variables* eingetragen werden, sonst kann die Live-Website keine Mails verschicken. Das ist bereits erledigt, für Production und Preview.
+
 ### Veröffentlichen mit Vercel
 
 Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verknüpft, es gibt keine eigenen Deploy-Skripte.
 
 - **Push auf `main`** → Vercel baut und veröffentlicht die Live-Website. `main` ist der **Production Branch** und ändert sich nur über Releases und Hotfixes (Git Flow).
-- **Push auf jeden anderen Branch** (z. B. `development`, `kotti`) → Vercel baut eine **Vorschau** mit eigener Adresse. Die Adresse steht im Vercel-Dashboard und bei GitHub am Commit. Vorschauen werden von Google nicht indexiert.
+- **Push auf jeden anderen Branch** (z. B. `development`, `kotti`) → Vercel baut eine **Vorschau** mit eigener Adresse. Die Adresse steht im Vercel-Dashboard und bei GitHub am Commit. Vorschauen sperrt `src/app/robots.ts` für Google, damit sie nicht im Index landen.
 - **Schlägt der Build fehl** (Formatierung, Code-Regeln, Typfehler oder Build-Fehler), wird nichts veröffentlicht. Die Live-Website bleibt auf dem letzten funktionierenden Stand. Die Fehlermeldung steht im Vercel-Dashboard unter dem Deployment. Gib sie Claude Code zum Beheben.
 
 **Alternative ohne Vercel:** Die Website lässt sich auch als reine HTML/CSS/JS-Dateien bei einem normalen Webhoster betreiben. Das ist getestet, aber nicht umgesetzt, weil es Umbauten braucht und ein Kontaktformular dann einen externen Dienst benötigt. Details: [statischer-export.md](statischer-export.md).
@@ -109,7 +149,7 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
   - `hotfix/…`: für dringende Fehler auf der Live-Website, direkt ausgehend von `main`.
 
   Was du sagen kannst: *„Committe das“*, *„Übernimm das Feature nach development“*, *„Veröffentliche den aktuellen Stand“*, *„Auf der Live-Seite ist ein Fehler, mach einen Hotfix“*. Commits, Merges und Veröffentlichungen passieren **nur, wenn du darum bittest**. So kannst du jederzeit zurück.
-  - `kotti`: ein **Design-Vorschlag** deines Kollegen (feinere Abschnitte, neuer Sticky-Header, breiteres Layout). Er ist bewusst nicht übernommen. Anschauen mit *„Wechsle auf den Branch kotti und starte den Dev-Server“*. Ob du ihn ganz, teilweise oder gar nicht übernimmst, entscheidest du.
+  - `kotti`: der **Design-Vorschlag** deines Kollegen (feinere Abschnitte, Sticky-Header, breiteres Layout). Am 19.09.2026 nach `development` übernommen, sein Stand ist jetzt der normale Stand der Website. Der Branch bleibt als Nachweis liegen, es wird nicht mehr darauf gearbeitet.
 - **Bei Unsicherheit fragen:** *„Erklär mir, was du geändert hast und warum.“* Das ist ausdrücklich erwünscht.
 
 ### Wo ändere ich was? (Kurzübersicht)
@@ -128,22 +168,39 @@ Die Website wird bei Vercel gehostet. Vercel ist direkt mit dem GitHub-Repo verk
 
 ### Offene Punkte vor dem Livegang
 
-- [ ] **Kundenstimmen sind erfunden** (Platzhalter aus dem Prototyp) → durch echte ersetzen oder den Abschnitt entfernen.
-- [ ] FAQ „Was kosten die Fotos?“ enthält noch **„X €“ und „Y €“**.
-- [ ] Links zu **Bruderimfokus** und zum **Onlineshop** fehlen (stehen auf `#` in `src/config/site.ts`).
-- [ ] Unterseiten fehlen noch: `/ueber-mich`, `/ablauf`, `/preise`, `/kontakt`, `/impressum`, `/datenschutz`.
-- [ ] Kontaktformular auf `/kontakt` inkl. E-Mail-Versand (Anbieter muss noch gewählt werden).
-- [ ] Ein eigenes Favicon, falls gewünscht (aktuell das Faultier).
-- [ ] **Vercel-Projekt anlegen** (einmalig):
-  1. Bei Vercel „Add New → Project“, das GitHub-Repo importieren.
-  2. Framework „Next.js“ wird erkannt. **Build-, Install- und Output-Einstellungen nicht überschreiben.** Vercel nimmt automatisch `pnpm install` und das `build`-Skript aus `package.json`.
-  3. Nach dem Import unter *Settings → Environments → Production* den **Production Branch auf `main`** stellen (Vercel nimmt sonst `development`, weil das der Standard-Branch auf GitHub ist).
-  4. Unter *Settings → Build and Deployment* prüfen, dass **Node.js 24.x** eingestellt ist (wird aus `package.json` übernommen).
-  5. Eigene Domain unter *Settings → Domains* verbinden, danach `metadataBase` im Code setzen lassen.
+**Noch offen:**
+
+- [ ] **Kundenstimmen sind erfunden** (Platzhalter aus dem Prototyp). Der Abschnitt ist auf der Startseite auskommentiert, Texte und Code liegen weiter in `src/content/testimonials.ts` und `src/components/home/testimonials-section.tsx`. Entweder echte Stimmen einsetzen und wieder einblenden oder beides löschen.
+- [ ] **Vercel-Plan prüfen:** Der Hobby-Plan ist auf nicht-kommerzielle Nutzung beschränkt, eine Geschäfts-Website braucht **Pro**. Davon hängt auch der AV-Vertrag (AVV) für die Datenschutzerklärung ab.
+- [ ] **Vercel-Projekt fertig einrichten:**
+  1. Unter *Settings → Environments → Production* den **Production Branch auf `main`** stellen (Vercel nimmt sonst `development`, weil das der Standard-Branch auf GitHub ist).
+  2. Unter *Settings → Build and Deployment* prüfen, dass **Node.js 24.x** eingestellt ist (wird aus `package.json` übernommen).
+  3. ~~Domain verbinden~~ — erledigt: `bruderjakob-kitafotografie.de` und `www.…` sind dem Projekt zugeordnet, die A-Einträge zeigen auf Vercel, die Nameserver bleiben bei IONOS. **Die Nameserver nicht auf Vercel umstellen**, sonst gehen die MX-Einträge und damit der E-Mail-Empfang verloren. Die Domain zeigt bis zum ersten Release nach `main` einen 404, weil es noch kein Production-Deployment gibt.
+- [ ] **Nach dem Livegang:** Website in der [Google Search Console](https://search.google.com/search-console) anmelden und dort `https://bruderjakob-kitafotografie.de/sitemap.xml` einreichen. Im Google-Business-Eintrag (Kategorie „Fotograf“, in Verifizierung) die Website-Adresse eintragen.
+
+**Erledigt:**
+
+- [x] Unterseiten `/impressum` und `/datenschutz` sind gebaut (Texte aus dem e-recht24-Generator).
+- [x] Datenschutz-Häkchen im Kontaktformular verlinkt auf `/datenschutz` (öffnet in neuem Tab, damit das Formular erhalten bleibt).
+- [x] Links zu **Bruderimfokus** (Instagram) und zum **Onlineshop** (fotograf.de) sind in `src/config/site.ts` eingetragen.
+- [x] SMTP-Zugangsdaten bei Vercel hinterlegt, für Production und Preview. **Am 22.09.2026 auf einer Vorschau-Adresse echt getestet, die Mail kam an.** Lokal läuft der Versand weiter gegen Mailpit.
+- [x] Die Nummer im Impressum ist geklärt: Marius rechnet nach der **Kleinunternehmerregelung** ab und hat keine USt-IdNr. `DE446262979` ist eine **Wirtschafts-Identifikationsnummer**, die Überschrift im Impressum stimmt so. Im Code heißt das Feld `siteConfig.businessId`.
+- [x] SEO-Grundausstattung: Domain in `siteConfig.url`, `metadataBase`, Canonical-URLs, `sitemap.ts`, `robots.ts` (sperrt Vorschau-Deployments aus), Open-Graph-Bild und LocalBusiness-Markup passend zum Google-Business-Eintrag.
 
 ---
 
 ## Teil B – Für den AI-Agent
+
+### Aufbau der Startseite (Stand nach dem kotti-Design)
+
+Der Design-Vorschlag von `kotti` ist am 19.09.2026 nach `development` übernommen worden und damit der verbindliche Stand. Neue Seiten folgen diesen Mustern:
+
+- **Header** (`site-header.tsx`, `nav-link.tsx`): sticky, Logo links, Navigation und Kontakt-Button rechts, 64/80px hoch. Aktiver Menüpunkt mit Terracotta-Unterstrich. Anker-Ziele haben deshalb `scroll-margin-top: 6rem` in `globals.css`.
+- **Layout** (`container.tsx`): Container 1408/1280/896px, Seitenabstand `px-4 sm:px-8 lg:px-12`.
+- **Abschnittstöne** (`section.tsx`): `default` (Weiß), `subtle` (Creme `ink-100`), `warm` (`terracotta-100`). Töne benachbarter Abschnitte abwechseln.
+- **Typografie** (`globals.css`): Überschriften mit `tracking-tight`, Absätze mit `text-pretty`, Fließtext in Abschnitten meist `text-lg`.
+- **Hero:** Eyebrow „Kitafotografie“ und Subline, 720px hoch, Bild mit `sizes="(min-width: 1080px) 100vw, 1080px"`.
+- **Abschnitte:** Portrait mit versetztem Kreis, Versprechen mit Häkchen und Schatten, Ablauf mit Terracotta-Linie, Stimmen-Karten mit Schatten, dunkle Kontakt-Karte, Dienstleistungen mit Eyebrow und größerer Galerie.
 
 ### Pflichtlektüre
 
@@ -191,7 +248,7 @@ Konvention für neue Seiten: `src/app/<route>/page.tsx` setzt die Abschnitte aus
 - **Farben:** nur zwei Paletten: `ink-{100,200,500,600,700,800,900}` und `terracotta-{100…800}`. Keine neuen Farbtöne einführen.
 - **Semantische Farben für shadcn:** `primary` = terracotta-500, `muted-foreground` = ink-700 (ink-600 ist auf Weiß nicht AA-konform), `border` = ink-200, `secondary`/`accent` = terracotta-100.
 - **Typo:** `font-heading` (Libre Franklin) für Überschriften, `font-sans` (Work Sans) für Text. Größen `text-h1`/`text-h2`/`text-h3`/`text-label` sind Desktopwerte, mobil kleiner, z. B. `text-3xl lg:text-h2`.
-- **Layout:** `<Section tone="default|warm">` liefert den vertikalen Rhythmus (`py-20 lg:py-section`). `<Container size="default|narrow|prose">` liefert Breite und Seitenabstand.
+- **Layout:** `<Section tone="default|subtle|warm">` liefert Hintergrund (Weiß, Creme `ink-100`, Warm `terracotta-100`) und vertikalen Rhythmus (`py-20 lg:py-section`). Töne benachbarter Abschnitte abwechseln. `<Container size="default|narrow|prose">` liefert Breite (1408/1280/896px) und Seitenabstand (`px-4 sm:px-8 lg:px-12`).
 - **Radien:** `rounded-sm` (4px) für Controls, `rounded-2xl` (16px) für Karten und Bilder. **Schatten:** `shadow-card`.
 - **Button-Varianten:** `default`, `outline`, `secondary`, `ghost`, `link`. Größen: `default`, `lg`, `sm`, `icon`, `icon-sm`. Links immer über `<Button asChild><Link/></Button>`.
 - **Brand-Regeln aus dem Design-System:** kein Dark Mode, keine Verläufe als Deko (Ausnahme: Overlay im Hero-Bild), kein Blur/Glassmorphism, keine Emojis, dezente Hover-Effekte (150ms Farbwechsel), keine Bounce- oder Scale-Animationen.
@@ -229,11 +286,13 @@ Die verbindlichen Regeln (Next.js/React, SEO, Barrierefreiheit, Code, Bilder, Gi
 
 ### Nächste sinnvolle Aufgaben
 
-1. Unterseiten nach Prototyp bauen, in dieser Reihenfolge: `/ablauf` (hat eigene FAQ, dann FAQ ggf. von der Startseite entfernen oder aufteilen, um doppelten Inhalt zu vermeiden), `/preise`, `/ueber-mich`, `/kontakt`.
-2. `/kontakt` mit Formular: shadcn `input`, `textarea`, `label` hinzufügen (Fallstrick 1 beachten), Server Action. Den E-Mail-Versanddienst mit dem Menschen abstimmen, keine Attrappe bauen.
-3. `/impressum` und `/datenschutz`: Inhalte muss der Mensch liefern, **keine Rechtstexte erfinden**.
-4. SEO-Basics: `metadataBase` (sobald die Domain feststeht), `sitemap.ts`, `robots.ts`, Open-Graph-Bild.
-5. Offene TODOs aus Teil A abarbeiten, sobald die Infos vorliegen (`grep -rn TODO src`).
+Alle Seiten und die SEO-Basics stehen. Was bleibt:
+
+1. Offene Punkte aus Teil A abarbeiten, sobald die Infos vorliegen (`grep -rn TODO src`). Der größte ist der auskommentierte Stimmen-Abschnitt auf der Startseite.
+2. Erstes Release `1.0.0` vorbereiten, sobald der Mensch den Livegang freigibt: Version in `package.json`, `release/1.0.0` → `main`, Tag `v1.0.0`, Rückmerge nach `development`.
+3. Beim Anlegen neuer öffentlicher Seiten: Eintrag in `src/app/sitemap.ts` und `alternates.canonical` in der `metadata` nicht vergessen.
+
+**Strukturierte Daten, die es schon gibt:** `FAQPage` (über `<FaqList>`, nur einmal pro Seite einbinden) und `ProfessionalService` (`src/components/seo/local-business.tsx`, einmal im Root-Layout). Beide nur mit Angaben füllen, die auch sichtbar auf der Seite stehen.
 
 ### Empfohlene Skills
 

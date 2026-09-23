@@ -1,0 +1,701 @@
+/*
+ * Print stylesheet for the acquisition documents.
+ * Mirrors the website's design tokens (src/app/globals.css) so printed
+ * material and the site read as one brand. Standalone file: no Tailwind,
+ * no build step -- open in a browser and print to PDF.
+ */
+
+:root {
+  --ink-900: #190c06;
+  --ink-800: #2d2724;
+  --ink-700: #665852;
+  --ink-600: #9b8b82;
+  --ink-500: #b2a59f;
+  --ink-200: #dfdad7;
+  --ink-100: #fdf9f7;
+
+  --terracotta-100: #f3ece3;
+  --terracotta-200: #e9bba4;
+  --terracotta-300: #e09c7b;
+  --terracotta-400: #d67d52;
+  --terracotta-500: #c5602f;
+  --terracotta-600: #9c4c25;
+  --terracotta-700: #73381c;
+  --terracotta-800: #4a2412;
+
+  --shadow-card: 0 1px 2px rgb(25 12 6 / 0.06), 0 8px 24px rgb(25 12 6 / 0.08);
+
+  --font-heading: "Libre Franklin", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Inner margin of every page. */
+  --gutter: 18mm;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Keep the brand colours in the PDF instead of letting the browser drop them. */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  background: var(--ink-200);
+  color: var(--ink-900);
+  font-family: var(--font-sans);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+/* --- Page shell -------------------------------------------------------- */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  margin: 0 auto 8mm;
+  padding: var(--gutter);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.page--subtle {
+  background: var(--ink-100);
+}
+
+.page--warm {
+  background: var(--terracotta-100);
+}
+
+.page--dark {
+  background: var(--ink-800);
+  color: #ffffff;
+}
+
+.page--dark h1,
+.page--dark h2,
+.page--dark h3,
+.page--dark strong {
+  color: #ffffff;
+}
+
+/* Full-bleed pages place their own padding. */
+.page--bleed {
+  padding: 0;
+}
+
+@media print {
+  body {
+    background: none;
+  }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .page:last-of-type {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .screen-only {
+    display: none;
+  }
+}
+
+/* --- Typography -------------------------------------------------------- */
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracotta-600);
+}
+
+.page--dark .eyebrow {
+  color: var(--terracotta-200);
+}
+
+.h1 {
+  font-size: 30pt;
+}
+
+.h2 {
+  font-size: 22pt;
+}
+
+.h3 {
+  font-size: 13pt;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  font-size: 12pt;
+  line-height: 1.55;
+  color: var(--ink-800);
+}
+
+.page--dark .lead {
+  color: var(--terracotta-100);
+}
+
+.muted {
+  color: var(--ink-700);
+}
+
+.page--dark .muted {
+  color: var(--terracotta-100);
+}
+
+.small {
+  font-size: 9pt;
+  line-height: 1.5;
+}
+
+.stack > * + * {
+  margin-top: 4mm;
+}
+
+.section {
+  margin-top: 10mm;
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.section-head {
+  margin-bottom: 6mm;
+}
+
+.section-head .eyebrow {
+  margin-bottom: 3mm;
+}
+
+/* --- Header and footer of a content page ------------------------------- */
+
+.page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+  padding-bottom: 4mm;
+  margin-bottom: 9mm;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+.page--warm .page-head,
+.page--warm .page-foot {
+  border-color: var(--terracotta-200);
+}
+
+.page-head img {
+  height: 9mm;
+  width: auto;
+}
+
+.page-head .page-head__label {
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-600);
+}
+
+.page-foot {
+  margin-top: auto;
+  padding-top: 4mm;
+  border-top: 1px solid var(--ink-200);
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  font-size: 8.5pt;
+  color: var(--ink-700);
+}
+
+/* --- Cover ------------------------------------------------------------- */
+
+.cover {
+  background: var(--ink-800);
+  color: #ffffff;
+}
+
+.cover__photo {
+  position: relative;
+  height: 148mm;
+  background: var(--terracotta-700);
+}
+
+.cover__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% 60%;
+  display: block;
+}
+
+/* The one gradient the design system allows: the hero overlay. */
+.cover__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(45 39 36 / 0.1),
+    rgb(45 39 36 / 0.95)
+  );
+}
+
+.cover__body {
+  flex: 1;
+  padding: 12mm var(--gutter) var(--gutter);
+  display: flex;
+  flex-direction: column;
+}
+
+.cover__logo {
+  align-self: flex-start;
+  height: 14mm;
+  width: auto;
+  margin-bottom: 10mm;
+}
+
+.cover__claim {
+  font-size: 26pt;
+  max-width: 150mm;
+}
+
+.cover__sub {
+  margin-top: 6mm;
+  font-size: 12pt;
+  color: var(--terracotta-100);
+  max-width: 145mm;
+}
+
+.cover__contact {
+  margin-top: auto;
+  padding-top: 8mm;
+  border-top: 1px solid rgb(255 255 255 / 0.18);
+  font-size: 9.5pt;
+  color: var(--terracotta-100);
+}
+
+.cover__name {
+  margin-bottom: 3mm;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cover__contact strong {
+  color: #ffffff;
+}
+
+/* --- Grids and cards --------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: 5mm;
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 62mm 1fr;
+  gap: 9mm;
+  align-items: start;
+}
+
+/* A .split whose columns should end flush at the bottom. */
+.split--even {
+  align-items: stretch;
+}
+
+/* The image fills the row height set by the taller text column instead of
+    stretching the row to its own intrinsic height. */
+.split--even .figure {
+  position: relative;
+  aspect-ratio: auto;
+  min-height: 42mm;
+}
+
+.split--even .figure img {
+  position: absolute;
+  inset: 0;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--ink-200);
+  border-radius: 4mm;
+  padding: 6mm;
+}
+
+.page--subtle .card,
+.page--warm .card {
+  border-color: transparent;
+  box-shadow: var(--shadow-card);
+}
+
+.card__title {
+  display: flex;
+  align-items: baseline;
+  gap: 2.5mm;
+  margin-bottom: 2mm;
+}
+
+.card--accent {
+  background: var(--terracotta-600);
+  border-color: var(--terracotta-600);
+  color: #ffffff;
+}
+
+.card--accent .muted,
+.card--accent p {
+  color: var(--terracotta-100);
+}
+
+.card--dark {
+  background: var(--ink-800);
+  border-color: var(--ink-800);
+  color: #ffffff;
+}
+
+.card--dark .muted,
+.card--dark p {
+  color: var(--terracotta-100);
+}
+
+/* Callout band, used for the "that is all we need from you" line. */
+.callout {
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+  padding: 6mm 7mm;
+  border-radius: 4mm;
+  background: var(--terracotta-100);
+  border-left: 1.5mm solid var(--terracotta-500);
+}
+
+.page--warm .callout {
+  background: #ffffff;
+}
+
+/* --- Contact details with icons ---------------------------------------- */
+
+.icon-list {
+  list-style: none;
+  display: grid;
+  gap: 2.5mm;
+}
+
+.icon-list li,
+.icon-row > span {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+}
+
+/* Inside the narrower contact cards the address needs to stay on one line. */
+.card .icon-list {
+  font-size: 9.5pt;
+}
+
+.icon-list svg,
+.icon-row svg {
+  width: 4.2mm;
+  height: 4.2mm;
+  flex: none;
+  color: var(--terracotta-500);
+}
+
+.page--dark .icon-list svg,
+.card--dark .icon-list svg,
+.cover .icon-row svg {
+  color: var(--terracotta-200);
+}
+
+/* Phone, mail and website side by side on a single line. */
+.icon-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 5mm;
+  white-space: nowrap;
+  font-size: 8.5pt;
+}
+
+/* --- Lists ------------------------------------------------------------- */
+
+.checklist {
+  list-style: none;
+  display: grid;
+  gap: 3mm;
+}
+
+.checklist li {
+  display: grid;
+  grid-template-columns: 5mm 1fr;
+  gap: 2.5mm;
+  align-items: start;
+}
+
+.checklist svg {
+  width: 4.2mm;
+  height: 4.2mm;
+  margin-top: 1mm;
+  color: var(--terracotta-500);
+  flex: none;
+}
+
+.page--dark .checklist svg,
+.card--accent .checklist svg,
+.card--dark .checklist svg {
+  color: var(--terracotta-200);
+}
+
+.plain-list {
+  list-style: none;
+  display: grid;
+  gap: 1.5mm;
+}
+
+/* --- Numbered process -------------------------------------------------- */
+
+.steps {
+  list-style: none;
+  position: relative;
+  display: grid;
+  gap: 6mm;
+  padding-left: 13mm;
+}
+
+/* The terracotta line that runs through the steps, as on the website. */
+.steps::before {
+  content: "";
+  position: absolute;
+  left: 4.5mm;
+  top: 4mm;
+  bottom: 4mm;
+  width: 0.6mm;
+  background: var(--terracotta-200);
+}
+
+.steps > li {
+  position: relative;
+}
+
+.steps__num {
+  position: absolute;
+  left: -13mm;
+  top: -0.5mm;
+  width: 9mm;
+  height: 9mm;
+  border-radius: 50%;
+  background: var(--terracotta-500);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 10pt;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Figures ----------------------------------------------------------- */
+
+.figure {
+  overflow: hidden;
+  border-radius: 4mm;
+  background: var(--terracotta-100);
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.figure--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.figure--square {
+  aspect-ratio: 1 / 1;
+}
+
+.figure--landscape {
+  aspect-ratio: 4 / 3;
+}
+
+.figure--banner {
+  aspect-ratio: 5 / 2;
+}
+
+/* Placeholder box for things Marius still has to supply (QR code, extra photos). */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5mm;
+  border: 0.5mm dashed var(--terracotta-300);
+  border-radius: 4mm;
+  background: var(--terracotta-100);
+  color: var(--terracotta-700);
+  font-size: 8.5pt;
+  font-weight: 600;
+}
+
+/* --- Price table ------------------------------------------------------- */
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4mm;
+  padding: 2.5mm 0;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+.price-row:last-child {
+  border-bottom: 0;
+}
+
+.price-row__price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--terracotta-600);
+}
+
+.card--accent .price-row {
+  border-color: rgb(255 255 255 / 0.25);
+}
+
+.card--accent .price-row__price {
+  color: #ffffff;
+}
+
+.big-number {
+  font-family: var(--font-heading);
+  font-size: 34pt;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+/* --- Letter (Elternbrief) --------------------------------------------- */
+
+/* The letter carries more running text than the other pages, so it runs on a
+   slightly tighter grid to stay on a single sheet. */
+.page--letter {
+  --gutter: 15mm;
+}
+
+.page--letter .section {
+  margin-top: 7mm;
+}
+
+.page--letter .callout {
+  padding: 4mm 5mm;
+}
+
+.letter__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 6mm;
+  font-size: 9pt;
+  color: var(--ink-700);
+  margin-bottom: 8mm;
+}
+
+.fill {
+  display: inline-block;
+  min-width: 34mm;
+  border-bottom: 0.4mm solid var(--terracotta-300);
+  color: var(--terracotta-700);
+  font-weight: 600;
+}
+
+.faq-item + .faq-item {
+  margin-top: 5mm;
+}
+
+.faq-item h3 {
+  margin-bottom: 1.5mm;
+}
+
+/* --- Screen-only hint bar --------------------------------------------- */
+
+.hint {
+  max-width: 210mm;
+  margin: 8mm auto;
+  padding: 6mm 7mm;
+  border-radius: 4mm;
+  background: #ffffff;
+  border-left: 1.5mm solid var(--terracotta-500);
+  box-shadow: var(--shadow-card);
+  font-size: 10pt;
+}
+
+.hint h2 {
+  font-size: 12pt;
+  margin-bottom: 2mm;
+}
+
+.hint ul {
+  margin: 2mm 0 0 5mm;
+}
