@@ -33,8 +33,13 @@
   der Gegenwart beschrieben, so wie auf der Website. Sobald die erste Kita fotografiert ist, kann
   daraus überall ein konkretes Beispiel werden.
 - **Betreffzeilen** kurz halten und den Kita-Namen nennen, damit die Mail in der Kita wiedergefunden wird.
-- **Impressumspflicht:** Geschäftliche E-Mails brauchen eine Anbieterkennzeichnung. Die Signatur unten
-  erfüllt das (Name, Anschrift, Kontaktdaten).
+- **Absenderadresse:** Diese Mails gehen an Kitas und Eltern, also von **marius@**. Die Adresse
+  steht auch im Fließtext und in der Signatur, damit Antworten im richtigen Postfach landen.
+  `kontakt@` bleibt die offizielle Adresse nach außen (Website, Impressum, Kontaktformular) und
+  gehört in die allgemeine Signatur, nicht in diese Vorlagen.
+- **Impressumspflicht:** Geschäftliche E-Mails brauchen eine Anbieterkennzeichnung. Die Signatur
+  unten nennt Name und Kontaktwege, aber nur den Kreis Göppingen statt der vollen Anschrift. Wer
+  ganz sicher gehen will, ergänzt eine Zeile mit Ziegelstraße 15, 73084 Salach.
 
 ---
 
@@ -51,17 +56,13 @@ keine Bilder in Signaturen erlaubt.
 Herzliche Grüße
 Marius
 
---
-Marius Jakob · Bruderjakob Kitafotografie
-Natürliche Kitafotografie im Kreis Göppingen
+Marius Jakob
+Fotograf für Kindergärten
 
-Ziegelstraße 15 · 73084 Salach
-Telefon & WhatsApp: 0152 33934815
-kontakt@bruderjakob-kitafotografie.de
-www.bruderjakob-kitafotografie.de
-Instagram: @bruderimfokus
-
-Kleinunternehmer nach § 19 UStG, daher kein Ausweis von Umsatzsteuer.
+📍 Kreis Göppingen
+📧 marius@bruderjakob-kitafotografie.de
+📞 +49 15233934815
+🌐 www.bruderjakob-kitafotografie.de
 ```
 
 **Kurzvariante** für laufende Konversationen (zweite, dritte Antwort im selben Thread):
@@ -71,12 +72,16 @@ Herzliche Grüße
 Marius
 
 --
-Marius Jakob · Bruderjakob Kitafotografie
-0152 33934815 · kontakt@bruderjakob-kitafotografie.de
-www.bruderjakob-kitafotografie.de
+Marius Jakob · Fotograf für Kindergärten
+📧 marius@bruderjakob-kitafotografie.de · 📞 +49 15233934815
+🌐 www.bruderjakob-kitafotografie.de
 ```
 
-In den Vorlagen unten steht am Ende jeweils nur `[Signatur]`.
+In den Vorlagen unten steht am Ende jeweils nur `[Signatur]`. Das ist die Stelle, an der dein
+Mailprogramm die hinterlegte Signatur anhängt – deshalb steht sie dort nicht ausgeschrieben. So
+gibt es sie nur an einer Stelle zu pflegen, und sie landet nicht doppelt in der Mail. Wenn du die
+Signatur noch nicht im Mailprogramm eingerichtet hast, mach das einmal nach der Anleitung in
+`signatur.html`, danach ist der Platzhalter erledigt.
 
 ---
 
@@ -150,7 +155,7 @@ Mail, die Sie unverändert an den Elternbeirat weiterleiten können, mitsamt der
 Ab der Linie steht alles, was für die Entscheidung nötig ist.
 
 Wenn dabei Fragen aufkommen, dürfen sich die Eltern jederzeit direkt bei mir melden – unter
-0152 33934815 oder kontakt@bruderjakob-kitafotografie.de. Dann bleibt das nicht an Ihnen hängen.
+0152 33934815 oder marius@bruderjakob-kitafotografie.de. Dann bleibt das nicht an Ihnen hängen.
 
 [Signatur]
 
@@ -202,7 +207,7 @@ Mehr zum Ablauf: https://bruderjakob-kitafotografie.de/ablauf
 Mehr zu mir: https://bruderjakob-kitafotografie.de/ueber-mich
 
 Für Rückfragen bin ich unter 0152 33934815 (auch WhatsApp) und
-kontakt@bruderjakob-kitafotografie.de erreichbar. Wenn Sie möchten, komme ich in Ihre nächste
+marius@bruderjakob-kitafotografie.de erreichbar. Wenn Sie möchten, komme ich in Ihre nächste
 Elternbeiratssitzung, vor Ort oder online. Zwanzig Minuten reichen: Ich bringe eine größere Auswahl
 an Bildern mit, beantworte Fragen, und Sie entscheiden danach in Ruhe.
 
@@ -211,7 +216,7 @@ Marius Jakob
 
 Marius Jakob · Bruderjakob Kitafotografie
 Ziegelstraße 15 · 73084 Salach
-0152 33934815 · kontakt@bruderjakob-kitafotografie.de
+0152 33934815 · marius@bruderjakob-kitafotografie.de
 www.bruderjakob-kitafotografie.de
 ```
 
@@ -428,7 +433,7 @@ den Bildern deines Kindes. Erst dann entscheidest du, ob du etwas bestellen möc
 entstehen keine Kosten und es gibt keine Mindestbestellmenge.
 
 Fragen dazu bitte direkt an mich, nicht ans Kita-Team: 0152 33934815 (auch WhatsApp) oder
-kontakt@bruderjakob-kitafotografie.de
+marius@bruderjakob-kitafotografie.de
 
 [Signatur]
 ```
