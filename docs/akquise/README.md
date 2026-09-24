@@ -12,7 +12,7 @@ ohne Next.js, ohne Build. Öffnen, anschauen, als PDF speichern.
 | `email-vorlagen.md` | Quelltext der E-Mail-Vorlagen, hier werden die Texte bearbeitet | – |
 | `email-vorlagen-html.mjs` | Baut aus der `.md` die `.html` | – |
 | `akquise-mappe-versand.html` | Mappe zum Verschicken: nur Bilder mit Referenz-Einwilligung, ohne Galerie-QR-Code | 7 |
-| `signatur.html` | E-Mail-Signatur mit Logo zum Kopieren, plus Anleitung für Apple Mail und Outlook | – |
+| `signatur.html` | Drei E-Mail-Signaturen zum Kopieren (marius@ mit Foto, kontakt@ ohne, Kurzvariante), plus Anleitung für IONOS Webmail, Apple Mail und Outlook | – |
 | `ci.css` | Gemeinsames Stylesheet mit den Design-Tokens der Website | – |
 | `bilder/` | Verkleinerte Fotos, Logos und der QR-Code für den Druck | – |
 | `pdf/` | Die fertigen PDFs zum Verschicken (werden erzeugt, nicht in Git) | – |
@@ -51,7 +51,9 @@ Terminbestätigung (Vorlage 3).
 
 ## Signatur einbauen
 
-http://localhost:4500/signatur.html öffnen und der Anleitung dort folgen. Das Logo ist als
+http://localhost:4500/signatur.html öffnen und der Anleitung dort folgen. Es gibt drei Fassungen:
+`marius@` mit Foto für Mails an Kitas und Eltern, `kontakt@` ohne Foto für alles andere nach außen,
+und eine Kurzvariante ohne Bilder für laufende Gespräche. Das Logo ist als
 Base64-Bild in die Signatur eingebettet, damit beim Empfänger nichts nachgeladen wird. Dieselbe
 Grafik liegt als `bilder/logo-signatur.png` (434 × 108 px) daneben, falls Outlook sie von Hand
 braucht. Erzeugt wurde sie aus `bilder/LogoDark.svg`; wenn sich das Logo ändert, muss sie neu
