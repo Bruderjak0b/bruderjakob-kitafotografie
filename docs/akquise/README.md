@@ -11,6 +11,7 @@ ohne Next.js, ohne Build. Öffnen, anschauen, als PDF speichern.
 | `email-vorlagen.html` | 14 E-Mail-Vorlagen für Kitas und Eltern, mit Kopieren-Knopf je Vorlage | – |
 | `email-vorlagen.md` | Quelltext der E-Mail-Vorlagen, hier werden die Texte bearbeitet | – |
 | `email-vorlagen-html.mjs` | Baut aus der `.md` die `.html` | – |
+| `akquise-mappe-versand.html` | Mappe zum Verschicken: nur Bilder mit Referenz-Einwilligung, ohne Galerie-QR-Code | 7 |
 | `signatur.html` | E-Mail-Signatur mit Logo zum Kopieren, plus Anleitung für Apple Mail und Outlook | – |
 | `ci.css` | Gemeinsames Stylesheet mit den Design-Tokens der Website | – |
 | `bilder/` | Verkleinerte Fotos, Logos und der QR-Code für den Druck | – |
@@ -39,6 +40,14 @@ node docs/akquise/email-vorlagen-html.mjs
 
 Dann http://localhost:4500/email-vorlagen.html öffnen. Jede Vorlage hat einen
 Kopieren-Knopf, der den Text in die Zwischenablage legt.
+
+## Welcher Anhang gehört an welche Mail
+
+Steht in `email-vorlagen.md` bzw. `email-vorlagen.html`, jeweils über der Vorlage. Kurzfassung:
+An Kita-Mails kommt immer `pdf/akquise-mappe-versand.pdf` (Vorlagen 1, 2, 10 und 13). Die
+vollständige `pdf/akquise-mappe.pdf` enthält zusätzliche Bilder ohne Referenz-Einwilligung und
+wird nur gedruckt oder persönlich übergeben, nie verschickt. Der Elternbrief mit FAQ gehört an die
+Terminbestätigung (Vorlage 3).
 
 ## Signatur einbauen
 

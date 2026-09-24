@@ -11,12 +11,27 @@
 - **Anrede:** Kitas und Elternbeiräte werden gesiezt (erster geschäftlicher Kontakt, oft mehrere
   Mitlesende), Eltern werden geduzt – so wie auf der Website. Wenn du mit einer Leitung bereits per du
   bist, einfach umstellen: „Sie/Ihnen/Ihre“ → „du/dir/eure“.
-- **Zwei verschiedene Galerien nicht verwechseln:**
-  - **Portfolio (öffentlich, Pixieset):** https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
-    Das ist die Arbeitsprobe für Kitas und Elternbeiräte. Sie steht in der Signatur und wird in den
-    Kita-Mails aktiv verlinkt.
-  - **Kind-Galerie (passwortgeschützt, fotograf.de):** der individuelle Zugang für Eltern nach dem
-    Fototag. Diesen Link nie öffentlich oder in Sammelmails ohne Passwort-Hinweis streuen.
+- **Zwei Fassungen der Mappe, und in Mails geht immer die Versandfassung.**
+  `akquise-mappe-versand.pdf` zeigt nur Kinder, für die eine Einwilligung als Referenz vorliegt.
+  Sie darf verschickt und weitergeleitet werden. Die vollständige `akquise-mappe.pdf` enthält
+  zusätzliche Bilder ohne diese Einwilligung und ist nur zum Ausdrucken und persönlichen Übergeben
+  gedacht. **Nie die vollständige Mappe an eine Mail hängen.**
+- **Die Kind-Galerie ist etwas anderes:** der passwortgeschützte Zugang bei fotograf.de für die
+  Eltern nach dem Fototag. Diesen Link nie öffentlich oder in Sammelmails ohne Passwort-Hinweis
+  streuen, er gehört genau einer Familie.
+- **Anhänge:** Die PDFs liegen im Ordner `pdf/` und werden mit `./scripts/akquise-pdf.sh` erzeugt:
+  - **Mappe zum Versenden** (`akquise-mappe-versand.pdf`, 7 Seiten, ca. 3 MB): Vorstellung,
+    Ablauf, Nutzen, Preise, Datenschutz, Bildbeispiele, Kontakt. Das ist der Anhang für alle
+    Kita-Mails, auch für die, die weitergeleitet werden.
+  - **Vollständige Mappe** (`akquise-mappe.pdf`, 8 Seiten): dieselbe Mappe mit allen Bildern und
+    dem QR-Code zur Galerie. Nur zum Ausdrucken und persönlich Übergeben.
+  - **Elternbrief und FAQ** (`elternbrief-und-faq.pdf`, 3 Seiten): Briefvorlage für die Kita plus
+    FAQ-Handout für Eltern. Das ist zum Weitergeben gedacht und gehört zur Terminbestätigung.
+- **Keine Bilder als Kita-Aufnahmen ausgeben, solange es keine gibt.** Die Vorlagen sprechen
+  deshalb von Bildern, nicht von „Bildern aus echten Kita-Terminen“, und versprechen nirgends
+  weitere Kita-Fotos im Gespräch. Alles andere – Ablauf, Vorgehen, Haltung – wird selbstbewusst in
+  der Gegenwart beschrieben, so wie auf der Website. Sobald die erste Kita fotografiert ist, kann
+  daraus überall ein konkretes Beispiel werden.
 - **Betreffzeilen** kurz halten und den Kita-Namen nennen, damit die Mail in der Kita wiedergefunden wird.
 - **Impressumspflicht:** Geschäftliche E-Mails brauchen eine Anbieterkennzeichnung. Die Signatur unten
   erfüllt das (Name, Anschrift, Kontaktdaten).
@@ -44,8 +59,6 @@ Ziegelstraße 15 · 73084 Salach
 Telefon & WhatsApp: 0152 33934815
 kontakt@bruderjakob-kitafotografie.de
 www.bruderjakob-kitafotografie.de
-
-Portfolio ansehen: https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
 Instagram: @bruderimfokus
 
 Kleinunternehmer nach § 19 UStG, daher kein Ausweis von Umsatzsteuer.
@@ -75,6 +88,10 @@ Ziel: freundlich abschließen, nichts aufdrängen, aber als Option im Kopf bleib
 wichtigste im ganzen Set, weil sie oft ein Jahr später zum Auftrag führt. Termin zur Wiedervorlage im
 Kalender eintragen (siehe Vorlage 10).
 
+Anhang: `pdf/akquise-mappe-versand.pdf`. Wer ablehnt, liest selten lange Mails – die Mappe landet
+aber oft im Ordner und wird ein Jahr später wieder hervorgeholt. Wenn dir der Anhang zu aufdringlich
+ist, streich den Satz dazu und biete sie stattdessen an.
+
 **Betreff:** Danke für das Gespräch – Kitafotografie [Kita-Name]
 
 ```
@@ -87,7 +104,10 @@ trotzdem kurz mit einem Dankeschön melden und mich für den Fall bereithalten, 
 etwas ändert.
 
 Falls Sie irgendwann vergleichen möchten, hier ein Einblick in meine Arbeit:
-https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+https://bruderjakob-kitafotografie.de
+
+Im Anhang liegt meine Mappe mit allem Wichtigen auf sieben Seiten, für den Ordner oder den
+Papierkorb. Eine größere Auswahl an Bildern bringe ich gern mit, wenn es bei Ihnen einmal passt.
 
 Kurz, was bei mir anders läuft:
 - Fotografiert wird draußen im Garten, im normalen Kita-Alltag. Kein Blitz, kein Studiohintergrund.
@@ -110,14 +130,24 @@ Ziel: Die Leitung soll die Mail mit einem Klick weiterleiten können. Deshalb is
 geschrieben, dass er auch für jemanden funktioniert, der nie mit mir telefoniert hat. Alles Wichtige
 steht im Text selbst, nicht im Anhang.
 
+Anhang: `pdf/akquise-mappe-versand.pdf`. Weil diese Mail weitergeleitet wird, darf hier nur die
+Versandfassung dran, nie die vollständige Mappe. Der weiterleitbare Teil enthält eine kurze
+Vorstellung und verweist auf den Anhang, damit die Mail auch bei jemandem funktioniert, der nie
+mit dir gesprochen hat.
+
+Link setzen: Im Satz „Mehr über mich und meine Arbeitsweise steht auf meiner Website“ die letzten
+drei Wörter markieren und den Link auf https://bruderjakob-kitafotografie.de/ueber-mich legen
+(Apple Mail und Outlook: Cmd/Strg + K). So bleibt der Text ruhig, und die Adresse steht ohnehin in
+der Signatur. Wer die Mail als reinen Text verschickt, schreibt die Adresse stattdessen aus.
+
 **Betreff:** Kitafotografie [Kita-Name] – Infos für den Elternbeirat (gern weiterleiten)
 
 ```
 Guten Tag Frau/Herr [Nachname],
 
 danke für das freundliche Gespräch vorhin. Wie besprochen schicke ich Ihnen alle Infos in einer
-Mail, die Sie unverändert an den Elternbeirat weiterleiten können. Ab der Linie steht alles, was
-für die Entscheidung nötig ist.
+Mail, die Sie unverändert an den Elternbeirat weiterleiten können, mitsamt der Mappe im Anhang.
+Ab der Linie steht alles, was für die Entscheidung nötig ist.
 
 Wenn dabei Fragen aufkommen, dürfen sich die Eltern jederzeit direkt bei mir melden – unter
 0152 33934815 oder kontakt@bruderjakob-kitafotografie.de. Dann bleibt das nicht an Ihnen hängen.
@@ -132,8 +162,13 @@ mein Name ist Marius Jakob, ich fotografiere unter dem Namen Bruderjakob Kitafot
 Göppingen. Die Leitung der [Kita-Name] hat mir angeboten, mich bei Ihnen vorzustellen, weil Sie
 über die Kitafotografie entscheiden.
 
-So sehen meine Bilder aus:
-https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+Kurz zu mir: Ich habe Design studiert, daher kommt mein Blick für Bildaufbau und Licht, und den
+Umgang mit Kindern habe ich in einem freiwilligen sozialen Jahr gelernt. Ich setze kein Kind vor
+die Kamera, das mich noch nicht kennt, und fotografiere niemanden, der nicht möchte. Mehr über
+mich und meine Arbeitsweise steht auf meiner Website.
+
+Im Anhang finden Sie meine Mappe mit Bildbeispielen, Ablauf, Preisen und Datenschutz auf sieben
+Seiten.
 
 Wie ich fotografiere
 Ich komme früh in die Einrichtung, damit die Kinder mich in Ruhe kennenlernen können. Wir reden
@@ -167,8 +202,9 @@ Mehr zum Ablauf: https://bruderjakob-kitafotografie.de/ablauf
 Mehr zu mir: https://bruderjakob-kitafotografie.de/ueber-mich
 
 Für Rückfragen bin ich unter 0152 33934815 (auch WhatsApp) und
-kontakt@bruderjakob-kitafotografie.de erreichbar. Gern stelle ich mich auch kurz in einer
-Elternbeiratssitzung vor, vor Ort oder online.
+kontakt@bruderjakob-kitafotografie.de erreichbar. Wenn Sie möchten, komme ich in Ihre nächste
+Elternbeiratssitzung, vor Ort oder online. Zwanzig Minuten reichen: Ich bringe eine größere Auswahl
+an Bildern mit, beantworte Fragen, und Sie entscheiden danach in Ruhe.
 
 Herzliche Grüße
 Marius Jakob
@@ -183,6 +219,9 @@ www.bruderjakob-kitafotografie.de
 
 Ziel: Zusage schriftlich festhalten und alles klären, was am Fototag sonst zwischen Tür und Angel
 besprochen werden müsste.
+
+Anhang: `pdf/elternbrief-und-faq.pdf`. Damit hat die Kita sofort alles, was sie an die Eltern
+weitergeben kann, und muss nichts selbst formulieren.
 
 **Betreff:** Fototermin [Kita-Name] am [Datum] – Bestätigung
 
@@ -214,8 +253,9 @@ Was ich von Ihnen brauche
 
 Was ich übernehme
 Anmeldung, Einverständniserklärungen, Galerien, Bestellungen und alle Elternfragen. Ihr Team soll
-damit nichts zu tun haben. Die Infos für die Eltern schicke ich Ihnen rechtzeitig vorher zu, sodass
-Sie sie nur noch über die gewohnten Wege verteilen müssen.
+damit nichts zu tun haben. Im Anhang liegt schon alles für die Eltern: eine Briefvorlage, die Sie
+unverändert übernehmen und mit Ihrem Briefkopf verschicken können, und ein FAQ-Handout mit den
+Fragen, die Eltern erfahrungsgemäß stellen. Sie müssen nichts selbst formulieren.
 
 Nach dem Fototag dauert es etwa zwei Wochen, bis die Galerien online sind.
 
@@ -364,8 +404,8 @@ Hallo,
 am [Datum] komme ich in die [Kita-Name] und fotografiere die Kinder. Mein Name ist Marius Jakob,
 ich fotografiere unter dem Namen Bruderjakob Kitafotografie.
 
-So sehen meine Bilder aus:
-https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+So arbeite ich, mit Bildbeispielen:
+https://bruderjakob-kitafotografie.de
 
 Anmeldung
 Damit dein Kind fotografiert werden darf, brauche ich deine Einwilligung. Die Anmeldung läuft
@@ -421,6 +461,8 @@ Bis [Wochentag],
 An Kitas, die abgesagt haben (siehe Vorlage 1), und an Kitas, bei denen ich schon war. Am besten im
 Frühjahr und im Spätsommer, wenn die Jahresplanung gemacht wird.
 
+Anhang: `pdf/akquise-mappe-versand.pdf`, außer die Kita hat sie schon.
+
 **Betreff:** Fototermin [Kita-Jahr] in der [Kita-Name]?
 
 ```
@@ -433,7 +475,8 @@ angekündigt noch einmal, weil bei Ihnen gerade die Planung für [Kita-Jahr] ans
 gemacht. Wenn Sie wieder mögen, halte ich Ihnen gern einen Termin frei.]
 
 Meine Termine für [Frühjahr/Herbst] vergebe ich ab jetzt. Wenn Sie Interesse haben, nennen Sie mir
-einfach zwei, drei Wochen, die Ihnen passen, dann finden wir etwas.
+einfach zwei, drei Wochen, die Ihnen passen, dann finden wir etwas. Meine Mappe mit Ablauf, Preisen
+und Datenschutz liegt im Anhang, falls Sie sie intern weitergeben möchten.
 
 Falls es bei Ihnen weiterhin nicht passt, ist das auch völlig in Ordnung. Sagen Sie kurz Bescheid,
 dann melde ich mich nicht wieder.
@@ -485,6 +528,9 @@ Die Galerien der übrigen Kinder gehen davon unabhängig wie geplant am [Datum] 
 Für den Alltag: schnelle, freundliche Erstantwort innerhalb von zwei Tagen (so steht es auf der
 Website, das sollte auch stimmen).
 
+Anhang: `pdf/akquise-mappe-versand.pdf`, wenn die Anfrage von einer Kita kommt. Bei Anfragen von Eltern zu
+Familien- oder Minishootings nicht anhängen, die Mappe passt inhaltlich nicht.
+
 **Betreff:** Ihre Anfrage zur Kitafotografie
 
 ```
@@ -498,8 +544,10 @@ Am einfachsten klären wir alles Weitere in einem kurzen Telefonat, zehn Minuten
 Wann passt es Ihnen diese oder nächste Woche? Alternativ rufe ich gern zurück, sagen Sie mir
 einfach Nummer und Zeitfenster.
 
-Falls Sie vorher einen Eindruck von meinen Bildern möchten:
-https://bruderjakob-kitafotografie.pixieset.com/bruderjakobkitafotografieportfolio/
+Im Anhang liegt meine Mappe: Ablauf, Preise, Datenschutz und Bildbeispiele auf sieben Seiten.
+Eine größere Auswahl an Bildern bringe ich gern zum Gespräch mit.
+
+Mehr auf der Website: https://bruderjakob-kitafotografie.de
 Ablauf und Preise stehen hier: https://bruderjakob-kitafotografie.de/ablauf und
 https://bruderjakob-kitafotografie.de/preise
 

@@ -40,7 +40,7 @@ for _ in $(seq 1 25); do
   sleep 0.2
 done
 
-for name in akquise-mappe elternbrief-und-faq; do
+for name in akquise-mappe akquise-mappe-versand elternbrief-und-faq; do
   out="$OUT_DIR/$name.pdf"
   rm -f "$out"
   # Headless Chrome writes the file and then sometimes lingers, so it runs in
