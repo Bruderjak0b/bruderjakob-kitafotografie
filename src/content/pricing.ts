@@ -9,6 +9,8 @@ export type PricePackage = {
 
 export const singlePhotoPrice = "5,90 €";
 
+export const groupPhotoGift = "Gruppenbild für jedes Kind geschenkt";
+
 export const pricePackages: PricePackage[] = [
   {
     name: "Klassik",

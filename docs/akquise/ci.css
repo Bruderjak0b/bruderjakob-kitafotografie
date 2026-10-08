@@ -406,6 +406,15 @@ strong {
   color: var(--terracotta-100);
 }
 
+/* The global `strong` colour is nearly black, which on the terracotta and ink
+   surfaces drops to about 3:1 and reads as a dark smudge. On those backgrounds
+   emphasis comes from the weight instead, and the colour stays with the text. */
+.card--accent strong,
+.card--dark strong {
+  color: inherit;
+  font-weight: 700;
+}
+
 .card--dark {
   background: var(--ink-800);
   border-color: var(--ink-800);
@@ -584,6 +593,10 @@ strong {
   aspect-ratio: 5 / 2;
 }
 
+.figure--wide {
+  aspect-ratio: 3 / 2;
+}
+
 /* Placeholder box for things Marius still has to supply (QR code, extra photos). */
 .placeholder {
   display: flex;
@@ -698,4 +711,76 @@ strong {
 
 .hint ul {
   margin: 2mm 0 0 5mm;
+}
+
+/* --- One-page overview -------------------------------------------------- */
+
+/* The overview squeezes the whole pitch onto one sheet, so it runs on a
+   tighter grid and smaller steps than the multi-page documents. */
+.page--overview {
+  --gutter: 14mm;
+  font-size: 10pt;
+}
+
+.page--overview .page-head {
+  margin-bottom: 6mm;
+}
+
+/* The three process steps side by side instead of stacked. */
+.steps-inline {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6mm;
+}
+
+.steps-inline .step-head {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+  margin-bottom: 2mm;
+}
+
+.steps-inline .step-num {
+  flex: none;
+  width: 7.5mm;
+  height: 7.5mm;
+  border-radius: 50%;
+  background: var(--terracotta-500);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 9pt;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dark strip that closes the sheet with the contact details. The name sits
+   above the details: side by side the non-wrapping detail line would squeeze
+   the name into a column of single words. */
+.contact-band {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  padding: 5mm 6mm;
+  border-radius: 4mm;
+  background: var(--ink-800);
+  color: #ffffff;
+}
+
+.contact-band__name {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.contact-band .icon-row {
+  color: var(--terracotta-100);
+  gap: 4mm;
+  font-size: 8pt;
+}
+
+.contact-band .icon-row svg {
+  color: var(--terracotta-200);
 }

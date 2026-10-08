@@ -8,10 +8,11 @@ ohne Next.js, ohne Build. Öffnen, anschauen, als PDF speichern.
 |---|---|---|
 | `akquise-mappe.html` | Die Mappe für die Kita-Leitung: Titel, Vorstellung, Ablauf, Nutzen, Kosten, Preise, Datenschutz, Portfolio (2 Seiten mit QR-Code), Kontakt | 8 |
 | `elternbrief-und-faq.html` | Vorlage für den Elternbrief (die Kita verschickt ihn) plus FAQ-Handout für Eltern | 3 |
-| `email-vorlagen.html` | 14 E-Mail-Vorlagen für Kitas und Eltern, mit Kopieren-Knopf je Vorlage | – |
+| `email-vorlagen.html` | 15 E-Mail-Vorlagen für Kitas und Eltern, mit Kopieren-Knopf je Vorlage | – |
 | `email-vorlagen.md` | Quelltext der E-Mail-Vorlagen, hier werden die Texte bearbeitet | – |
 | `email-vorlagen-html.mjs` | Baut aus der `.md` die `.html` | – |
 | `akquise-mappe-versand.html` | Mappe zum Verschicken: nur Bilder mit Referenz-Einwilligung, ohne Galerie-QR-Code | 7 |
+| `akquise-uebersicht.html` | Einseitiger Überblick: Ablauf, Nutzen, Kosten, Preise, Datenschutz und Kontakt auf einen Blick. Nur Bilder mit Referenz-Einwilligung | 1 |
 | `signatur.html` | Drei E-Mail-Signaturen zum Kopieren (marius@ mit Foto, kontakt@ ohne, Kurzvariante), plus Anleitung für IONOS Webmail, Apple Mail und Outlook | – |
 | `ci.css` | Gemeinsames Stylesheet mit den Design-Tokens der Website | – |
 | `bilder/` | Verkleinerte Fotos, Logos und der QR-Code für den Druck | – |
@@ -44,10 +45,15 @@ Kopieren-Knopf, der den Text in die Zwischenablage legt.
 ## Welcher Anhang gehört an welche Mail
 
 Steht in `email-vorlagen.md` bzw. `email-vorlagen.html`, jeweils über der Vorlage. Kurzfassung:
-An Kita-Mails kommt immer `pdf/akquise-mappe-versand.pdf` (Vorlagen 1, 2, 10 und 13). Die
+An Kita-Mails kommt immer `pdf/akquise-mappe-versand.pdf` (Vorlagen 1, 2, 3, 11 und 14). Die
 vollständige `pdf/akquise-mappe.pdf` enthält zusätzliche Bilder ohne Referenz-Einwilligung und
 wird nur gedruckt oder persönlich übergeben, nie verschickt. Der Elternbrief mit FAQ gehört an die
-Terminbestätigung (Vorlage 3).
+Terminbestätigung (Vorlage 4).
+
+`pdf/akquise-uebersicht.pdf` ist die Kurzfassung auf einer Seite: für Leitungen, die nicht sieben
+Seiten lesen wollen, als Anhang bei einer kurzen Anfrage, als Handzettel beim Vorbeischauen oder
+als Beilage zum Elternbeirat. Sie nutzt dieselben freigegebenen Bilder wie die Versand-Mappe und
+darf deshalb ebenfalls verschickt werden. Sie ersetzt die Mappe nicht, sie geht ihr voraus.
 
 ## Signatur einbauen
 
@@ -98,9 +104,9 @@ den neuen Code einmal mit dem Handy scannen.
 
 Im Quelltext als `TODO Marius` markiert:
 
-- Google-Bewertungslink (`https://g.page/r/…`) für die E-Mail-Vorlagen 4 und 7
-- Anmeldelink bzw. QR-Code von Fotograf.de für E-Mail-Vorlage 8
-- Feste Laufzeit der Galerien festlegen (E-Mail-Vorlagen 5 und 6)
+- Google-Bewertungslink (`https://g.page/r/…`) für die E-Mail-Vorlagen 5 und 8
+- Anmeldelink bzw. QR-Code von Fotograf.de für E-Mail-Vorlage 9
+- Feste Laufzeit der Galerien festlegen (E-Mail-Vorlagen 6 und 7)
 
 ## Ansprache
 
