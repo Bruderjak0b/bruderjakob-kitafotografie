@@ -27,7 +27,7 @@ export const faqItems: FaqItem[] = [
     question: "Was kosten die Fotos?",
     onHome: true,
     answer:
-      "Für die Einrichtung entstehen keine Kosten. Eltern zahlen erst, wenn sie die fertigen Bilder gesehen haben und etwas bestellen möchten – kein Vorabgeld, keine Mindestbestellmenge. Einzelne Bilder könnt ihr schon ab 5,90 € kaufen. Die Pakete starten ab 24,90 €.",
+      "Für die Einrichtung entstehen keine Kosten. Eltern zahlen erst, wenn sie die fertigen Bilder gesehen haben und etwas bestellen möchten – kein Vorabgeld, keine Mindestbestellmenge. Einzelne Bilder könnt ihr schon ab 5,90 € kaufen. Die Pakete starten ab 24,90 €. Das Gruppenbild bekommt jedes Kind digital geschenkt.",
   },
   {
     question: "Wie lange dauert es, bis unsere Fotos verfügbar sind?",
