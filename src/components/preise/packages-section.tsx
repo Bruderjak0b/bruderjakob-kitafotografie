@@ -1,9 +1,10 @@
-import { CheckIcon, DownloadIcon, TagIcon } from "lucide-react";
+import { CheckIcon, DownloadIcon, GiftIcon, TagIcon } from "lucide-react";
 
 import { Container } from "~/components/layout/container";
 import { Section, SectionHeader } from "~/components/layout/section";
 import {
   digitalPackage,
+  groupPhotoGift,
   pricePackages,
   singlePhotoPrice,
 } from "~/content/pricing";
@@ -24,10 +25,14 @@ export function PackagesSection() {
             passende Auswahl für eure Erinnerungen. Alle Pakete gibt es sowohl
             gedruckt als auch digital.
           </p>
-          <p className="mt-6">
+          <p className="mt-6 flex flex-wrap gap-3">
             <span className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
               <TagIcon aria-hidden className="size-4 shrink-0" />
               Einzelfotos ab {singlePhotoPrice}
+            </span>
+            <span className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
+              <GiftIcon aria-hidden className="size-4 shrink-0" />
+              {groupPhotoGift}
             </span>
           </p>
         </SectionHeader>

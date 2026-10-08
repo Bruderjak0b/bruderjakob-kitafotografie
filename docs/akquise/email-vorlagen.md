@@ -87,11 +87,85 @@ Signatur noch nicht im Mailprogramm eingerichtet hast, mach das einmal nach der 
 
 # Teil 1 – Mails an die Kita
 
-## 1. Nach dem Telefonat: Die Kita hat bereits einen Fotografen
+## 1. Erstkontakt: Anfrage an die Kita (zum Weiterleiten an den Elternbeirat)
+
+Ziel: Zwei Wege öffnen, ohne zu drängen. Der Herbst ist das Argument für jetzt, die Termine für
+2027 sind die Tür für alle, bei denen es dieses Jahr nicht mehr klappt. So endet die Mail nicht mit
+einem Nein, nur weil der Kalender schon voll ist. Entweder die Leitung antwortet selbst, oder sie leitet die
+Mail an den Elternbeirat weiter. Deshalb steht alles Wichtige in der Mail und nicht im Anhang, und
+der Text funktioniert auch für jemanden, der nie mit dir gesprochen hat.
+
+**Rechtlicher Hinweis:** Eine unaufgeforderte Werbemail ist nach § 7 UWG auch an Einrichtungen
+heikel. Am sichersten ist diese Reihenfolge: erst anrufen, dann senden, und in der Mail oben auf das
+Gespräch verweisen (dafür steht die Variante in Klammern in der ersten Zeile). Wenn du kalt
+anschreibst, dann nur einmal, an die offizielle Adresse der Einrichtung, mit dem Abmeldesatz am
+Ende. Nicht nachfassen per Mail, sondern per Telefon.
+
+Anhang: `pdf/akquise-mappe-versand.pdf`.
+
+Zeitplan für die Weihnachtsbilder, bevor du eine Frist in die Mail schreibst: Nach dem Fototag
+dauert die Bearbeitung etwa zwei Wochen, danach brauchen Eltern Zeit zum Aussuchen, und Druck und
+Versand kommen obendrauf. Ein Fototag **bis etwa zum 20. November** lässt alles bequem vor
+Weihnachten ankommen. Die aktuellen Lieferzeiten bei Fotograf.de einmal nachsehen, bevor du ein
+Datum zusagst.
+
+**Betreff:** Fototermin für die [Kita-Name]?
+
+Alternativen, falls der erste Betreff nicht gut läuft:
+Kitafotografie in [Ort] – Termine im Herbst und für 2027
+Bilder für die Eltern, rechtzeitig vor Weihnachten
+
+```
+Guten Tag,
+
+mein Name ist Marius Jakob, ich bin Fotograf aus Salach und fotografiere Kitas im Kreis Göppingen.
+[Bei Mail nach einem Telefonat: danke, dass Sie sich vorhin Zeit genommen haben. Wie besprochen
+hier alles Wichtige zum Nachlesen.]
+
+Ich habe für diesen Herbst noch Termine frei und wollte fragen, ob ein Fototag bei Ihnen passt.
+
+Warum sich der Herbst lohnt: Die Bilder sind etwa zwei Wochen nach dem Fototag online, danach können
+Eltern in Ruhe aussuchen und bestellen. Wenn der Termin bis Mitte November liegt, sind die Abzüge
+rechtzeitig vor Weihnachten da. Erfahrungsgemäß ist das für viele Familien das Geschenk für
+Großeltern und Paten, das sie ohnehin suchen.
+
+Wenn der Herbst bei Ihnen zu knapp ist, ist das kein Problem: Für 2027 vergebe ich ab jetzt
+ebenfalls Termine, im Frühjahr genauso wie vor den Sommerferien. Viele Einrichtungen planen den
+Fototag fest ins Kita-Jahr ein. Sagen Sie mir einfach, was Ihnen lieber ist, dann halte ich Ihnen
+etwas frei.
+
+So fotografiere ich:
+- Draußen im Garten, im normalen Kita-Alltag. Kein Blitz, kein Studiohintergrund, keine Kulisse.
+  Die Kinder spielen, ich fotografiere mit. Pro Gruppe ein bis zwei Stunden. Zum Schluss mache ich
+  Gruppenfotos, und das Gruppenbild bekommt jedes Kind digital geschenkt.
+- Für Ihre Einrichtung entstehen keine Kosten, und bei Ihnen bleibt keine Arbeit hängen: Anmeldung,
+  Einverständniserklärungen, Galerien, Bestellungen und alle Elternfragen laufen über mich.
+- Eltern bekommen für ihr Kind eine passwortgeschützte Galerie und bestellen online, Lieferung nach
+  Hause. Keine Listen, kein Bargeld im Gruppenraum, keine Mappen, die zurückkommen müssen. Bezahlt
+  wird erst, wenn die Bilder gefallen.
+
+Zwei Möglichkeiten, wie es weitergehen kann:
+
+1. Sie antworten mir kurz, dann klären wir in zehn Minuten am Telefon, ob und wann es passt,
+   in diesem Herbst oder im nächsten Kita-Jahr.
+2. Wenn bei Ihnen der Elternbeirat über den Fotografen entscheidet, leiten Sie diese Mail einfach
+   weiter. Alles Wichtige steht darin, und die Eltern dürfen sich jederzeit direkt bei mir melden,
+   unter 0152 33934815 oder marius@bruderjakob-kitafotografie.de. Dann bleibt das nicht an Ihnen
+   hängen. Gern stelle ich mich auch in einer Elternbeiratssitzung vor, vor Ort oder online.
+
+Im Anhang finden Sie meine Mappe mit Bildbeispielen, Ablauf, Preisen und Datenschutz auf sieben
+Seiten. Mehr steht auf https://www.bruderjakob-kitafotografie.de
+
+Wenn Sie kein Interesse haben, genügt ein kurzes Nein, dann melde ich mich nicht wieder.
+
+[Signatur]
+```
+
+## 2. Nach dem Telefonat: Die Kita hat bereits einen Fotografen
 
 Ziel: freundlich abschließen, nichts aufdrängen, aber als Option im Kopf bleiben. Diese Mail ist die
 wichtigste im ganzen Set, weil sie oft ein Jahr später zum Auftrag führt. Termin zur Wiedervorlage im
-Kalender eintragen (siehe Vorlage 10).
+Kalender eintragen (siehe Vorlage 11).
 
 Anhang: `pdf/akquise-mappe-versand.pdf`. Wer ablehnt, liest selten lange Mails – die Mappe landet
 aber oft im Ordner und wird ein Jahr später wieder hervorgeholt. Wenn dir der Anhang zu aufdringlich
@@ -129,7 +203,7 @@ Bis dahin wünsche ich Ihnen und Ihrem Team eine gute Zeit.
 [Signatur]
 ```
 
-## 2. Nach dem Telefonat: Der Elternbeirat entscheidet (zum Weiterleiten)
+## 3. Nach dem Telefonat: Der Elternbeirat entscheidet (zum Weiterleiten)
 
 Ziel: Die Leitung soll die Mail mit einem Klick weiterleiten können. Deshalb ist der untere Teil so
 geschrieben, dass er auch für jemanden funktioniert, der nie mit mir telefoniert hat. Alles Wichtige
@@ -178,8 +252,8 @@ Seiten.
 Wie ich fotografiere
 Ich komme früh in die Einrichtung, damit die Kinder mich in Ruhe kennenlernen können. Wir reden
 erst kurz über Lieblingsspielzeug, Alter und Namen, dann entsteht ein Einzelportrait. Danach
-spielen die Kinder frei im Garten, während ich weiter fotografiere. Gruppenbilder runden den
-Termin ab. Pro Gruppe dauert das ein bis zwei Stunden, danach läuft der Tag ganz normal weiter.
+spielen die Kinder frei im Garten, während ich weiter fotografiere. Zum Schluss mache ich
+Gruppenfotos, und das Gruppenbild bekommt jedes Kind digital geschenkt. Pro Gruppe dauert das ein bis zwei Stunden, danach läuft der Tag ganz normal weiter.
 Ich arbeite nur mit dem vorhandenen Licht und den Spielgeräten, die die Kinder ohnehin benutzen:
 kein Blitz, kein Studiohintergrund, keine aufgebaute Kulisse.
 
@@ -220,7 +294,7 @@ Ziegelstraße 15 · 73084 Salach
 www.bruderjakob-kitafotografie.de
 ```
 
-## 3. Dankeschön und Terminbestätigung
+## 4. Dankeschön und Terminbestätigung
 
 Ziel: Zusage schriftlich festhalten und alles klären, was am Fototag sonst zwischen Tür und Angel
 besprochen werden müsste.
@@ -246,8 +320,9 @@ Ansprechpartner vor Ort: [Name]
 So läuft der Tag ab
 Ich bin etwa [15–30] Minuten vor Beginn da, damit die Kinder mich in Ruhe kennenlernen können.
 Danach fotografiere ich pro Kind ein kurzes Einzelportrait, anschließend spielen die Kinder frei
-im Garten, während ich weiter fotografiere. Zum Schluss die Gruppenbilder. Der Tagesrhythmus muss
-dafür nicht umgestellt werden.
+im Garten, während ich weiter fotografiere. Zum Schluss mache ich Gruppenfotos, und das
+Gruppenbild bekommt jedes Kind digital geschenkt. Der Tagesrhythmus muss dafür nicht umgestellt
+werden.
 
 Was ich von Ihnen brauche
 - Einen Platz im Freien, gern im Garten. Alles Weitere bringe ich mit.
@@ -270,7 +345,7 @@ Wenn sich bei Ihnen noch etwas ändert oder Fragen offen sind, melden Sie sich j
 [Signatur]
 ```
 
-## 4. Nach dem Besuch: Dankeschön an die Kita und Bitte um eine Google-Bewertung
+## 5. Nach dem Besuch: Dankeschön an die Kita und Bitte um eine Google-Bewertung
 
 Ziel: sich bedanken und genau einmal um eine Bewertung bitten. Nicht erinnern, nicht nachfassen.
 Am besten 1–3 Tage nach dem Fototag senden, wenn der Eindruck noch frisch ist.
@@ -309,7 +384,7 @@ Eltern werden geduzt. Diese Mails gehen entweder über den Mailversand von Fotog
 die Kita die Adressen nicht herausgibt – als Textvorlage an die Kita, die sie über die Elternpost
 verteilt. In dem Fall den Hinweis „Diese Nachricht kommt über die Kita“ oben ergänzen.
 
-## 5. Die Galerie steht bereit
+## 6. Die Galerie steht bereit
 
 **Betreff:** Die Fotos aus der [Kita-Name] sind online
 
@@ -322,8 +397,9 @@ schauen, welche dir gefallen.
 Zur Galerie: [GALERIE-LINK]
 Zugangscode: [CODE]
 
-In der Galerie findest du nur die Bilder deines Kindes [und die Gruppenbilder]. Sie ist
-passwortgeschützt, niemand sonst kann sie sehen.
+In der Galerie findest du nur die Bilder deines Kindes und das Gruppenbild. Sie ist
+passwortgeschützt, niemand sonst kann sie sehen. Das Gruppenbild bekommst du digital geschenkt,
+auch wenn du sonst nichts bestellst.
 
 Bestellen kannst du direkt online, einzelne Bilder ab 5,90 €. Beliebter sind die Pakete ab 24,90 €,
 damit lässt sich im Vergleich zur Einzelbestellung deutlich sparen. Du entscheidest frei zwischen
@@ -339,7 +415,7 @@ Schreib mir einfach, ich helfe gern weiter.
 [Signatur]
 ```
 
-## 6. Erinnerung: Die Galerie schließt bald
+## 7. Erinnerung: Die Galerie schließt bald
 
 Etwa 7–10 Tage vor dem Ablaufdatum senden. Nur an Eltern, die noch nicht bestellt haben, falls sich
 das über Fotograf.de filtern lässt.
@@ -364,7 +440,7 @@ melde dich bitte kurz bei mir. Eine Verlängerung ist im Einzelfall möglich, we
 [Signatur]
 ```
 
-## 7. Danke für die Bestellung und Bitte um eine Google-Bewertung
+## 8. Danke für die Bestellung und Bitte um eine Google-Bewertung
 
 Erst senden, wenn die Bestellung angekommen sein müsste, also etwa 1–2 Wochen nach dem Versand.
 Vorher wirkt die Bitte hohl, weil die Bilder noch gar nicht in der Hand waren.
@@ -396,7 +472,7 @@ dann finden wir eine Lösung.
 Diese Vorlagen decken die Lücken zwischen den oberen ab. Die wichtigsten sind Nummer 8 (spart die
 meisten Rückfragen) und Nummer 10 (bringt die meisten Folgeaufträge).
 
-## 8. Infomail an die Eltern vor dem Fototag
+## 9. Infomail an die Eltern vor dem Fototag
 
 Geht über die Kita raus, etwa zwei bis drei Wochen vorher. Beantwortet die Fragen, die sonst beim
 Team landen.
@@ -430,7 +506,8 @@ sind Gummistiefel ideal, ich bringe Schirme mit.
 Wie es weitergeht
 Etwa zwei Wochen nach dem Fototag bekommst du einen Zugang zu einer passwortgeschützten Galerie mit
 den Bildern deines Kindes. Erst dann entscheidest du, ob du etwas bestellen möchtest. Vorab
-entstehen keine Kosten und es gibt keine Mindestbestellmenge.
+entstehen keine Kosten und es gibt keine Mindestbestellmenge. Das Gruppenbild bekommst du für dein
+Kind digital geschenkt, auch ohne Bestellung.
 
 Fragen dazu bitte direkt an mich, nicht ans Kita-Team: 0152 33934815 (auch WhatsApp) oder
 marius@bruderjakob-kitafotografie.de
@@ -438,7 +515,7 @@ marius@bruderjakob-kitafotografie.de
 [Signatur]
 ```
 
-## 9. Erinnerung an die Kita kurz vor dem Fototag
+## 10. Erinnerung an die Kita kurz vor dem Fototag
 
 Drei bis sieben Tage vorher. Kurz halten.
 
@@ -461,9 +538,9 @@ Bis [Wochentag],
 [Signatur]
 ```
 
-## 10. Wiedervorlage im nächsten Kita-Jahr
+## 11. Wiedervorlage im nächsten Kita-Jahr
 
-An Kitas, die abgesagt haben (siehe Vorlage 1), und an Kitas, bei denen ich schon war. Am besten im
+An Kitas, die abgesagt haben (siehe Vorlage 2), und an Kitas, bei denen ich schon war. Am besten im
 Frühjahr und im Spätsommer, wenn die Jahresplanung gemacht wird.
 
 Anhang: `pdf/akquise-mappe-versand.pdf`, außer die Kita hat sie schon.
@@ -489,7 +566,7 @@ dann melde ich mich nicht wieder.
 [Signatur]
 ```
 
-## 11. Absage oder Verschiebung wegen Wetter
+## 12. Absage oder Verschiebung wegen Wetter
 
 Am Vortag oder am Morgen. Immer zusätzlich anrufen, eine Mail allein wird am Fototag zu spät gelesen.
 
@@ -510,7 +587,7 @@ Ich rufe Sie heute Nachmittag ohnehin kurz an, damit wir das schnell klären kö
 [Signatur]
 ```
 
-## 12. Nachfototermin für Kinder, die gefehlt haben
+## 13. Nachfototermin für Kinder, die gefehlt haben
 
 **Betreff:** Nachfototermin für die Kinder, die am [Datum] gefehlt haben
 
@@ -528,7 +605,7 @@ Die Galerien der übrigen Kinder gehen davon unabhängig wie geplant am [Datum] 
 [Signatur]
 ```
 
-## 13. Antwort auf eine Anfrage über das Kontaktformular
+## 14. Antwort auf eine Anfrage über das Kontaktformular
 
 Für den Alltag: schnelle, freundliche Erstantwort innerhalb von zwei Tagen (so steht es auf der
 Website, das sollte auch stimmen).
@@ -559,7 +636,7 @@ https://bruderjakob-kitafotografie.de/preise
 [Signatur]
 ```
 
-## 14. Galerie-Zugang funktioniert nicht
+## 15. Galerie-Zugang funktioniert nicht
 
 Kurzer Baustein für den häufigsten Elternsupport-Fall.
 
@@ -587,9 +664,9 @@ Wenn es dann immer noch nicht klappt, ruf mich gern an: 0152 33934815.
 ## Noch zu klären
 
 - [ ] **Google-Bewertungslink besorgen.** Im Google-Business-Profil unter „Rezensionen → Bewertungen
-      erhalten“ gibt es einen kurzen Link der Form `https://g.page/r/…`. Diesen in den Vorlagen 4 und 7
+      erhalten“ gibt es einen kurzen Link der Form `https://g.page/r/…`. Diesen in den Vorlagen 5 und 8
       für `[GOOGLE-BEWERTUNGSLINK]` einsetzen. Erst möglich, wenn das Profil verifiziert ist.
-- [ ] **Anmeldelink bzw. QR-Code von Fotograf.de** für Vorlage 8 eintragen.
-- [ ] **Standard-Laufzeit der Galerien festlegen** (z. B. vier Wochen) und in den Vorlagen 5 und 6
+- [ ] **Anmeldelink bzw. QR-Code von Fotograf.de** für Vorlage 9 eintragen.
+- [ ] **Standard-Laufzeit der Galerien festlegen** (z. B. vier Wochen) und in den Vorlagen 6 und 7
       konsistent verwenden. Auf der Website steht bisher keine Frist – wenn sie fest ist, gehört sie
       in die FAQ.
