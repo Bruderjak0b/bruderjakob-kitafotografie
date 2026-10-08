@@ -7,7 +7,7 @@ import { PackagesSection } from "~/components/preise/packages-section";
 export const metadata: Metadata = {
   title: "Preise für Kita-Fotopakete",
   description:
-    "Fotopakete von 24,90 € bis 79,90 €, Einzelbilder ab 5,90 €. Für die Kita entstehen keine Kosten, Eltern bestellen erst nach der Auswahl in der Galerie.",
+    "Fotopakete von 24,90 € bis 79,90 €, Einzelbilder ab 5,90 €, Einzeldownload 9,90 €. Für die Kita kostenlos, Eltern bestellen nach der Auswahl in der Galerie.",
   alternates: { canonical: "/preise" },
 };
 
