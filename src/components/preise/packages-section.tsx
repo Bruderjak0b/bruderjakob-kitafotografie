@@ -4,8 +4,11 @@ import { Container } from "~/components/layout/container";
 import { Section, SectionHeader } from "~/components/layout/section";
 import {
   digitalPackage,
+  freeShippingFrom,
   groupPhotoGift,
   pricePackages,
+  shippingPrice,
+  singleDownloadPrice,
   singlePhotoPrice,
 } from "~/content/pricing";
 import { cn } from "~/lib/utils";
@@ -29,6 +32,10 @@ export function PackagesSection() {
             <span className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
               <TagIcon aria-hidden className="size-4 shrink-0" />
               Einzelfotos ab {singlePhotoPrice}
+            </span>
+            <span className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
+              <DownloadIcon aria-hidden className="size-4 shrink-0" />
+              Einzeldownload {singleDownloadPrice}
             </span>
             <span className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
               <GiftIcon aria-hidden className="size-4 shrink-0" />
@@ -91,6 +98,13 @@ export function PackagesSection() {
             {digitalPackage.price}
           </span>
         </div>
+
+        <p className="mt-6 max-w-3xl text-pretty text-muted-foreground">
+          Alle Abzüge kommen direkt zu euch nach Hause. Der Versand kostet{" "}
+          {shippingPrice} pro Bestellung, ab {freeShippingFrom} Bestellwert ist
+          er kostenlos. Das gilt auch, wenn ihr für mehrere Kinder zusammen
+          bestellt. Downloads stehen sofort bereit und kosten keinen Versand.
+        </p>
       </Container>
     </Section>
   );

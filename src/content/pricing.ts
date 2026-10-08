@@ -9,6 +9,13 @@ export type PricePackage = {
 
 export const singlePhotoPrice = "5,90 €";
 
+export const singleDownloadPrice = "9,90 €";
+
+/** Charged per order, so siblings ordered together pay it only once. */
+export const shippingPrice = "4,90 €";
+
+export const freeShippingFrom = "50 €";
+
 export const groupPhotoGift = "Gruppenbild für jedes Kind geschenkt";
 
 export const pricePackages: PricePackage[] = [
@@ -42,7 +49,7 @@ export const pricePackages: PricePackage[] = [
     name: "Premium",
     price: "79,90 €",
     description:
-      "Die umfangreichste Variante mit hochwertigen Silk-Abzügen und mehreren Downloads, für alle, die keine Kompromisse eingehen wollen.",
+      "Die umfangreichste Variante mit hochwertigen Silk-Abzügen und dazu allen Fotos deines Kindes als Download.",
     featured: true,
     contents: [
       "4x 10x15 Abzüge: Premium Silk",
@@ -51,20 +58,20 @@ export const pricePackages: PricePackage[] = [
       "1x Magnetsticker 4er-Set Matt",
       "1x Klebebilder (Sticker) 16er-Set Matt",
       "1x 4er-Fotoset 6x9 Matt",
-      "3x Fotodownload Originalgröße",
+      "Alle Fotos als Download in Originalgröße",
     ],
   },
   {
     name: "Geschwister",
-    price: "69,90 €",
+    price: "54,90 €",
     description:
-      "Für Familien mit mehreren Kindern, inklusive Einzelbildern jedes Kindes und einem gemeinsamen Geschwisterfoto, zu einem günstigeren Preis als zwei Einzelpakete.",
+      "Für Familien mit mehreren Kindern in der Kita. Ihr wählt frei aus den Einzelbildern aller Kinder und den Geschwisterfotos, alles in einer Bestellung.",
     contents: [
-      "2x 10x15 Abzüge: Premium Matt (je Kind)",
-      "2x 13x19 Abzüge: Premium Matt (je Kind)",
-      "1x 15x20 Abzüge: Premium Matt (gemeinsames Geschwisterfoto)",
-      "1x Klebebilder (Sticker) 16er-Set Matt (je Kind)",
-      "1x Fotodownload Originalgröße (gemeinsames Geschwisterfoto)",
+      "2x 10x15 Abzüge: Premium Matt",
+      "4x 13x19 Abzüge: Premium Matt",
+      "3x 15x20 Abzüge: Premium Matt",
+      "2x Klebebilder (Sticker) 16er-Set Matt",
+      "1x Fotodownload Originalgröße",
     ],
   },
 ];
