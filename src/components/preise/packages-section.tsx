@@ -8,7 +8,6 @@ import {
   groupPhotoGift,
   pricePackages,
   shippingPrice,
-  singleDownloadPrice,
   singlePhotoPrice,
 } from "~/content/pricing";
 import { cn } from "~/lib/utils";
@@ -34,10 +33,6 @@ export function PackagesSection() {
               Einzelfotos ab {singlePhotoPrice}
             </span>
             <span className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
-              <DownloadIcon aria-hidden className="size-4 shrink-0" />
-              Einzeldownload {singleDownloadPrice}
-            </span>
-            <span className="inline-flex items-center gap-2.5 rounded-full bg-terracotta-100 px-5 py-2.5 font-heading text-base font-semibold text-terracotta-700">
               <GiftIcon aria-hidden className="size-4 shrink-0" />
               {groupPhotoGift}
             </span>
@@ -51,15 +46,26 @@ export function PackagesSection() {
             <li
               key={item.name}
               className={cn(
-                "row-span-4 grid grid-rows-[auto_auto_1fr_auto] rounded-3xl p-6 sm:grid-rows-subgrid sm:p-8",
+                "relative row-span-4 grid grid-rows-[auto_auto_1fr_auto] rounded-3xl p-6 sm:grid-rows-subgrid sm:p-8",
                 item.featured ? "bg-terracotta-100" : "bg-white shadow-card",
               )}
             >
+              {/* Absolutely positioned, so it takes no cell in the subgrid. */}
+              {item.badge && (
+                <p className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full whitespace-nowrap bg-terracotta-600 px-3 py-1 font-heading text-sm font-semibold text-white">
+                  {item.badge}
+                </p>
+              )}
               <h2 className="text-2xl font-extrabold lg:text-h3">
                 {item.name}
               </h2>
               <p className="mt-1 font-heading text-3xl font-extrabold text-terracotta-600">
                 {item.price}
+                <span className="mt-1 block font-sans text-base font-normal text-muted-foreground">
+                  {item.freeShipping
+                    ? "versandkostenfrei"
+                    : `zzgl. ${shippingPrice} Versand`}
+                </span>
               </p>
               <p className="mt-4 mb-6 text-lg text-muted-foreground">
                 {item.description}

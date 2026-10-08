@@ -5,6 +5,10 @@ export type PricePackage = {
   contents: string[];
   /** The most extensive package, shown in the accent colour. */
   featured?: boolean;
+  /** Short highlight label shown next to the package name. */
+  badge?: string;
+  /** Price reaches the free-shipping threshold on its own. */
+  freeShipping?: boolean;
 };
 
 export const singlePhotoPrice = "5,90 €";
@@ -51,6 +55,8 @@ export const pricePackages: PricePackage[] = [
     description:
       "Die umfangreichste Variante mit hochwertigen Silk-Abzügen und dazu allen Fotos deines Kindes als Download.",
     featured: true,
+    badge: "Beliebtestes Paket",
+    freeShipping: true,
     contents: [
       "4x 10x15 Abzüge: Premium Silk",
       "6x 13x19 Abzüge: Premium Silk",
@@ -64,6 +70,7 @@ export const pricePackages: PricePackage[] = [
   {
     name: "Geschwister",
     price: "54,90 €",
+    freeShipping: true,
     description:
       "Für Familien mit mehreren Kindern in der Kita. Ihr wählt frei aus den Einzelbildern aller Kinder und den Geschwisterfotos, alles in einer Bestellung.",
     contents: [
@@ -78,6 +85,6 @@ export const pricePackages: PricePackage[] = [
 
 export const digitalPackage = {
   eyebrow: "Alles digital",
-  text: "Wer alle Fotos als Download möchte, bekommt das komplette Paket.",
+  text: `Wer alle Fotos als Download möchte, bekommt das komplette Paket. Einzelne Downloads gibt es für je ${singleDownloadPrice}.`,
   price: "69,90 €",
 };
