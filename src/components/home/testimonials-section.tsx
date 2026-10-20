@@ -11,9 +11,9 @@ export function TestimonialsSection() {
       <Container>
         <SectionHeader eyebrow="Stimmen" title="Das sagen Eltern" />
 
-        <ul className="grid gap-6 lg:grid-cols-3">
+        <ul className="stagger grid gap-6 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <li key={testimonial.author}>
+            <li key={testimonial.author} className="reveal">
               <figure
                 className={cn(
                   "flex h-full flex-col gap-6 rounded-3xl p-8 lg:p-10",

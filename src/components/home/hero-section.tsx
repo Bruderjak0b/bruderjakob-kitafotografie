@@ -20,13 +20,14 @@ export function HeroSection() {
         <div>
           <Eyebrow className="mb-6">Kitafotografie</Eyebrow>
           <h1 className="mb-6 text-5xl leading-[1.04] font-extrabold sm:text-6xl xl:text-display">
-            Lebhafte Bilder in Göppingen und Umgebung
+            <span className="mark-in">Lebhafte Bilder</span> in Göppingen und
+            Umgebung
           </h1>
-          <p className="mb-9 max-w-xl text-lg text-ink-700 lg:text-xl">
+          <p className="rise-in mb-9 max-w-xl text-lg text-ink-700 lg:text-xl">
             Natürliche Kindergartenfotos, die im freien Spiel entstehen. Ohne
             Studio, ohne Posen, mitten im Kita-Alltag.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="rise-in flex flex-wrap gap-3 [--motion-step:1]">
             <Button asChild size="lg">
               <Link href="/kontakt">
                 Verfügbarkeit anfragen
@@ -38,12 +39,15 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <ul className="mt-12 grid gap-3 border-t border-ink-200 pt-8 text-ink-800 sm:grid-cols-3 sm:gap-6">
+          <ul className="stagger mt-12 grid gap-3 border-t border-ink-200 pt-8 text-ink-800 sm:grid-cols-3 sm:gap-6">
             {highlights.map((item) => (
-              <li key={item} className="flex gap-2.5 text-sm font-medium">
+              <li
+                key={item}
+                className="rise-in flex gap-2.5 text-sm font-medium [animation-delay:calc(450ms+var(--motion-step)*100ms)]"
+              >
                 <CheckIcon
                   aria-hidden
-                  className="mt-0.5 size-4 shrink-0 text-terracotta-600"
+                  className="draw-check mt-0.5 size-4 shrink-0 text-terracotta-600"
                   strokeWidth={2.5}
                 />
                 {item}
