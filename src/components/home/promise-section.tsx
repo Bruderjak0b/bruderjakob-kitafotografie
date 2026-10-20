@@ -46,16 +46,21 @@ export function PromiseSection() {
       <Container>
         <SectionHeader
           eyebrow="Versprechen"
-          title="Die wichtigsten Punkte zusammengefasst"
+          title={
+            <>
+              Die <span className="mark">wichtigsten Punkte</span>{" "}
+              zusammengefasst
+            </>
+          }
         >
-          <p className="mt-2 inline-flex items-center gap-3 rounded-2xl bg-terracotta-100 px-5 py-3 text-left sm:rounded-full text-base font-semibold text-terracotta-700">
+          <p className="reveal mt-2 inline-flex [--motion-step:1] items-center gap-3 rounded-2xl bg-terracotta-100 px-5 py-3 text-left sm:rounded-full text-base font-semibold text-terracotta-700">
             <GiftIcon aria-hidden className="size-5 shrink-0" />
             Jedes Kind und jede Einrichtung erhält ein kostenloses digitales
             Gruppenbild
           </p>
         </SectionHeader>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="stagger grid gap-6 lg:grid-cols-2">
           <PromiseCard title="Für Eltern" icon={HeartIcon} items={forParents} />
           <PromiseCard
             title="Für Kitas"
@@ -65,7 +70,7 @@ export function PromiseSection() {
           />
         </div>
 
-        <div className="mt-12 flex justify-end">
+        <div className="reveal-right mt-12 flex justify-end">
           <Button asChild size="lg">
             <Link href="/kontakt">
               Verfügbarkeit anfragen
@@ -93,6 +98,8 @@ function PromiseCard({
     <div
       className={cn(
         "rounded-3xl p-6 sm:p-10 lg:p-14",
+        // The parents card stays put, the daycare card slides in next to it.
+        dark && "reveal-right",
         dark ? "bg-ink-800 text-white" : "bg-white shadow-card",
       )}
     >
@@ -123,7 +130,7 @@ function PromiseCard({
               <CheckIcon
                 aria-hidden
                 className={cn(
-                  "mt-1 size-5 shrink-0",
+                  "reveal-check mt-1 size-5 shrink-0",
                   dark ? "text-terracotta-300" : "text-terracotta-600",
                 )}
                 strokeWidth={2.5}

@@ -17,7 +17,7 @@ export function LegalProse({
         // German legal terms are long compound words ("Wirtschafts-
         // identifikationsnummer") that overflow narrow screens unhyphenated.
         // The document is lang="de", so the browser hyphenates correctly.
-        "hyphens-auto break-words text-ink-700",
+        "reveal hyphens-auto break-words text-ink-700",
         "[&_h2]:mt-14 [&_h2]:mb-5 [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:tracking-tight [&_h2]:text-ink-900",
         "lg:[&_h2]:text-h3",
         "[&_h2:first-child]:mt-0",

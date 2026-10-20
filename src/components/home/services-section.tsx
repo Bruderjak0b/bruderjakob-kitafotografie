@@ -31,7 +31,7 @@ export function ServicesSection() {
           align="left"
         />
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="stagger grid gap-6 lg:grid-cols-2">
           <article className="flex flex-col rounded-3xl bg-terracotta-100 p-6 sm:p-10 lg:p-12">
             <h3 className="mb-5 text-2xl font-extrabold lg:text-h3">
               Minishootings
@@ -59,11 +59,11 @@ export function ServicesSection() {
               </p>
             </div>
 
-            <dl className="my-8 grid gap-3 sm:grid-cols-3">
+            <dl className="stagger my-8 grid gap-3 sm:grid-cols-3">
               {miniShootingFacts.map((fact) => (
                 <div
                   key={fact.value}
-                  className="flex flex-col-reverse justify-end gap-1 rounded-2xl bg-white p-4"
+                  className="reveal flex flex-col-reverse justify-end gap-1 rounded-2xl bg-white p-4"
                 >
                   <dt className="text-sm text-ink-700">{fact.label}</dt>
                   <dd className="flex items-center gap-2 font-heading text-xl font-extrabold text-terracotta-600">
@@ -79,7 +79,7 @@ export function ServicesSection() {
             </Button>
           </article>
 
-          <article className="flex flex-col overflow-hidden rounded-3xl bg-ink-800 text-white">
+          <article className="reveal-right flex flex-col overflow-hidden rounded-3xl bg-ink-800 text-white">
             <div className="grid h-72 grid-cols-2 grid-rows-2 gap-1.5 sm:h-96 lg:h-[26rem] lg:grid-rows-[3fr_2fr]">
               <GalleryImage
                 src={familyImage}

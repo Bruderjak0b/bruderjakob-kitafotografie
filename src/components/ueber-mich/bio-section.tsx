@@ -41,12 +41,12 @@ export function BioSection() {
             Hallo, ich bin Marius
           </h1>
 
-          <p className="text-xl leading-relaxed text-ink-800 lg:text-2xl lg:leading-relaxed">
+          <p className="rise-in-right text-xl leading-relaxed text-ink-800 lg:text-2xl lg:leading-relaxed">
             {aboutLead}
           </p>
 
           {aboutSections.map((section) => (
-            <section key={section.title} className="mt-12">
+            <section key={section.title} className="reveal-right mt-12">
               <h2 className="mb-4 text-2xl font-extrabold lg:text-h3">
                 {section.title}
               </h2>
@@ -58,7 +58,9 @@ export function BioSection() {
             </section>
           ))}
 
-          <p className="mt-12 text-lg text-muted-foreground">{aboutClosing}</p>
+          <p className="reveal-right mt-12 text-lg text-muted-foreground">
+            {aboutClosing}
+          </p>
 
           {/* Mobile: the sticky button above is hidden, so repeat it here. */}
           <Button asChild size="lg" className="mt-10 lg:hidden">

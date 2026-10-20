@@ -54,6 +54,7 @@ export function SectionHeader({
     <div
       className={cn(
         "mb-12 flex flex-col gap-6 lg:mb-16",
+        isCenter ? "reveal" : "reveal-left",
         !isCenter && action && "lg:flex-row lg:items-end lg:justify-between",
         className,
       )}

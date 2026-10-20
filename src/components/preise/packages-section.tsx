@@ -46,7 +46,7 @@ export function PackagesSection() {
             <li
               key={item.name}
               className={cn(
-                "relative row-span-4 grid grid-rows-[auto_auto_1fr_auto] rounded-3xl p-6 sm:grid-rows-subgrid sm:p-8",
+                "reveal relative row-span-4 grid grid-rows-[auto_auto_1fr_auto] rounded-3xl p-6 sm:grid-rows-subgrid sm:p-8",
                 item.featured ? "bg-terracotta-100" : "bg-white shadow-card",
               )}
             >
@@ -86,7 +86,7 @@ export function PackagesSection() {
           ))}
         </ul>
 
-        <div className="mt-6 flex flex-col gap-6 rounded-3xl bg-ink-800 p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-10 lg:p-12">
+        <div className="reveal mt-6 flex flex-col gap-6 rounded-3xl bg-ink-800 p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-10 lg:p-12">
           <div className="flex gap-5">
             <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-terracotta-500">
               <DownloadIcon aria-hidden className="size-5" />
@@ -105,7 +105,7 @@ export function PackagesSection() {
           </span>
         </div>
 
-        <p className="mt-6 max-w-3xl text-pretty text-muted-foreground">
+        <p className="reveal mt-6 max-w-3xl text-pretty text-muted-foreground">
           Alle Abzüge kommen direkt zu euch nach Hause. Der Versand kostet{" "}
           {shippingPrice} pro Bestellung, ab {freeShippingFrom} Bestellwert ist
           er kostenlos. Das gilt auch, wenn ihr für mehrere Kinder zusammen
