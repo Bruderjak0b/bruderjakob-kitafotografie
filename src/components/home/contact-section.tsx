@@ -10,7 +10,7 @@ export function ContactSection() {
     <Section tone="accent" id="kontakt" className="pb-28 lg:pb-40">
       <Container
         size="narrow"
-        className="flex flex-col items-center text-center"
+        className="reveal flex flex-col items-center text-center"
       >
         <Eyebrow className="mb-6 text-terracotta-100">Kontakt</Eyebrow>
         <h2 className="mb-6 max-w-4xl text-4xl font-extrabold sm:text-5xl lg:text-display">

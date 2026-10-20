@@ -28,7 +28,7 @@ export function PageHero({
         <h1 className="max-w-4xl text-4xl leading-[1.06] font-extrabold sm:text-5xl lg:text-h1">
           {title}
         </h1>
-        {children && <div className="mt-6 max-w-2xl">{children}</div>}
+        {children && <div className="rise-in mt-6 max-w-2xl">{children}</div>}
       </Container>
     </section>
   );

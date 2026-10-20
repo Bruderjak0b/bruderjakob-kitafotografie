@@ -18,12 +18,12 @@ type FaqListProps = {
 export function FaqList({ items, name = "faq", className }: FaqListProps) {
   return (
     <>
-      <div className={cn("flex flex-col gap-3", className)}>
+      <div className={cn("stagger flex flex-col gap-3", className)}>
         {items.map((item) => (
           <details
             key={item.question}
             name={name}
-            className="group rounded-2xl bg-white px-6 shadow-card transition-shadow duration-150 lg:px-8 details-content:h-0 details-content:overflow-hidden details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto"
+            className="reveal group rounded-2xl bg-white px-6 shadow-card transition-shadow duration-150 lg:px-8 details-content:h-0 details-content:overflow-hidden details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-200 open:details-content:h-auto"
           >
             <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left font-semibold transition-colors duration-150 rounded-lg outline-none hover:text-terracotta-600 focus-visible:ring-3 focus-visible:ring-ring/50 [&::-webkit-details-marker]:hidden">
               <h3 className="font-sans text-lg tracking-normal text-pretty">

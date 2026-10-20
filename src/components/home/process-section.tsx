@@ -11,7 +11,12 @@ export function ProcessSection() {
       <Container>
         <SectionHeader
           eyebrow="Ablauf"
-          title="Euer Weg zu natürlichen Kindergartenfotos"
+          title={
+            <>
+              Euer Weg zu{" "}
+              <span className="mark">natürlichen Kindergartenfotos</span>
+            </>
+          }
           align="left"
           action={
             <Button asChild size="lg" variant="outline">
@@ -20,11 +25,11 @@ export function ProcessSection() {
           }
         />
 
-        <ol className="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
+        <ol className="stagger grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
           {processSteps.map((step, index) => (
             <li
               key={step.title}
-              className="relative border-t border-ink-200 pt-8 before:absolute before:-top-px before:left-0 before:h-0.5 before:w-16 before:bg-primary"
+              className="reveal reveal-line relative border-t border-ink-200 pt-8 before:absolute before:-top-px before:left-0 before:h-0.5 before:w-16 before:bg-primary"
             >
               <span
                 aria-hidden

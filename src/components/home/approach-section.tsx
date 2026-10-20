@@ -30,7 +30,7 @@ export function ApproachSection() {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <Eyebrow className="mb-6">Herangehensweise</Eyebrow>
           <h2 className="mb-6 text-4xl font-extrabold lg:text-h2">
-            Wie entstehen die natürlichen Bilder?
+            Wie entstehen die <span className="mark">natürlichen Bilder</span>?
           </h2>
           <p className="mb-10 text-lg text-muted-foreground">
             Ergebnisse allein reichen mir nicht. Wenn ein Kind die Kamera
@@ -49,11 +49,11 @@ export function ApproachSection() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 lg:pt-4">
+        <div className="stagger flex flex-col gap-6 lg:pt-4">
           {ageGroups.map((group) => (
             <article
               key={group.label}
-              className="rounded-3xl bg-white p-6 shadow-card sm:p-10 lg:p-12"
+              className="reveal-right rounded-3xl bg-white p-6 shadow-card sm:p-10 lg:p-12"
             >
               <div className="mb-5 flex items-center gap-4 lg:gap-5">
                 <span
@@ -74,7 +74,7 @@ export function ApproachSection() {
             </article>
           ))}
 
-          <div className="flex flex-col gap-5 rounded-3xl bg-terracotta-600 p-6 text-white sm:flex-row sm:gap-6 sm:p-10 lg:p-12">
+          <div className="reveal-right flex flex-col gap-5 rounded-3xl bg-terracotta-600 p-6 text-white sm:flex-row sm:gap-6 sm:p-10 lg:p-12">
             <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-terracotta-500">
               <SunIcon aria-hidden className="size-6" />
             </span>
@@ -84,7 +84,10 @@ export function ApproachSection() {
                 Foto: das Klettergerüst, den Sandkasten, das Licht im Garten.
               </p>
               <p className="font-heading text-2xl font-extrabold lg:text-h3">
-                Darum wirken sie so lebendig.
+                Darum wirken sie so{" "}
+                <span className="mark [--mark-color:var(--color-terracotta-500)]">
+                  lebendig.
+                </span>
               </p>
             </div>
           </div>

@@ -35,7 +35,7 @@ export function ProcessDetailSection() {
                     // Sticks while its own paragraph scrolls past, so the step
                     // stays readable next to the text it belongs to.
                     "flex items-baseline gap-5 lg:sticky lg:top-28 lg:self-start",
-                    textOnLeft && "lg:order-2",
+                    textOnLeft ? "reveal-right lg:order-2" : "reveal-left",
                   )}
                 >
                   <span
@@ -49,7 +49,12 @@ export function ProcessDetailSection() {
                   </h2>
                 </div>
 
-                <div className={cn("max-w-2xl", textOnLeft && "lg:order-1")}>
+                <div
+                  className={cn(
+                    "max-w-2xl",
+                    textOnLeft ? "reveal-left lg:order-1" : "reveal-right",
+                  )}
+                >
                   <p className="mb-5 text-xl leading-relaxed text-ink-800">
                     {step.summary}
                   </p>

@@ -37,7 +37,7 @@ export default function KontaktPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[7fr_5fr] lg:gap-16">
             <ContactForm />
 
-            <div className="flex flex-col gap-8">
+            <div className="reveal-right flex flex-col gap-8">
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-terracotta-200">
                 <Image
                   src={portrait}
