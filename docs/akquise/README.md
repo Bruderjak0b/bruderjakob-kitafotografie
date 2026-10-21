@@ -11,7 +11,7 @@ ohne Next.js, ohne Build. Öffnen, anschauen, als PDF speichern.
 | `email-vorlagen.html` | 15 E-Mail-Vorlagen für Kitas und Eltern, mit Kopieren-Knopf je Vorlage | – |
 | `email-vorlagen.md` | Quelltext der E-Mail-Vorlagen, hier werden die Texte bearbeitet | – |
 | `email-vorlagen-html.mjs` | Baut aus der `.md` die `.html` | – |
-| `akquise-mappe-versand.html` | Mappe zum Verschicken: nur Bilder mit Referenz-Einwilligung, ohne Galerie-QR-Code | 7 |
+| `akquise-mappe-versand.html` | Mappe zum Verschicken: nur Bilder mit Referenz-Einwilligung, ohne Galerie-QR-Code. Druckfreundlich ohne dunkle oder farbige Flächen, weil Kitas sie oft selbst ausdrucken | 7 |
 | `akquise-uebersicht.html` | Einseitiger Überblick: Ablauf, Nutzen, Kosten, Preise, Datenschutz und Kontakt auf einen Blick. Nur Bilder mit Referenz-Einwilligung | 1 |
 | `signatur.html` | Drei E-Mail-Signaturen zum Kopieren (marius@ mit Foto, kontakt@ ohne, Kurzvariante), plus Anleitung für IONOS Webmail, Apple Mail und Outlook | – |
 | `ci.css` | Gemeinsames Stylesheet mit den Design-Tokens der Website | – |
