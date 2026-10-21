@@ -89,11 +89,14 @@ Signatur noch nicht im Mailprogramm eingerichtet hast, mach das einmal nach der 
 
 ## 1. Erstkontakt: Anfrage an die Kita (zum Weiterleiten an den Elternbeirat)
 
-Ziel: Zwei Wege öffnen, ohne zu drängen. Der Herbst ist das Argument für jetzt, die Termine für
-2027 sind die Tür für alle, bei denen es dieses Jahr nicht mehr klappt. So endet die Mail nicht mit
-einem Nein, nur weil der Kalender schon voll ist. Entweder die Leitung antwortet selbst, oder sie leitet die
-Mail an den Elternbeirat weiter. Deshalb steht alles Wichtige in der Mail und nicht im Anhang, und
-der Text funktioniert auch für jemanden, der nie mit dir gesprochen hat.
+Ziel: Eine ruhige, durchgehend lesbare Anfrage für Termine 2027 (Frühjahr, vor den Sommerferien
+oder im Herbst). Entweder die Leitung antwortet selbst, oder sie leitet die Mail an den Elternbeirat
+weiter. Deshalb steht alles Wichtige in der Mail und nicht im Anhang, und der Text funktioniert auch
+für jemanden, der nie mit dir gesprochen hat. Stand 21.10.2026, von Marius so freigegeben.
+
+Anrede: Steht in Notion „Frau …“ oder „Herr …“, dann „Sehr geehrte Frau …“ bzw. „Sehr geehrter
+Herr …“. Steht nur ein Name da, „Guten Tag Vorname Nachname,“. Ohne Ansprechperson „Sehr geehrte
+Damen und Herren,“.
 
 **Rechtlicher Hinweis:** Eine unaufgeforderte Werbemail ist nach § 7 UWG auch an Einrichtungen
 heikel. Am sichersten ist diese Reihenfolge: erst anrufen, dann senden, und in der Mail oben auf das
@@ -103,60 +106,30 @@ Ende. Nicht nachfassen per Mail, sondern per Telefon.
 
 Anhang: `pdf/akquise-mappe-versand.pdf`.
 
-Zeitplan für die Weihnachtsbilder, bevor du eine Frist in die Mail schreibst: Nach dem Fototag
-dauert die Bearbeitung etwa zwei Wochen, danach brauchen Eltern Zeit zum Aussuchen, und Druck und
-Versand kommen obendrauf. Ein Fototag **bis etwa zum 20. November** lässt alles bequem vor
-Weihnachten ankommen. Die aktuellen Lieferzeiten bei Fotograf.de einmal nachsehen, bevor du ein
-Datum zusagst.
-
 **Betreff:** Fototermin für die [Kita-Name]?
 
-Alternativen, falls der erste Betreff nicht gut läuft:
-Kitafotografie in [Ort] – Termine im Herbst und für 2027
-Bilder für die Eltern, rechtzeitig vor Weihnachten
-
 ```
-Guten Tag,
+[Anrede]
 
-mein Name ist Marius Jakob, ich bin Fotograf aus Salach und fotografiere Kitas im Kreis Göppingen.
-[Bei Mail nach einem Telefonat: danke, dass Sie sich vorhin Zeit genommen haben. Wie besprochen
-hier alles Wichtige zum Nachlesen.]
+mein Name ist Marius Jakob. Ich bin Fotograf aus Salach und fotografiere in Kitas im Kreis Göppingen.
+Gerade plane ich die Fototage für 2027 und würde mich freuen, wenn Ihre Einrichtung dabei ist. Ob im Frühjahr, kurz vor den Sommerferien oder im bunten Herbst, richte ich mich ganz nach Ihnen.
 
-Ich habe für diesen Herbst noch Termine frei und wollte fragen, ob ein Fototag bei Ihnen passt.
+Ich fotografiere draußen im Garten meistens am Vormittag. Die Kinder spielen, und ich fotografiere ohne Blitz, ohne Studiohintergrund und ohne dass jemand still sitzen muss.
+Pro Gruppe brauche ich ein bis zwei Stunden.
+Zum Schluss mache ich noch Gruppenfotos, und das Gruppenbild bekommt jedes Kind digital geschenkt.
 
-Warum sich der Herbst lohnt: Die Bilder sind etwa zwei Wochen nach dem Fototag online, danach können
-Eltern in Ruhe aussuchen und bestellen. Wenn der Termin bis Mitte November liegt, sind die Abzüge
-rechtzeitig vor Weihnachten da. Erfahrungsgemäß ist das für viele Familien das Geschenk für
-Großeltern und Paten, das sie ohnehin suchen.
+Für Ihre Einrichtung ist das kostenlos, und an Ihrem Team bleibt keine Arbeit hängen. Einverständniserklärungen, Galerien, Bestellungen und Fragen der Eltern laufen über mich.
+Jede Familie bekommt eine eigene, passwortgeschützte Online-Galerie, sucht sich dort in Ruhe aus, was ihr gefällt, und bekommt die Bilder nach Hause geliefert.
+Es gibt also keine Listen, kein Bargeld im Gruppenraum und keine Mappen, die wieder eingesammelt werden müssen.
 
-Wenn der Herbst bei Ihnen zu knapp ist, ist das kein Problem: Für 2027 vergebe ich ab jetzt
-ebenfalls Termine, im Frühjahr genauso wie vor den Sommerferien. Viele Einrichtungen planen den
-Fototag fest ins Kita-Jahr ein. Sagen Sie mir einfach, was Ihnen lieber ist, dann halte ich Ihnen
-etwas frei.
+Wenn Sie das interessiert, antworten Sie mir gern kurz.
+Dann rufe ich Sie an, und wir klären in zehn Minuten, ob und wann es bei Ihnen passt.
 
-So fotografiere ich:
-- Draußen im Garten, im normalen Kita-Alltag. Kein Blitz, kein Studiohintergrund, keine Kulisse.
-  Die Kinder spielen, ich fotografiere mit. Pro Gruppe ein bis zwei Stunden. Zum Schluss mache ich
-  Gruppenfotos, und das Gruppenbild bekommt jedes Kind digital geschenkt.
-- Für Ihre Einrichtung entstehen keine Kosten, und bei Ihnen bleibt keine Arbeit hängen: Anmeldung,
-  Einverständniserklärungen, Galerien, Bestellungen und alle Elternfragen laufen über mich.
-- Eltern bekommen für ihr Kind eine passwortgeschützte Galerie und bestellen online, Lieferung nach
-  Hause. Keine Listen, kein Bargeld im Gruppenraum, keine Mappen, die zurückkommen müssen. Bezahlt
-  wird erst, wenn die Bilder gefallen.
+Entscheidet bei Ihnen der Elternbeirat über den Fotografen, können Sie diese Mail auch einfach dorthin weiterleiten. Die Eltern erreichen mich direkt unter 0152 33934815 oder per Mail, und ich stelle mich gern in einer Sitzung vor, vor Ort oder online.
 
-Zwei Möglichkeiten, wie es weitergehen kann:
+Im Anhang finden Sie meine Mappe mit Bildbeispielen, Ablauf, Preisen und Datenschutz. Weitere Informationen gibt es auf www.bruderjakob-kitafotografie.de.
 
-1. Sie antworten mir kurz, dann klären wir in zehn Minuten am Telefon, ob und wann es passt,
-   in diesem Herbst oder im nächsten Kita-Jahr.
-2. Wenn bei Ihnen der Elternbeirat über den Fotografen entscheidet, leiten Sie diese Mail einfach
-   weiter. Alles Wichtige steht darin, und die Eltern dürfen sich jederzeit direkt bei mir melden,
-   unter 0152 33934815 oder marius@bruderjakob-kitafotografie.de. Dann bleibt das nicht an Ihnen
-   hängen. Gern stelle ich mich auch in einer Elternbeiratssitzung vor, vor Ort oder online.
-
-Im Anhang finden Sie meine Mappe mit Bildbeispielen, Ablauf, Preisen und Datenschutz auf sieben
-Seiten. Mehr steht auf https://www.bruderjakob-kitafotografie.de
-
-Wenn Sie kein Interesse haben, genügt ein kurzes Nein, dann melde ich mich nicht wieder.
+Und falls es gerade nicht passt, reicht mir ein kurzes Nein. Dann melde ich mich nicht noch einmal.
 
 [Signatur]
 ```
