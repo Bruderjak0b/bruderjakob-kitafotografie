@@ -784,3 +784,55 @@ strong {
 .contact-band .icon-row svg {
   color: var(--terracotta-200);
 }
+
+/* --- Ink-saving variant ------------------------------------------------- */
+
+/* Kitas often print the mailed folder on an office printer. These variants
+   keep the brand through type, lines and terracotta accents instead of large
+   dark or coloured surfaces. */
+
+.cover--light {
+  padding: var(--gutter);
+}
+
+.cover--light .cover__logo {
+  height: 12mm;
+  margin-bottom: 8mm;
+}
+
+.cover--light .cover__photo {
+  height: 140mm;
+  overflow: hidden;
+  border-radius: 4mm;
+  background: var(--ink-100);
+}
+
+.cover--light .cover__photo::after {
+  content: none;
+}
+
+.cover--light .cover__body {
+  padding: 10mm 0 0;
+}
+
+.cover--light .cover__sub {
+  color: var(--ink-700);
+}
+
+.cover--light .cover__contact {
+  border-top-color: var(--ink-200);
+  color: var(--ink-700);
+}
+
+.cover--light .cover__name {
+  color: var(--ink-900);
+}
+
+/* Outlined counterpart to .card--accent: same emphasis, no filled surface. */
+.card--outline {
+  border: 0.6mm solid var(--terracotta-500);
+}
+
+.card--outline .big-number {
+  color: var(--terracotta-600);
+}
