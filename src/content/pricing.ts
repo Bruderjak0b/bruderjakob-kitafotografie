@@ -55,7 +55,7 @@ export const pricePackages: PricePackage[] = [
     description:
       "Die umfangreichste Variante mit hochwertigen Silk-Abzügen und dazu allen Fotos deines Kindes als Download.",
     featured: true,
-    badge: "Beliebtestes Paket",
+    badge: "Favorit",
     freeShipping: true,
     contents: [
       "4x 10x15 Abzüge: Premium Silk",

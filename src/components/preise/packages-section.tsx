@@ -46,19 +46,21 @@ export function PackagesSection() {
             <li
               key={item.name}
               className={cn(
-                "reveal relative row-span-4 grid grid-rows-[auto_auto_1fr_auto] rounded-3xl p-6 sm:grid-rows-subgrid sm:p-8",
+                "reveal row-span-4 grid grid-rows-[auto_auto_1fr_auto] rounded-3xl p-6 sm:grid-rows-subgrid sm:p-8",
                 item.featured ? "bg-terracotta-100" : "bg-white shadow-card",
               )}
             >
-              {/* Absolutely positioned, so it takes no cell in the subgrid. */}
-              {item.badge && (
-                <p className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full whitespace-nowrap bg-terracotta-600 px-3 py-1 font-heading text-sm font-semibold text-white">
-                  {item.badge}
-                </p>
-              )}
-              <h2 className="text-2xl font-extrabold lg:text-h3">
-                {item.name}
-              </h2>
+              {/* Name and badge share one subgrid cell. */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <h2 className="text-2xl font-extrabold lg:text-h3">
+                  {item.name}
+                </h2>
+                {item.badge && (
+                  <p className="rounded-full whitespace-nowrap bg-terracotta-600 px-3 py-1 font-heading text-sm font-semibold text-white">
+                    {item.badge}
+                  </p>
+                )}
+              </div>
               <p className="mt-1 font-heading text-3xl font-extrabold text-terracotta-600">
                 {item.price}
                 <span className="mt-1 block font-sans text-base font-normal text-muted-foreground">
